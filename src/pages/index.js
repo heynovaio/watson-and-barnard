@@ -8,7 +8,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Feed from "../components/feed"
-import heroImg from "../images/adobe-stock-4946677-preview@3x.png"
+import heroImg from "../images/adobe-stock-4946677-preview@3x.jpg"
 import archLogo from "../images/architect.svg"
 import homeLogo from "../images/house-icon.svg"
 import helmetLogo from "../images/construction.svg"
@@ -28,13 +28,20 @@ const Global = styled.section`
 `
 //border-style: solid;
 const Hero = styled.section`
-  position: relative;
   .background {
     width: 100%;
     height: 100%;
     background-color: #f6f7fa;
     position: absolute;
     z-index: -2;
+  }
+  .width {
+    max-width: 1403px;
+    position: relative;
+  }
+  .center {
+    max-width: 1440px;
+    margin: auto;
   }
   .outer-container {
     max-width: 782px;
@@ -84,7 +91,7 @@ const Hero = styled.section`
     max-width: 707px;
     box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
     position: absolute;
-    right: 37px;
+    right: 0;
     top: 0;
     z-index: -1;
   }
@@ -127,8 +134,9 @@ const Associates = styled.section`
   }
   .flex-container {
     display: flex;
-    justify-content: center;
-
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
   }
   .container {
     display: block;
@@ -136,7 +144,6 @@ const Associates = styled.section`
     border-radius: 4px;
     box-shadow: 2px 2px 13px 0 rgba(0, 0, 0, 0.03);
     background-color: #ffffff;
-    margin: 0 10px;
     padding: 0 14px;
   }
   h3 {
@@ -186,16 +193,20 @@ const Associates = styled.section`
 `
 const Easy = styled.div`
   background-color: #092146;
-  padding: 67px 0 84px;
-  position: relative;
+  .center {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 67px 0 84px;
+  }
   img.handShake {
     max-width: 585px;
     position: absolute;
     top: 36px;
-    left: 120px;
+    left: 0;
   }
   .container {
-    max-width: 615px;
+    max-width: 555px;
     margin-left: auto;
   }
   h2 {
@@ -286,8 +297,10 @@ const Friends = styled.section`
   }
   .flex-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
   }
   img {
     max-width: 590px;
@@ -296,8 +309,8 @@ const Friends = styled.section`
 
   }
   .container {
-    margin: 11.05px 8.5px;
-
+    margin: 11.05px 0;
+    margin: auto;
   }
   .label {
     margin-top: -10px;
@@ -313,23 +326,27 @@ const IndexPage = () => (
   <Layout><Global>
     <Hero>
       <div class="background"/>
-      <div class="outer-container">
-        <img class="arrow" src={arrow}/>
-        <div class="email">info@w&b.com</div>
-        <div class="number">1 555 555 2525</div>
-        <div class="green-box">
-          <div class="container">
-            <h2>Reliable Land Surveying & Engineering in Delta, BC</h2>
-            <p>
-              Hexagon fashion axe authentic chartreuse. Green juice kale
-              chips irony chicharrones bicycle rights chartreuse, lo-fi
-              put a bird on it marfa poke tousled.
-            </p>
-            <div class="button"><span class="txt">Learn More</span></div>
+      <div class="center">
+        <div class="width">
+          <div class="outer-container">
+            <img class="arrow" src={arrow}/>
+            <div class="email">info@w&b.com</div>
+            <div class="number">1 555 555 2525</div>
+            <div class="green-box">
+              <div class="container">
+                <h2>Reliable Land Surveying & Engineering in Delta, BC</h2>
+                <p>
+                  Hexagon fashion axe authentic chartreuse. Green juice kale
+                  chips irony chicharrones bicycle rights chartreuse, lo-fi
+                  put a bird on it marfa poke tousled.
+                </p>
+                <div class="button"><span class="txt">Learn More</span></div>
+              </div>
+            </div>
           </div>
+          <img class="hero" src={heroImg}/>
         </div>
       </div>
-      <img class="hero" src={heroImg}/>
     </Hero>
     <Associates>
       <div class="background"/>
@@ -371,27 +388,31 @@ const IndexPage = () => (
       <div class="button"><span class="txt">View Services</span></div>
     </Associates>
     <Easy>
-      <img class="handShake" src={handShake}/>
-      <div class="blue-box">
-        <div class="container">
-          <h2>How we make it easier for you</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud.
-          </p>
-          <h3>Educating and guiding</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation.
-          </p>
-          <h3>Other ways you help</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation.
-          </p>
+      <div class="center">
+        <div class="width">
+          <img class="handShake" src={handShake}/>
+          <div class="blue-box">
+            <div class="container">
+              <h2>How we make it easier for you</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud.
+              </p>
+              <h3>Educating and guiding</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation.
+              </p>
+              <h3>Other ways you help</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                veniam, quis nostrud exercitation.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Easy>
