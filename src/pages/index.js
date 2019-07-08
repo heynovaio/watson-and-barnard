@@ -1,6 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
@@ -61,7 +64,7 @@ const Hero = styled.section`
     padding-top: 248px;
     padding-bottom: 138px;
   }
-  h2 {
+  h1 {
     font-size: 44px;
     font-weight: 500;
     line-height: 1.2;
@@ -325,16 +328,20 @@ const Friends = styled.section`
 const IndexPage = () => (
   <Layout><Global>
     <Hero>
+
+
+
       <div class="background"/>
       <div class="center">
         <div class="width">
           <div class="outer-container">
             <img class="arrow" src={arrow}/>
-            <div class="email">info@w&b.com</div>
+            <div class="email">info@w&b.com <FontAwesomeIcon icon={faEnvelope} /></div>
             <div class="number">1 555 555 2525</div>
             <div class="green-box">
               <div class="container">
-                <h2>Reliable Land Surveying & Engineering in Delta, BC</h2>
+                <h1>Reliable Land Surveying & Engineering in Delta, BC </h1>
+                <FontAwesomeIcon icon={faArrowRight} />
                 <p>
                   Hexagon fashion axe authentic chartreuse. Green juice kale
                   chips irony chicharrones bicycle rights chartreuse, lo-fi
