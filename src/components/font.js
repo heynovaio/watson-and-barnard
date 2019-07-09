@@ -24,6 +24,19 @@ export const Font = () => (
   <Global
     styles={css`
 
+      h1 {
+        font-family: metropolis, sans-serif;
+        font-weight: 600;
+      }
+      h3 {
+        font-family: metropolis, sans-serif;
+        font-weight: 700;
+      }
+      p {
+        font-family: metropolis, sans-serif;
+        font-weight: 500;
+      }
+
       @font-face {
         font-family: 'metropolis';
         src: url(${blackFont2}) format('woff'), url(${blackFont}) format('woff');

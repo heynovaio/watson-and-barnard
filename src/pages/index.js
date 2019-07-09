@@ -26,8 +26,8 @@ import handShake from "../images/hand@3x.jpg"
 import arrow from "../images/bitmap@3x.png"
 
 
-const Global = styled.section`
-  font-family: canada-type-gibson, sans-serif;
+const Global = styled.div`
+  font-family: metropolis, sans-serif;
 `
 //border-style: solid;
 const Associates = styled.section`
@@ -287,7 +287,6 @@ const Hero = styled.section`
   h1 {
     min-height: 106px;
     font-size: 44px;
-    font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.4px;
     color: #ffffff;
