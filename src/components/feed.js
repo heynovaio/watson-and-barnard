@@ -33,9 +33,10 @@ const Contact = styled.section`
     min-height: 64px;
     font-family: canada-type-gibson, sans-serif;
     font-size: 50px;
-    font-weight: normal;
     line-height: 1.28;
     color: #eee4cb;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
   }
   h3 {
     min-height: 31px;

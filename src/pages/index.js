@@ -129,11 +129,13 @@ const Easy = styled.div`
     margin-left: auto;
   }
   h2 {
-    font-weight: normal;
+
     max-width: 474px;
     font-size: 50px;
     line-height: 1.04;
     color: #eee4cb;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
   }
   h2+p {
     max-width: 555px;
@@ -159,11 +161,12 @@ const Process = styled.div`
   background-color: #eee4cb;
   padding: 80px 0 41px;
   h2 {
-    font-weight: normal;
     font-size: 50px;
     line-height: 1.28;
     text-align: center;
     color: #172821;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
   }
   .flex-box {
     display: flex;
@@ -209,10 +212,11 @@ const Friends = styled.section`
   h2 {
     min-eight: 52px;
     font-size: 50px;
-    font-weight: normal;
     line-height: 1.04;
     text-align: center;
     color: #172821;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
   }
   .flex-box {
     display: flex;
@@ -366,10 +370,78 @@ const Hero = styled.section`
     top: 465px;
   }
   .title {
-    top: 40px;
-    left: 90px;
     position: absolute;
     z-index: +4;
+  }
+  .W {
+    width: 48px;
+    height: 81px;
+    font-size: 37.8px;
+    line-height: 0.71;
+    letter-spacing: -1.62px;
+    text-align: center;
+    color: #ffffff;
+    left: 90px;
+    top: 43.9px;
+    position: absolute;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+  }
+  .atson {
+    width: 78px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+    font-size: 34.5px;
+    line-height: 0.78;
+    letter-spacing: -1.06px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 44px;
+    left: 133px;
+  }
+  .and {
+    width: 30px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+    font-size: 19.2px;
+    line-height: 1.41;
+    letter-spacing: -0.92px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    top: 70px;
+    left: 150.1px;
+  }
+  .B {
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 90.9px;
+    left: 62px;
+    width: 134.9px;
+    height: 27px;
+    font-size: 37.8px;
+    line-height: 0.71;
+    letter-spacing: -1.62px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .arnard {
+    width: 95px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+    font-size: 34.5px;
+    line-height: 0.78;
+    letter-spacing: -0.87px;
+    text-align: center;
+    color: #ffffff;
+    top: 90.4px;
+    left: 141.7px;
+    position: absolute;
   }
 `
 const IndexPage = () => (
@@ -400,9 +472,9 @@ const IndexPage = () => (
         <div class="phoneLogo"><FontAwesomeIcon icon={faPhoneAlt}/></div>
         <div class="mailLogo"><FontAwesomeIcon icon={faEnvelope}/></div>
         <div class="title">
-          <span class="w">W</span><span class="atson">atson</span><br/>
-          <span class="and">and</span><br/>
-          <span class="B">B</span><span class="arnard">arnard</span>
+          <span class="W">W</span><span class="atson">atson</span>
+          <span class="and">and</span>
+          <span class="B">       B</span><span class="arnard">arnard</span>
         </div>
       </div>
     </Hero>
@@ -451,7 +523,7 @@ const IndexPage = () => (
           <img class="handShake" src={handShake}/>
           <div class="blue-box">
             <div class="container">
-              <h2>How we make it easier for you</h2>
+              <h2>How we Make it Easier For You</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
