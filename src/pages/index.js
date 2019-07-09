@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
@@ -30,93 +30,6 @@ const Global = styled.section`
   font-family: canada-type-gibson, sans-serif;
 `
 //border-style: solid;
-const Hero = styled.section`
-  .background {
-    width: 100%;
-    height: 100%;
-    background-color: #f6f7fa;
-    position: absolute;
-    z-index: -2;
-  }
-  .width {
-    max-width: 1403px;
-    position: relative;
-  }
-  .center {
-    max-width: 1440px;
-    margin: auto;
-  }
-  .outer-container {
-    max-width: 782px;
-    background-color: #eee4cb;
-    position: relative;
-    top: -115px;
-  }
-  .green-box {
-    max-width: 743px;
-    margin-left: 39px;
-    box-shadow: -4px -1px 18px 0 rgba(72, 86, 81, 0.55);
-    background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
-  }
-  .container {
-    max-width: 563px;
-    margin: auto;
-    padding-top: 248px;
-    padding-bottom: 138px;
-  }
-  h1 {
-    font-size: 44px;
-    font-weight: 500;
-    line-height: 1.2;
-    letter-spacing: -0.4px;
-    color: #ffffff;
-    margin-bottom: 33px;
-  }
-  p {
-    font-size: 22px;
-    line-height: 1.55;
-    color: #ffffff;
-    margin-bottom: 57px;
-  }
-  .button {
-    max-width: 231px;
-    padding: 22px 32px 23.2px 33px;
-    box-shadow: 5px 2px 14px 0 #585243;
-    background-color: #d3c190;
-  }
-  .txt {
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.1;
-    color: #172821;
-  }
-  img.hero {
-    max-width: 707px;
-    box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-  img.arrow {
-    max-width: 48px;
-    position: absolute;
-    top: 20px;
-    left: 15px
-  }
-  .number {
-    transform: rotate(270deg);
-    position: absolute;
-    left: -43px;
-    bottom: 390px;
-  }
-  .email {
-    transform: rotate(270deg);
-    position: absolute;
-    left: -43px;
-    bottom: 185px;
-  }
-`
 const Associates = styled.section`
   position: relative;
   padding-bottom: 53px;
@@ -129,11 +42,14 @@ const Associates = styled.section`
     top:0;
   }
   h2 {
-    font-weight: normal;
     font-size: 50px;
     line-height: 1.28;
     text-align: center;
     color: #34594c;
+
+    font-family: astoria, sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   .flex-container {
     display: flex;
@@ -325,33 +241,168 @@ const Friends = styled.section`
     background-color: #ffffff;
   }
 `
+const Hero = styled.section`
+  background-color: #f6f7fa;
+  position: relative;
+  .width {
+    max-width: 1440px;
+    margin: auto;
+    position: relative;
+  }
+  .center {
+    max-width: 743px;
+    position: relative;
+    margin-left: 39px;
+  }
+  .aligned {
+    max-width: 563px;
+    margin: auto;
+    position: relative;
+    padding: 248px 0 139px 0;
+  }
+  .box {
+    position: relative;
+    max-width: 782px;
+    box-shadow: -4px -1px 18px 0 rgba(72, 86, 81, 0.55);
+    background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
+    left: 0;
+    top: -115px;
+    z-index: 2;
+  }
+  .pic {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 707px;
+    z-index:0;
+  }
+  h1 {
+    min-height: 106px;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.4px;
+    color: #ffffff;
+    margin-bottom: 33px;
+  }
+  p {
+    max-width: 543px;
+    min-height: 102px;
+    font-size: 22px;
+    line-height: 1.55;
+    color: #ffffff;
+    margin-bottom: 57px;
+  }
+  .button {
+    max-width: 231px;
+    padding: 22px 32px 23.2px 33px;
+    box-shadow: 5px 2px 14px 0 #585243;
+    background-color: #d3c190;
+  }
+  .green-strip {
+    width: 50%;
+    height: 100%;
+    box-shadow: -4px -1px 18px 0 rgba(72, 86, 81, 0.55);
+    background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+  .bar {
+    height: 100%;
+    width: 39px;
+    left:0;
+    top:0;
+    background-color: #eee4cb;
+    position: absolute;
+    z-index: 3;
+
+  }
+  img.arrow {
+    max-width: 48px;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    z-index: +4;
+  }
+  .number {
+    transform: rotate(270deg);
+    position: absolute;
+    left: -46px;
+    bottom: 390px;
+    z-index: 4;
+    height: 39px;
+    top: 330px;
+    padding-top: 9px;
+  }
+  .email {
+    transform: rotate(270deg);
+    position: absolute;
+    left: -44px;
+    z-index: 4;
+    height: 39px;
+    top: 540px;
+    padding-top: 9px;
+  }
+  .shift-up {
+    top: -115px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .phoneLogo {
+    width: 39px;
+    position: absolute;
+    z-index:+4;
+    text-align: center;
+    top: 254px;
+  }
+  .mailLogo {
+    width: 39px;
+    position: absolute;
+    z-index: +4;
+    text-align: center;
+    top: 465px;
+  }
+  .title {
+    top: 40px;
+    left: 90px;
+    position: absolute;
+    z-index: +4;
+  }
+`
 const IndexPage = () => (
   <Layout><Global>
     <Hero>
-
-
-
-      <div class="background"/>
-      <div class="center">
-        <div class="width">
-          <div class="outer-container">
-            <img class="arrow" src={arrow}/>
-            <div class="email">info@w&b.com <FontAwesomeIcon icon={faEnvelope} /></div>
-            <div class="number">1 555 555 2525</div>
-            <div class="green-box">
-              <div class="container">
-                <h1>Reliable Land Surveying & Engineering in Delta, BC </h1>
-                <FontAwesomeIcon icon={faArrowRight} />
-                <p>
-                  Hexagon fashion axe authentic chartreuse. Green juice kale
-                  chips irony chicharrones bicycle rights chartreuse, lo-fi
-                  put a bird on it marfa poke tousled.
-                </p>
-                <div class="button"><span class="txt">Learn More</span></div>
-              </div>
+      <div class="width">
+        <div class="box">
+          <div class="center">
+            <div class="aligned">
+              <h1>Reliable Land Surveying & Engineering in Delta, BC</h1>
+              <p>
+                Hexagon fashion axe authentic chartreuse. Green juice kale
+                chips irony chicharrones bicycle rights chartreuse, lo-fi
+                put a bird on it marfa poke tousled.
+              </p>
+              <div class="button"><span class="txt">Learn More</span></div>
             </div>
           </div>
-          <img class="hero" src={heroImg}/>
+        </div>
+        <img class="pic" src={heroImg}/>
+      </div>
+      <div class="shift-up">
+        <div class="green-strip"></div>
+        <div class="bar"/>
+        <div class="email">info@w&b.com</div>
+        <div class="number">1 555 555 2525</div>
+        <img class="arrow" src={arrow}/>
+        <div class="phoneLogo"><FontAwesomeIcon icon={faPhoneAlt}/></div>
+        <div class="mailLogo"><FontAwesomeIcon icon={faEnvelope}/></div>
+        <div class="title">
+          <span class="w">W</span><span class="atson">atson</span><br/>
+          <span class="and">and</span><br/>
+          <span class="B">B</span><span class="arnard">arnard</span>
         </div>
       </div>
     </Hero>

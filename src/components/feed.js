@@ -4,6 +4,10 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import survey from "../images/survey.svg"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+
+
 const Contact = styled.section`
   position: relative;
   .background {
@@ -142,9 +146,9 @@ const Feed = () => (
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
               <div class="address">
-                <div>123 Address, Delta BC</div>
-                <div class="middle">000-000-0000</div>
-                <div>email@address.com</div>
+                <div><FontAwesomeIcon icon={faMapMarkerAlt}/> 123 Address, Delta BC</div>
+                <div class="middle"><FontAwesomeIcon icon={faPhoneAlt}/> 000-000-0000</div>
+                <div><FontAwesomeIcon icon={faEnvelope}/> email@address.com</div>
               </div>
             </div>
             <div>
