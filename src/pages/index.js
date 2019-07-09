@@ -116,7 +116,7 @@ const Easy = styled.div`
     position: relative;
     max-width: 1200px;
     margin: auto;
-    padding: 67px 0 84px;
+
   }
   img.handShake {
     max-width: 585px;
@@ -127,6 +127,10 @@ const Easy = styled.div`
   .container {
     max-width: 555px;
     margin-left: auto;
+    padding: 67px 0 84px;
+    position: relative;
+    z-index: +2;
+    background-color: #092146;
   }
   h2 {
 
@@ -302,6 +306,7 @@ const Hero = styled.section`
     padding: 22px 32px 23.2px 33px;
     box-shadow: 5px 2px 14px 0 #585243;
     background-color: #d3c190;
+    position: relative;
   }
   .green-strip {
     width: 50%;
@@ -323,7 +328,7 @@ const Hero = styled.section`
     z-index: 3;
 
   }
-  img.arrow {
+  img.pointer {
     max-width: 48px;
     position: absolute;
     top: 20px;
@@ -443,6 +448,37 @@ const Hero = styled.section`
     left: 141.7px;
     position: absolute;
   }
+  .arrow {
+    position: absolute;
+    top: 33px;
+    right: 32px;
+  }
+  .arrow div {
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+  }
+  .long-line {
+    width: 43px;
+    height: 0;
+    position: absolute;
+  }
+  .top-short-line {
+    width: 11.3px;
+    height: 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: -6px;
+    left: 33px;
+  }
+  .bottom-short-line {
+    width: 11.3px;
+    height: 0;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 0px;
+    left: 33px;
+  }
 `
 const IndexPage = () => (
   <Layout><Global>
@@ -457,7 +493,14 @@ const IndexPage = () => (
                 chips irony chicharrones bicycle rights chartreuse, lo-fi
                 put a bird on it marfa poke tousled.
               </p>
-              <div class="button"><span class="txt">Learn More</span></div>
+              <div class="button">
+                <span class="txt">Learn More</span>
+                <div class="arrow">
+                  <div class="long-line"/>
+                  <div class="top-short-line"/>
+                  <div class="bottom-short-line"/>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -468,13 +511,13 @@ const IndexPage = () => (
         <div class="bar"/>
         <div class="email">info@w&b.com</div>
         <div class="number">1 555 555 2525</div>
-        <img class="arrow" src={arrow}/>
+        <img class="pointer" src={arrow}/>
         <div class="phoneLogo"><FontAwesomeIcon icon={faPhoneAlt}/></div>
         <div class="mailLogo"><FontAwesomeIcon icon={faEnvelope}/></div>
         <div class="title">
           <span class="W">W</span><span class="atson">atson</span>
           <span class="and">and</span>
-          <span class="B">       B</span><span class="arnard">arnard</span>
+          <span class="B">B</span><span class="arnard">arnard</span>
         </div>
       </div>
     </Hero>
@@ -515,7 +558,9 @@ const IndexPage = () => (
           </p>
         </div>
       </div>
-      <div class="button"><span class="txt">View Services</span></div>
+      <div class="button">
+        <span class="txt">View Services</span>
+      </div>
     </Associates>
     <Easy>
       <div class="center">
