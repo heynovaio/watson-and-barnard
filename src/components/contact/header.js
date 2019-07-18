@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHamburger, faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import arrow from "../images/bitmap@3x.png"
+import arrow from "../../images/bitmap@3x.png"
 
 const bp = {
   smaller: 300,
@@ -57,7 +57,7 @@ const Header = styled.div`
     text-align: center;
     font-family: metropolis, sans-serif;
     font-weight: 600;
-    color: #172821;
+    color: #ffffff;
     font-size: 16px;
     text-decoration: none;
   }
@@ -66,11 +66,11 @@ const Header = styled.div`
     text-align: center;
     font-family: metropolis, sans-serif;
     font-weight: 600;
-    color: #172821;
+    color: #ffffff;
     font-size: 16px;
     text-decoration: none;
     padding: 14px 0 17px;
-    border: solid 3px #172821;
+    border: solid 3px #ffffff;
   }
   .hamburger {
     position: relative;

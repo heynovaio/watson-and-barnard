@@ -8,6 +8,7 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Property = styled.section`
   background-color: #f6f7fa;
+  padding-top: 84px;
   h2 {
     min-height: 52px;
     font-family: astoria, sans-serif;

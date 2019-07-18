@@ -9,9 +9,11 @@ import Home from "../components/services/home"
 import Architect from "../components/services/architect"
 import Developer from "../components/services/developer"
 import Property from "../components/services/property"
+import Header from "../components/services/header"
 
 const render = () => (
   <Layout>
+    <Header/>
     <Hero/>
     <Architect/>
     <Developer/>

@@ -4,7 +4,7 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHamburger, faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import arrow from "../images/bitmap@3x.png"
+import arrow from "../../images/bitmap@3x.png"
 
 const bp = {
   smaller: 300,
