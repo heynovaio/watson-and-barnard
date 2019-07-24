@@ -26,10 +26,15 @@ const mq = n => {
 const Hero = styled.section`
   background-color: #f6f7fa;
   .align {
-    max-width: 646px;
+    max-width: 666px; /*was 646px*/
     margin-left: auto;
-    padding-top: 236px;
     min-height: 749px;
+    padding: 236px 20px 127px;
+    position: relative;
+    ${mq('small')}{
+      padding-top: 205px;
+      min-height: 705px;
+    }
   }
   h1 {
     min-height: 106px;
@@ -40,6 +45,13 @@ const Hero = styled.section`
     font-weight: 600;
     font-family: metropolis, sans-serif;
     margin-bottom: 19px;
+    ${mq('small')}{
+      font-size: 26px;
+      line-height: 1.42;
+      letter-spacing: -0.3px;
+      margin-bottom: 27px;
+      min-height: 74px;
+    }
   }
   p {
     max-width: 543px;
@@ -49,6 +61,10 @@ const Hero = styled.section`
     color: #ffffff;
     font-family: metropolis, sans-serif;
     margin-bottom: 38px;
+    ${mq('regular')}{
+      font-size: 20px;
+      line-height: 1.4;
+    }
   }
   .outer-container {
     position: relative;
@@ -66,11 +82,18 @@ const Hero = styled.section`
     ${mq('regular')}{
       margin-right:0;
     }
+    ${mq('small')}{
+      margin-left: 0;
+    }
   }
   .image-center {
     max-width: 1366px;
     margin: auto;
     position: relative;
+    /*new*/
+    ${mq('small')}{
+      display: none;
+    }
   }
   .photo {
     position: absolute;
@@ -78,6 +101,10 @@ const Hero = styled.section`
     width: 707px;
     top: 115px;
     box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
+    /*new*/
+    ${mq('small')}{
+      display: none;
+    }
   }
   .button {
     font-family: metropolis, sans-serif;
@@ -117,6 +144,113 @@ const Hero = styled.section`
     right: 0;
     top: 9px
   }
+  .W {
+    font-family: astoria, sans-serif;
+    width: 48px;
+    height: 81px;
+    font-size: 37.8px;
+    line-height: 0.71;
+    letter-spacing: -1.62px;
+    color: #ffffff;
+    position: absolute;
+    text-align: center;
+    top: 40.9px;
+    left: 60px;
+  }
+  .atson {
+    width: 78px;
+    height: 27px;
+    font-size: 34.5px;
+    line-height: 0.78;
+    letter-spacing: -1.06px;
+    text-align: center;
+    color: #ffffff;
+    font-family: astoria, sans-serif;
+    top:41px;
+    left: 103px;
+    position: absolute;
+  }
+  .and {
+    width: 30px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-size: 19.2px;
+    line-height: 1.41;
+    letter-spacing: -0.92px;
+    text-align: center;
+    color: #ffffff;
+    top:64.9px;
+    left: 120.1px;
+    position: absolute;
+  }
+  .B {
+    width: 48px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-size: 37.8px;
+    line-height: 0.71;
+    letter-spacing: -1.62px;
+    text-align: center;
+    color: #ffffff;
+    top: 87.9px;
+    left: 76px;
+    position: absolute;
+  }
+  .arnard {
+    width: 95px;
+    height: 27px;
+    font-family: astoria, sans-serif;
+    font-size: 34.5px;
+    line-height: 0.78;
+    letter-spacing: -0.87px;
+    text-align: center;
+    color: #ffffff;
+    top: 87.4px;
+    left: 111.7px;
+    position: absolute;
+  }
+  .pointer {
+    position: absolute;
+    width: 28.9px;
+    top: 36px;
+    left: 21px;
+  }
+  .title-small {
+    display: none;
+    ${mq('small')}{display: block}
+  }
+  .logo-container {
+    width: 205px;
+    margin: auto;
+    position: relative;
+    bottom: 37px;
+    display: none;
+    ${mq('small')}{
+      display: block;
+    }
+    & div {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      box-shadow: 0 2px 20px 0 rgba(97, 97, 97, 0.2);
+      background-color: #ffffff;
+      text-align: center;
+      padding-top: 21px;
+      color: #d3c190;
+      position: absolute;
+    }
+  }
+  .icon {
+    width: 30px;
+    display: block;
+    margin: auto;
+  }
+  .phoneLogo {
+    left: 0;
+  }
+  .mailLogo {
+    right: 0;
+  }
 `
 const render = () => (
   <Hero>
@@ -124,7 +258,13 @@ const render = () => (
     <div class="outer-container">
       <div class="green-box">
         <div class="align">
-          <h1>Reliable Land Surveying<br/>& Engineering in Delta, BC</h1>
+          <div class="title-small">
+            <img class="pointer" src={arrow}/>
+            <div class="W">W</div><div class="atson">atson</div>
+            <div class="and">and</div>
+            <div class="B">B</div><div class="arnard">arnard</div>
+          </div>
+          <h1>Reliable Land Surveying & Engineering in Delta, BC</h1>
           <p>
             Hexagon fashion axe authentic chartreuse. Green juice kale
             chips irony chicharrones bicycle rights chartreuse, lo-fi
@@ -136,6 +276,10 @@ const render = () => (
               <div class="head"/>
             </div>
           </div>
+        </div>
+        <div class="logo-container">
+          <div class="phoneLogo"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
+          <div class="mailLogo"><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
         </div>
       </div>
     </div>

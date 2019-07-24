@@ -43,12 +43,22 @@ const Contact = styled.section`
   .center {
     max-width: 846px;
     margin-left: auto;
+    ${mq('small')}{
+      padding: 0 20px;
+    }
   }
   .width {
-    max-width: 779px;
+    max-width: 776px;
+    position: relative;
+    ${mq('small')}{
+      margin: auto;
+    }
   }
   .text {
     padding-top:83px;
+    ${mq('small')}{
+      padding-top: 43px;
+    }
   }
   h2 {
     min-height: 64px;
@@ -59,6 +69,13 @@ const Contact = styled.section`
     font-family: astoria, sans-serif;
     font-weight: 400;
     margin: 0px;
+    ${mq('small')}{
+      text-align: center;
+      min-height: 48px;
+      font-size: 40px;
+      line-height: 1.2;
+
+    }
   }
   h3 {
     min-height: 31px;
@@ -67,6 +84,11 @@ const Contact = styled.section`
     line-height: 1.48;
     color: #ffffff;
     margin: 4px 0 0;
+    ${mq('small')}{
+      font-size: 21px;
+      min-height: 31px;
+      margin-top: 36px;
+    }
   }
   p {
     max-width: 347px;
@@ -75,8 +97,14 @@ const Contact = styled.section`
     font-size: 18px;
     line-height: 1.33;
     color: #ffffff;
-    margin: 14px 0 0;
-    margin-bottom: 35px;
+    margin: 14px 0 35px;
+    ${mq('small')}{
+      margin-bottom: 37px;
+    }
+  }
+  .address {
+    position: relative;
+    max-width: 335px;
   }
   .address div {
     height: 23px;
@@ -87,6 +115,7 @@ const Contact = styled.section`
     padding-left: 39px;
     position: relative;
     margin-bottom: 23px;
+    left: -2px;
   }
   .address .icon {
     position:absolute;
@@ -106,6 +135,65 @@ const Contact = styled.section`
     position absolute;
     top: 61px;
     right: 0;
+  }
+  form {
+    width: 361px;
+    position: absolute;
+    right: 0;
+    top: 86px;
+    ${mq('small')}{
+      position: relative;
+      top: 58px;
+      width: 335px;
+    }
+  }
+  input[type=text] {
+    width: 100%;
+    height: 40px;
+    margin: 0 0 20px;
+    border-style: none;
+    border-radius: 2px;
+    display: block;
+  }
+  select {
+    width: 100%;
+    height: 40px;
+    margin: 0 0 20px;
+    display: block;
+  }
+  textarea {
+    width: 100%;
+    height: 96px;
+    border-style: none;
+    border-radius: 2px;
+    display: block;
+    margin: 0 0 16px;
+  }
+  input[type=submit] {
+    width: 100%;
+    height: 51px;
+    background-color: #172821;
+    color: white;
+    border-style: none;
+    font-size: 20px;
+    display: block;
+    font-family: metropolis, sans-serif;
+    font-weight: 600;
+  }
+  form div {
+    margin: 0 0 7px;
+    font-family: metropolis, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .pic-small {
+    width: 93px;
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    ${mq('small')}{display: block}
   }
 `
 const render = () => (
@@ -134,8 +222,24 @@ const render = () => (
                 <div>email@address.com
                   <FontAwesomeIcon class="icon" icon={faEnvelope}/>
                 </div>
+                <img class="pic-small" src={survey}/>
               </div>
             </div>
+            <form>
+              <div>Email Address</div>
+              <input type="text"/>
+              <div>Project Type</div>
+              <select>
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+              <div>Write us a message</div>
+              <textarea>
+              </textarea>
+              <input type="submit"/>
+            </form>
           </div>
         </div>
       </div>

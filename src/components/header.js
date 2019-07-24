@@ -13,7 +13,6 @@ const bp = {
   medium: 1024,
   large: 1200,
   regular: 1440,
-  hamburger: 1250,
 };
 const mq = n => {
   const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
@@ -24,84 +23,14 @@ const mq = n => {
   return result;
 };
 const Header = styled.div`
-  .center {
-    max-width: 1440px;
-    margin: auto;
-  }
-  .width {
-    max-width: 628px;
-    margin-left: 775px;
-    position: relative;
-    ${mq('hamburger')}{
-      display: none;
-    }
-  }
-  .flex {
-    display: flex;
-    width: 100%;
-    position: absolute;
-    justify-content: space-between;
-    height: 115px;
-    align-items: center;
-    z-index:+2;
-    ${mq('hamburger')}{
-      flex-direction: column;
-      height: 200px;
-      display: none;
-      top: 30px;
-      background: yellow;
-    }
-  }
-  .link {
-    width: 142px;
-    text-align: center;
-    font-family: metropolis, sans-serif;
-    font-weight: 600;
-    color: #172821;
-    font-size: 16px;
-    text-decoration: none;
-  }
-  .contact {
-    width: 142px;
-    text-align: center;
-    font-family: metropolis, sans-serif;
-    font-weight: 600;
-    color: #172821;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 14px 0 17px;
-    border: solid 3px #172821;
-  }
-  .hamburger {
-    position: relative;
-    width: 142px;
-    margin-left: auto;
-    display: none;
-    ${mq('hamburger')}{
-      display: block;
-      z-index: +1;
-    }
-  }
-  .bar {
-    position: absolute;
-    text-align: right;
-    width: 100%;
-    background: orange;
-    height: 30px;
-  }
-  .hamburger:hover .flex {
-    display: flex;
-  }
-  img.pointer {
-    max-width: 48px;
-    position: absolute;
-    top: 20px;
-    left: 15px;
-    z-index:1;
+  position: relative;
+  z-index: +1;
+  .hide {
+    display: block;
+    ${mq('small')}{display: none;}
   }
   .title {
     position: absolute;
-    z-index: +1;
   }
   .W {
     width: 48px;
@@ -173,84 +102,246 @@ const Header = styled.div`
     left: 141.7px;
     position: absolute;
   }
-  .number {
-    transform: rotate(270deg);
-    position: absolute;
-    left: -46px;
-    bottom: 390px;
-    z-index: 4;
-    height: 39px;
-    top: 330px;
-    padding-top: 12px;
-    font-family: metropolis, sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-  }
   .email {
     transform: rotate(270deg);
     position: absolute;
     left: -44px;
-    z-index: 4;
     height: 39px;
-    top: 540px;
+    top: 510px;
     padding-top: 9px;
     font-family: metropolis, sans-serif;
     font-weight: 400;
     font-size: 17px;
   }
+  .number {
+    transform: rotate(270deg);
+    position: absolute;
+    left: -46px;
+    bottom: 390px;
+    height: 39px;
+    top: 310px;
+    padding-top: 12px;
+    font-family: metropolis, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+  }
+  img.pointer {
+    max-width: 48px;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+  }
   .phoneLogo {
     width: 39px;
     position: absolute;
-    z-index:+4;
     text-align: center;
-    top: 254px;
+    top: 234px;
     color: #d3c190;
   }
   .mailLogo {
     width: 39px;
     position: absolute;
-    z-index: +4;
     text-align: center;
-    top: 465px;
+    top: 435px;
     color: #d3c190;
   }
+  .center {
+    max-width: 1440px;
+    margin: auto;
+  }
+  .width {
+    max-width: 628px;
+    margin-left: 775px;
+    position: relative;
+  }
+  .menu {
+    width: 100%;
+    position: absolute;
+    padding-top: 43px;
+    ${mq('small')}{
+      display: none;
+    }
+  }
+  .link {
+    width: 142px;
+    text-align: center;
+    font-family: metropolis, sans-serif;
+    font-weight: 600;
+    color: ${props => props.home ? '#172821': 'white'};
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    width: 25%;
+  }
+  .services:hover ~ hr {
+    margin-left: 0%;
+  }
+  .about:hover ~ hr {
+    margin-left: 25%;
+  }
+  .resources:hover ~ hr {
+    margin-left: 50%;
+  }
+  .contact:hover ~ hr {
+    margin-left: 75%;
+  }
+  hr {
+    background: black;
+    width: 25%;
+    transition: .3s ease-in-out;
+    height: 7px;
+    margin: 0;
+    border: none;
+  }
+  .hamburger {
+    width: 42px;
+    height: 24px;
+    position: absolute;
+    top: 28px;
+    right: 23px;
+  }
+  .top {
+    position: absolute;
+    width: 42px;
+    height: 4px;
+    top: 0;
+    background-color: white;
+  }
+  .mid {
+    position: absolute;
+    width: 42px;
+    height: 4px;
+    top: 10px;
+    background-color: white;
+  }
+  .bot {
+    position: absolute;
+    width: 42px;
+    height: 4px;
+    top: 20px;
+    background-color: white;
+  }
+  .dropDown {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 1024px;
+    background-color: rgba(23, 40, 33, 0.91);
+  }
+  .menu-vertical {
+    max-width: 158px;
+    height: 330px;
+    margin: 122px auto 61px;
+    text-align: center;
+    font-family: metropolis, sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 2.54;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+  }
+  .logo-container {
+    width: 205px;
+    margin: 0 auto;
+    position: relative;
+    & div {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      box-shadow: 0 2px 20px 0 rgba(97, 97, 97, 0.2);
+      background-color: #ffffff;
+      text-align: center;
+      padding-top: 21px;
+      color: #d3c190;
+      position: absolute;
+    }
+  }
+  .icon {
+    width: 30px;
+    display: block;
+    margin: auto;
+  }
+  .phoneLogoDrop {
+    left: 0;
+  }
+  .mailLogoDrop {
+    right: 0;
+  }
+  .cw {
+    position: absolute;
+    top: 38px;
+    right: 22px;
+    width: 42px;
+    height: 4px;
+    transform: rotate(44deg);
+    background-color: #ffffff;
+  }
+  .ccw {
+    position: absolute;
+    top: 38px;
+    right: 22px;
+    width: 42px;
+    height: 4px;
+    transform: rotate(-44deg);
+    background-color: #ffffff;
+  }
+  .show {
+    display: none;
+    ${mq('small')}{display: block}
+  }
 `
-const render = () => (
-  <Header>
-    <div class="title">
-      <span class="W">W</span><span class="atson">atson</span>
-      <span class="and">and</span>
-      <span class="B">B</span><span class="arnard">arnard</span>
+function displayDrop() {
+  document.getElementById("drop").classList.toggle("show");
+}
+export default props => (
+  <Header home={props.home}>
+    <div class="hide">
+      <div class="title">
+        <span class="W">W</span><span class="atson">atson</span>
+        <span class="and">and</span>
+        <span class="B">B</span><span class="arnard">arnard</span>
+      </div>
+      <div class="email"><span>info@w&b.com</span></div>
+      <div class="number"><span>1 555 555 2525</span></div>
+      <img class="pointer" src={arrow}/>
+      <div class="phoneLogo"><FontAwesomeIcon icon={faPhoneAlt}/></div>
+      <div class="mailLogo"><FontAwesomeIcon icon={faEnvelope}/></div>
     </div>
-    <div class="email"><span>info@w&b.com</span></div>
-    <div class="number"><span>1 555 555 2525</span></div>
-    <img class="pointer" src={arrow}/>
-    <div class="phoneLogo"><FontAwesomeIcon icon={faPhoneAlt}/></div>
-    <div class="mailLogo"><FontAwesomeIcon icon={faEnvelope}/></div>
-    <img class="pointer" src={arrow}/>
     <div class="center">
       <div class="width">
-        <div class="flex">
-          <Link class="link" to="/" activeStyle={{display: "none"}}>Home</Link>
-          <Link class="link" to="/services/" activeStyle={{display: "none"}}>Our Services</Link>
-          <Link class="link" to="/about/" activeStyle={{display: "none"}}>About Us</Link>
-          <Link class="link" to="/resources/" activeStyle={{display: "none"}}>Resources</Link>
-          <Link class="contact" to="/contact/" activeStyle={{display: "none"}}>Contact Us</Link>
+        <div class="menu">
+          <Link class="link home" to="/" activeStyle={{display: "none"}}>Home</Link>
+          <Link class="link services" to="/services/" activeStyle={{display: "none"}}>Our Services</Link>
+          <Link class="link about" to="/about/" activeStyle={{display: "none"}}>About Us</Link>
+          <Link class="link resources" to="/resources/" activeStyle={{display: "none"}}>Resources</Link>
+          <Link class="link contact" to="/contact/" activeStyle={{display: "none"}}>Contact Us</Link>
+          <hr/>
         </div>
       </div>
-      <div class="hamburger">
-        <div class="bar">
-          <FontAwesomeIcon icon={faHamburger}/>
+    </div>
+    <div class="show">
+      <div id="button" class="hamburger" onclick="displayDrop()">
+        <div class="top"/>
+        <div class="mid"/>
+        <div class="bot"/>
+      </div>
+      <div id="drop" class="dropDown">
+        <div class="exit" onclick="hideDrop()">
+          <div class="cw"/>
+          <div class="ccw"/>
         </div>
-        <div class="flex">
-          <Link class="link" to="/" activeStyle={{display: "none"}}>Home</Link>
-          <Link class="link" to="/services/" activeStyle={{display: "none"}}>Our Services</Link>
-          <Link class="link" to="/about/" activeStyle={{display: "none"}}>About Us</Link>
-          <Link class="link" to="/resources/" activeStyle={{display: "none"}}>Resources</Link>
-          <Link class="contact" to="/contact/" activeStyle={{display: "none"}}>Contact Us</Link>
+        <div class="menu-vertical">
+          Home<br/>
+          Our Services<br/>
+          About Us<br/>
+          Resources<br/>
+          Contact<br/>
+        </div>
+        <div class="logo-container">
+          <div class="phoneLogoDrop"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
+          <div class="mailLogoDrop"><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
         </div>
       </div>
     </div>
   </Header>
 )
-export default render

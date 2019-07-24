@@ -27,6 +27,9 @@ const mq = n => {
 const Associates = styled.section`
   background-color: #f6f7fa;
   padding: 95px 0 53px;
+  ${mq('small')}{
+    padding: 83px 0 62px;
+  }
   h2 {
     font-size: 50px;
     line-height: 1.28;
@@ -36,6 +39,11 @@ const Associates = styled.section`
     font-family: astoria, sans-serif;
     font-weight: 400;
     font-style: normal;
+    ${mq('small')}{
+      font-size: 40px;
+      line-height: 1.2;
+      min-height: 48px;
+    }
   }
   .flex-outer{
     display: flex;
@@ -44,13 +52,16 @@ const Associates = styled.section`
     margin: 30px 0 41px;
     ${mq('flex')}{
       flex-wrap: wrap;
+      margin: 25px 0 38px;
     }
-    margin: 30px 0 41px;
   }
   .inner-flex {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
+    ${mq('small')}{
+      flex-flow: column wrap;
+    }
   }
   .container {
     max-width: 285px;
@@ -60,6 +71,10 @@ const Associates = styled.section`
     background-color: #ffffff;
     margin: 10px;
     padding: 0 14px;
+    ${mq('small')}{
+      max-width: 334px;
+      margin: 13px 21px;
+    }
   }
   h3 {
     font-size: 21px;
