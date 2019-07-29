@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import survey from "../../images/survey.svg"
 
 const Feed = styled.div`
@@ -82,7 +80,7 @@ const Feed = styled.div`
 const render = () => (
   <Feed>
     <div class="center">
-      <img class="img" src={survey}/>
+      <img class="img" src={survey} alt=""/>
       <div class="pushRight">
         <form>
           <div>Email Address</div>

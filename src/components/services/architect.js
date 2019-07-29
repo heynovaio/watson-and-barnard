@@ -1,7 +1,5 @@
 import React from "react"
-import { divnk } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import pic from "../../images/services_1@3x.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -87,7 +85,7 @@ const Architect = styled.section`
 const render = () => (
   <Architect>
     <div class="outer-center">
-      <img src={pic} class="photo"/>
+      <img src={pic} class="photo" alt=""/>
       <div class="box">
         <div class="center">
           <h2>Architect</h2>

@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 //font-family: astoria, sans-serif;

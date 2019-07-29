@@ -1,7 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import picture from "../../images/icon-group@3x.png"
 //font-family: metropolis, sans-serif;
 //font-family: astoria, sans-serif;
@@ -67,7 +65,7 @@ const render = () => (
           it marfa poke tousled.
         </p>
       </div>
-      <img class="picture" src={picture}/>
+      <img class="picture" src={picture} alt=""/>
     </div>
   </Hero>
 )

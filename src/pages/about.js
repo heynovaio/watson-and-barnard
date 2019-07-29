@@ -1,10 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import Feed from "../components/feed"
 
 const Hero = styled.section``

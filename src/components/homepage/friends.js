@@ -1,13 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-
-import tower from "../../images/rectangle@3x.jpg"
+import tower from "../../images/towers@3x.jpg"
 import building from "../../images/912859458@3x.jpg"
 import construction from "../../images/464959464@3x.jpg"
 import residence from "../../images/984568356@3x.jpg"
-
 const bp = {
   smaller: 300,
   small: 500,
@@ -17,7 +13,7 @@ const bp = {
   regular: 1440,
   friendsFlex: 1180,
   compress: 590,
-};
+}
 const mq = n => {
   const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
   const [result] = bpArray.reduce((acc, [name, size]) => {
@@ -25,11 +21,12 @@ const mq = n => {
     return acc;
   }, []);
   return result;
-};
+}
 const Friends = styled.section`
   font-family: metropolis, sans-serif;
   background-color: #f6f7fa;
-  padding: 79px 0 90px;
+  padding: 79px 10px 80px;
+  ${mq('small')}{ padding: 41px 10px 73px }
   h2 {
     min-eight: 52px;
     font-size: 50px;
@@ -38,37 +35,36 @@ const Friends = styled.section`
     color: #172821;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0 0 56.15px;
+    margin: 0 10px 56.8px;
+    ${mq('small')}{
+      font-size: 40px;
+      line-height: 1.2;
+      margin-bottom: 32px;
+    }
   }
-  .flex-box {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: auto;
-  }
+`
+const Flex = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1220px;
+  margin: auto;
+`
+const Item = styled.div`
+  margin: 10px;
+  max-width: 590px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 13px 0 rgba(0, 0, 0, 0.03);
+  background-color: #ffffff;
   img {
-    max-width: 590px;
-    margin-top: 0;
-    margin-bottom: 0;
-    ${mq('compress')}{
-      max-width: 100vw;
-    }
-  }
-  .container {
+    width: 100%;
+    margin: 0;
     padding: 0;
-    margin: 10.65px 0;
-    ${mq('friendsFlex')}{
-      margin: 10.65px auto;
-    }
   }
-  .label {
-    margin-top: -10px;
-    max-width: 100%;
-    text-align: center;
-    padding: 30.5px 0 42px;
-    border-radius: 4px;
-    box-shadow: 2px 2px 13px 0 rgba(0, 0, 0, 0.03);
+  div {
+    margin: 0;
+    padding: 30.5px 0 0;
+    min-height: 102px;
     background-color: #ffffff;
     font-size: 22px;
     font-weight: bold;
@@ -77,16 +73,14 @@ const Friends = styled.section`
     color: #172821;
   }
 `
-const render = () => (
+export default () => (
   <Friends>
     <h2>We Have Worked With</h2>
-    <div class="flex-box">
-      <div class="container"><img src={tower}/><div class="label">145 Store Street</div></div>
-      <div class="container"><img src={building}/><div class="label">368 Johnson Ave</div></div>
-      <div class="container"><img src={construction}/><div class="label">45 View Street</div></div>
-      <div class="container"><img src={residence}/><div class="label">5999 Main Street</div></div>
-    </div>
+    <Flex>
+      <Item><img src={tower} alt=""/><div>145 Store Street</div></Item>
+      <Item><img src={building} alt =""/><div>368 Johnson Ave</div></Item>
+      <Item><img src={construction} alt=""/><div>45 View Street</div></Item>
+      <Item><img src={residence} alt=""/><div>5999 Main Street</div></Item>
+    </Flex>
   </Friends>
 )
-
-export default render

@@ -13,6 +13,10 @@ export default function HTML(props) {
         />
         <link rel="stylesheet" href="https://use.typekit.net/kzp1hfe.css" />
         {props.headComponents}
+
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"/>
+
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
