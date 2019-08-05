@@ -164,8 +164,8 @@ const FormStyle = styled.form`
     margin: 16px 0 0;
     width: 100%;
     height: 51px;
-    background-color: #172821;
-    color: white;
+    background-color: #d3c190;
+    color: black;
     border-style: none;
     font-size: 20px;
     display: block;

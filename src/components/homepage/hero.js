@@ -78,7 +78,7 @@ const OuterContainer = styled.div`
 const GreenBox = styled.div`
   margin: 0 -55px 0 39px;
   padding: 236px 20px 20px;
-  border-radius: 6px;
+  border-radius: 0 0 6px 6px;
   background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
   min-height: 739px;
   ${mq('regular')}{ margin-right: 0 }

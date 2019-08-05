@@ -7,7 +7,7 @@ import Feed from "../components/contact/feed"
 
 const Render = () => (
   <Layout>
-    <Header/>
+    <Header page="contact"/>
     <Hero/>
     <Feed/>
   </Layout>

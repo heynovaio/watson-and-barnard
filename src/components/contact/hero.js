@@ -2,22 +2,9 @@ import React from "react"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-//font-family: astoria, sans-serif;
-//font-family: metropolis, sans-serif;
-
-const Hero = styled.div`
-  background-color: #f6f7fa;
+const Hero = styled.section`
   position: relative;
-  .green-box {
-    top:0;
-    bottom: 0;
-    left: 39px;
-    right: 0;
-    position: absolute;
-    border-radius: 6px;
-    box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.07);
-    background-image: linear-gradient(to bottom, #4e8672, #386656);
-  }
+  font-family: metropolis, sans-serif;
   h1 {
     font-family: astoria, sans-serif;
     font-size: 100px;
@@ -26,55 +13,16 @@ const Hero = styled.div`
     letter-spacing: 0.4px;
     text-align: center;
     color: #eee4cb;
-    margin: auto;
+    margin: 0 0 40px;
   }
   p {
     max-width: 598px;
     min-height: 96px;
-    font-family: metropolis, sans-serif;
     font-size: 22px;
     line-height: 1.45;
     text-align: center;
     color: #ffffff;
     margin: 40px auto 0;
-  }
-  .container {
-    position: relative;
-    z-index: +1;
-    min-height: 622px;
-    padding-top: 303px;
-  }
-  .circle {
-    width: 87px;
-    height: 87px;
-    box-shadow: 0 2px 4px 0 rgba(78, 78, 78, 0.11);
-    background-color: #ffffff;
-    border-radius: 50%;
-    margin: auto;
-    padding: 25.5px 0;
-  }
-  .item {
-    width: 166px;
-    height: 225px;
-    padding-top: 22px;
-
-  }
-  .title {
-    font-size: 26px;
-    font-weight: 600;
-    line-height: 1.38;
-    text-align: center;
-    color: #505d68;
-    font-family: metropolis, sans-serif;
-  }
-  .content {
-    max-width: 166px;
-    min-height: 24px;
-    font-family: metropolis, sans-serif;
-    font-size: 18px;
-    line-height: 1.33;
-    text-align: center;
-    color: #172821;
   }
   .icon {
     max-height: 36px;
@@ -82,50 +30,93 @@ const Hero = styled.div`
     display: block;
     color: #34594c;
   }
-  .flex-container {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-  .flex {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    max-width: 608px;
-    top: 142px;
-    position: relative;
-  }
 `
-const render = () => (
+const GreenBox = styled.div`
+  top:0;
+  bottom: 0;
+  left: 39px;
+  right: 0;
+  position: absolute;
+  border-radius: 0 0 0 6px;
+  box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.07);
+  background-image: linear-gradient(to bottom, #4e8672, #386656);
+`
+const Container = styled.div`
+  position: relative;
+  padding: 303px 20px 130px;
+`
+const FlexContainer = styled.div`
+  position: relative;
+  max-width: 608px;
+  margin: 0 auto;
+`
+const FlexBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  position: absolute;
+  top: -83px;
+`
+const Item = styled.div`
+  padding: 22px 10px 43px;
+  min-height: 225px;
+`
+const Circle = styled.div`
+  width: 87px;
+  height: 87px;
+  box-shadow: 0 2px 4px 0 rgba(78, 78, 78, 0.11);
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 0 auto 17px;
+  padding: 25.5px 0;
+`
+const Title = styled.div`
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.38;
+  text-align: center;
+  color: #505d68;
+  margin: 17px 0 2px;
+`
+const Content = styled.div`
+  max-width: 166px;
+  min-height: 24px;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  color: #172821;
+  margin: 2px 0 0;
+`
+export default () => (
   <Hero>
-    <div class="green-box"/>
-    <div class="container">
+    <GreenBox/>
+    <Container>
       <h1>Contact Us</h1>
       <p>
         Hexagon fashion axe authentic chartreuse. Green juice kale chips
         irony chicharrones bicycle rights chartreuse, lo-fi put a bird
          on it marfa poke tousled.
       </p>
-      <div class="flex-container">
-        <div class="flex">
-          <div class="item">
-            <div class="circle"><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
-            <div class="title">Email</div>
-            <div class="content">info@form.com</div>
-          </div>
-          <div class="item">
-            <div class="circle"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
-            <div class="title">Phone</div>
-            <div class="content">601-199-0349</div>
-          </div>
-          <div class="item">
-            <div class="circle"><FontAwesomeIcon class="icon" icon={faMapMarkerAlt}/></div>
-            <div class="title">Address</div>
-            <div class="content">053 Braulio Field</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </Container>
+    <FlexContainer>
+      <FlexBox>
+        <Item>
+          <Circle><FontAwesomeIcon class="icon" icon={faEnvelope}/></Circle>
+          <Title>Email</Title>
+          <Content>info@form.com</Content>
+        </Item>
+        <Item>
+          <Circle><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></Circle>
+          <Title>Phone</Title>
+          <Content>601-199-0349</Content>
+        </Item>
+        <Item>
+          <Circle><FontAwesomeIcon class="icon" icon={faMapMarkerAlt}/></Circle>
+          <Title>Address</Title>
+          <Content>053 Braulio Field</Content>
+        </Item>
+      </FlexBox>
+    </FlexContainer>
   </Hero>
 )
-export default render

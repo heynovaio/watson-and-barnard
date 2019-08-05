@@ -3,13 +3,14 @@ import React from "react"
 import Layout from "../components/layout"
 import styled from "@emotion/styled"
 import Feed from "../components/feed"
-
+import Header from "../components/header"
 const Hero = styled.section``
 const History = styled.section``
 const Different = styled.section``
 
 const Render = () => (
   <Layout>
+    <Header page='about'/>
     <Hero>
       <h1>About Us</h1>
       <p>

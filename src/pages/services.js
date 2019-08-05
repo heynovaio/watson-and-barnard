@@ -10,7 +10,7 @@ import Header from "../components/header"
 
 const render = () => (
   <Layout>
-    <Header/>
+    <Header page='services'/>
     <Hero/>
     <Architect/>
     <Developer/>

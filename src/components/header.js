@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import arrow from "../images/bitmap@3x.png"
@@ -21,66 +22,33 @@ const mq = n => {
   return result;
 }
 const Header = styled.header`
-  background-color: black;
   position: relative;
-  z-index: +1;
+  z-index: 1;
+  font-family: metropolis, sans-serif;
 `
-const Desktop = styled.div`
-  display: block;
-  img {
-    max-width: 48px;
-    position: absolute;
-    top: 20px;
-    left: 15px;
+const ArrowLogo = styled.img`
+  position: absolute;
+  max-width: 48px;
+  top: 20px;
+  left: 15px;
+  ${mq('small')}{
+    width: 28.9px;
+    top: 36px;
+    left: 21px;
   }
-  ${mq('small')}{display: none}
 `
-const PhoneLogo = styled.div`
-  width: 39px;
-  position: absolute;
-  text-align: center;
-  top: 234px;
-  color: #d3c190;
-`
-const Phone = styled.div`
-  transform: rotate(270deg);
-  position: absolute;
-  left: -46px;
-  bottom: 390px;
-  height: 39px;
-  top: 310px;
-  padding-top: 12px;
-  font-family: metropolis, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.7px;
-`
-const MailLogo = styled.div`
-  width: 39px;
-  position: absolute;
-  text-align: center;
-  top: 435px;
-  color: #d3c190;
-`
-const Email = styled.div`
-  transform: rotate(270deg);
-  position: absolute;
-  left: -44px;
-  height: 39px;
-  top: 510px;
-  padding-top: 9px;
-  font-family: metropolis, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 0.7px;
-`
-/*Watson and Barnard logo*/
+/*Making title logo section*/
+const Title = () => (
+  <TitleStyle>
+    <div>W</div><div>atson</div>
+    <div>and</div>
+    <div>B</div><div>arnard</div>
+  </TitleStyle>
+)
 const TitleStyle = styled.div`
   font-family: astoria, sans-serif;
   position: absolute;
   top: 0;
-  display: block;
-  ${mq('small')}{ display: none }
   div {
     color: #ffffff;
     position: absolute;
@@ -94,6 +62,10 @@ const TitleStyle = styled.div`
     letter-spacing: -1.62px;
     top: 43.9px;
     left: 90px;
+    ${mq('small')}{
+      top: 40.9px;
+      left: 60px;
+    }
   }
   div:nth-child(2){ /*atson*/
     width: 78px;
@@ -104,6 +76,10 @@ const TitleStyle = styled.div`
     color: #ffffff;
     top:44px;
     left: 133px;
+    ${mq('small')}{
+      top:41px;
+      left: 103px;
+    }
   }
   div:nth-child(3){ /*and*/
     width: 30px;
@@ -114,6 +90,10 @@ const TitleStyle = styled.div`
     color: #ffffff;
     top:70px;
     left: 150.1px;
+    ${mq('small')}{
+      top:64.9px;
+      left: 120.1px;
+    }
   }
   div:nth-child(4){ /*B*/
     width: 48px;
@@ -124,6 +104,10 @@ const TitleStyle = styled.div`
     color: #ffffff;
     top: 90.9px;
     left: 106px;
+    ${mq('small')}{
+      top:87.9px;
+      left: 76px;
+    }
   }
   div:last-child{ /*arnard*/
     width: 95px;
@@ -134,78 +118,153 @@ const TitleStyle = styled.div`
     color: #ffffff;
     top: 90.4px;
     left: 141.7px;
+    ${mq('small')}{
+      top: 87.4px;
+      left: 111.7px;
+    }
   }
 `
-const Title = () => (
-  <TitleStyle>
-    <div>W</div><div>atson</div>
-    <div>and</div>
-    <div>B</div><div>arnard</div>
-  </TitleStyle>
-)
-/**/
-const CenterMenu = styled.div`
+/*End of title logo section*/
+
+/*Acts as Center for desktop*/
+const MenuContainerOuter = styled.div`
   max-width: 1440px;
   margin: auto;
 `
-const MenuWidth = styled.div`
+/*Acts as Width for desktop*/
+const MenuContainerInner = styled.div`
   max-width: 628px;
   margin-left: 775px;
   position: relative;
+  ${mq('small')}{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(23, 40, 33, 0.91);
+    max-width: auto;
+    margin: 0;
+  }
 `
 const Menu = styled.nav`
   width: 100%;
   position: absolute;
   padding-top: 43px;
-  .link {
-    width: 142px;
+  ${mq('small')} {
+    width: auto;
+    max-height: 330px;
+    margin: 122px auto 61px;
+    position: relative;
+    padding: 0;
+  }
+  div {
     text-align: center;
-    font-family: metropolis, sans-serif;
-    font-weight: 600;
-    color: ${props => props.home ? '#172821': 'white'};
-    font-size: 16px;
-    text-decoration: none;
-    display: inline-block;
     width: 25%;
+    ${mq('small')}{
+      width: 100%;
+      height: 20%;
+      padding: 19px;
+    }
+    a {
+      color: ${props => props.page === 'home' ? '#172821': 'white'};
+      text-align: center;
+      font-family: metropolis, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      ${mq('small')}{
+        color: white;
+        font-size: 26px;
+        line-height: 2.54px;
+        letter-spacing: -0.3px;
+      }
+    }
   }
-  .services:hover ~ hr {
-    margin-left: 0%;
+  div:first-child {
+    display: ${props => (props.page === 'home') ? 'none' : 'inline-block'};
+    ${mq('small')}{ display: block }
+    &:hover ~ hr {
+      margin-left: 0;
+    }
   }
-  .about:hover ~ hr {
-    margin-left: 25%;
+  div:nth-child(2) {
+    display: ${props => props.page === 'services' ? 'none' : 'inline-block'};
+    ${mq('small')}{ display: block }
+    &:hover ~ hr {
+      margin-left: ${props => props.page === 'home' ? '0' : '25%'};
+    }
   }
-  .resources:hover ~ hr {
-    margin-left: 50%;
+  div:nth-child(3) {
+    display: ${props => props.page === 'about' ? 'none' : 'inline-block'};
+    ${mq('small')}{ display: block }
+    &:hover ~ hr {
+      margin-left: ${props => props.page === 'home' || props.page ==='services' ? '25%' : '50%'};
+    }
   }
-  .contact:hover ~ hr {
-    margin-left: 75%;
+  div:nth-child(4) {
+    display: ${props => props.page === 'resources' ? 'none' : 'inline-block'};
+    ${mq('small')}{ display: block }
+    &:hover ~ hr {
+      margin-left: ${props => props.page !== 'contact'  ? '50%' : '75%'};
+    }
+  }
+  div:nth-child(5){
+    display: ${props => props.page === 'contact' ? 'none' : 'inline-block'};
+    ${mq('small')}{ display: block }
+    &:hover ~ hr {
+      margin-left: 75%;
+    }
   }
   hr {
-    background: black;
+    background-color: ${props => (props.page === 'home') ? '#172821': 'white'};
     width: 25%;
     transition: .3s ease-in-out;
     height: 7px;
     margin: 0;
     border: none;
+    ${mq('small')}{ display: none }
   }
 `
-const Mobile = styled.div`
+const Exit = () => (
+  <ExitStyle onClick={hideDrop}>
+    <div/><div/>
+  </ExitStyle>
+)
+const ExitStyle = styled.div`
   display: none;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
   ${mq('small')}{display: block}
+  div {
+    position: absolute;
+    top: 38px;
+    right: 22px;
+    width: 42px;
+    height: 4px;
+    background-color: #ffffff;
+  }
+  div:first-child { transform: rotate(44deg) }
+  div:last-child { transform: rotate(-44deg) }
 `
+const showDrop = () => {
+  document.getElementById("drop").style.display = "block";
+  document.getElementById("open").style.display = "none";
+}
+const hideDrop = () => {
+  document.getElementById("drop").style.display = "none";
+  document.getElementById("open").style.display = "block";
+}
 const Hamburger = () => (
   <HamburgerStyle id="open" onClick={showDrop}>
     <div/><div/><div/>
   </HamburgerStyle>
 )
 const HamburgerStyle = styled.div`
-  display: block;
+  display: none;
+  ${mq('small')}{display: block}
   width: 42px;
   height: 24px;
-  position: absolute;
+  position: fixed;
   top: 28px;
   right: 23px;
   div {
@@ -228,54 +287,12 @@ const HamburgerStyle = styled.div`
     top: 20px;
   }
 `
-const Exit = () => (
-  <ExitStyle onClick={hideDrop}>
-    <div/><div/>
-  </ExitStyle>
-)
-const ExitStyle = styled.div`
-  div {
-    position: absolute;
-    top: 38px;
-    right: 22px;
-    width: 42px;
-    height: 4px;
-    background-color: #ffffff;
-  }
-  div:first-child { transform: rotate(44deg) }
-  div:last-child { transform: rotate(-44deg) }
-`
-const showDrop = () => {
-  document.getElementById("drop").style.display = "block";
-  document.getElementById("open").style.display = "none";
-}
-const hideDrop = () => {
-  document.getElementById("drop").style.display = "none";
-  document.getElementById("open").style.display = "block";
-}
-const DropDown = styled.nav`
-  display: none;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(23, 40, 33, 0.91);
-`
-const VerticalMenu = styled.div`
-  max-width: 158px;
-  height: 330px;
-  margin: 122px auto 61px;
-  text-align: center;
-  font-family: metropolis, sans-serif;
-  font-size: 26px;
-  font-weight: 600;
-  line-height: 2.54;
-  letter-spacing: -0.3px;
-  color: #ffffff;
-`
 const ContactStyle = styled.div`
   width: 205px;
   margin: 0 auto;
   position: relative;
+  display: none;
+  ${mq('small')}{display: block}
   div {
     width: 74px;
     height: 74px;
@@ -301,41 +318,75 @@ const Contact = () => (
     <div><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
   </ContactStyle>
 )
+const PhoneLogo = styled.div`
+  display: block;
+  ${mq('small')}{display: none}
+  width: 39px;
+  position: absolute;
+  text-align: center;
+  top: 234px;
+  color: #d3c190;
+`
+const Phone = styled.div`
+  display: block;
+  ${mq('small')}{display: none}
+  transform: rotate(270deg);
+  position: absolute;
+  left: -46px;
+  bottom: 390px;
+  height: 39px;
+  top: 310px;
+  padding-top: 12px;
+  font-family: metropolis, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+`
+const MailLogo = styled.div`
+  display: block;
+  ${mq('small')}{display: none}
+  width: 39px;
+  position: absolute;
+  text-align: center;
+  top: 435px;
+  color: #d3c190;
+`
+const Email = styled.div`
+  display: block;
+  ${mq('small')}{display: none}
+  transform: rotate(270deg);
+  position: absolute;
+  left: -44px;
+  height: 39px;
+  top: 510px;
+  padding-top: 9px;
+  font-family: metropolis, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.7px;
+`
 export default props => (
   <Header>
-    <Desktop>
-      <img src={arrow} alt=""/>
-      <Title/>
-      <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
-      <Phone>1 555 555 2525</Phone>
-      <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
-      <Email>info@w&b.com</Email>
-      <CenterMenu>
-        <MenuWidth>
-          <Menu home={props.home}>
-            <Link class="link home" to="/" activeStyle={{display: "none"}}>Home</Link>
-            <Link class="link services" to="/services/" activeStyle={{display: "none"}}>Our Services</Link>
-            <Link class="link about" to="/about/" activeStyle={{display: "none"}}>About Us</Link>
-            <Link class="link resources" to="/resources/" activeStyle={{display: "none"}}>Resources</Link>
-            <Link class="link contact" to="/contact/" activeStyle={{display: "none"}}>Contact Us</Link>
-            <hr/>
-          </Menu>
-        </MenuWidth>
-      </CenterMenu>
-    </Desktop>
-    <Mobile>
-      <Hamburger/>
-      <DropDown id="drop">
+    <ArrowLogo src={arrow} alt="main logo"/>
+    <Title/>
+    <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
+    <Phone>1 555 555 2525</Phone>
+    <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
+    <Email>info@w&b.com</Email>
+    <Hamburger/>
+    <MenuContainerOuter>
+      <MenuContainerInner id="drop">{/*whole drop down*/}
         <Exit/>
-        <VerticalMenu>
-          Home<br/>
-          Our Services<br/>
-          About Us<br/>
-          Resources<br/>
-          Contact<br/>
-        </VerticalMenu>
+        <Menu page={props.page}>
+          <div><Link to="/" >Home</Link></div>
+          <div><Link to="/services/" >Our Services</Link></div>
+          <div><Link to="/about/" >About Us</Link></div>
+          <div><Link to="/resources/" >Resources</Link></div>
+          <div><Link to="/contact/" >Contact Us</Link></div>
+          <hr/>
+        </Menu>
         <Contact/>
-      </DropDown>
-    </Mobile>
+      </MenuContainerInner>
+    </MenuContainerOuter>
   </Header>
 )

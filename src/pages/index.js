@@ -11,7 +11,7 @@ import Friends from "../components/homepage/friends"
 
 const IndexPage = () => (
   <Layout>
-    <Header home/>
+    <Header page='home'/>
     <Hero/>
     <Associates/>
     <Easy/>
