@@ -22,21 +22,21 @@ const mq = n => {
 const Architect = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 82px 0 271px;
+  margin: 82px 0 142px;
   position: relative;
   ${mq('small')}{
     margin-bottom: 24px;
     min-height: 756px;
   }
   h2 {
-    min-height: 52px;
+    min-height: 72px;
     font-family: astoria, sans-serif;
-    font-size: 50px;
+    font-size: 36px;
     font-weight: normal;
-    line-height: 1.04;
+    line-height: 1.17;
     letter-spacing: normal;
     color: #34594c;
-    margin: 0 0 15px;
+    margin: 0 0 -2px;
     ${mq('small')}{
       min-height: 88px;
       font-size: 40px;
@@ -45,12 +45,12 @@ const Architect = styled.section`
     }
   }
   p {
-    min-height: 78px;
+    min-height: 98px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
-    max-width: 482px;
-    margin: 15px 0 15px;
+    max-width: 428px;
+    margin: -2px 0 -4px;
     ${mq('small')}{
       min-height: 97px;
       margin: 6px 0 18px;
@@ -66,7 +66,7 @@ const Center = styled.div`
   img {
     position: absolute;
     right: 0;
-    bottom: -127px;
+    bottom: -63px;
     max-width: 555px;
     margin: 0;
     ${mq('small')}{
@@ -90,23 +90,40 @@ const Box = styled.div`
   }
 `
 const Content = styled.div`
-  max-width: 464px;
-  margin: auto;
-  padding: 47px 0 0;
+  max-width: 494px;
+  margin-left: auto;
+  padding: 39px 0 0;
   ${mq('small')}{
     padding-top: 20px;
   }
 `
 const List = styled.div`
   position: relative;
-  margin: 15px 0 39px;
-  div {
-    padding: 4px 0 0 40px;
+  line-height: 1.5;
+  font-size: 16px;
+  div:first-child {
+    max-width: 479px;
+    min-height: 84px;
+    padding:4px 9px 8px 40px;
+    margin: -4px 0 -3px;
+  }
+  div:nth-child(2){
+    max-width: 503px;
+    min-height: 53px;
+    padding: 4px 9px 1px 40px;
+    margin: -3px 0 8px;
+  }
+  div:nth-child(3){
+    max-width:503px;
+    min-height: 47px;
+    padding: 4px 9px 0px 40px;
+    margin: 8px 0 19px;
+  }
+  div:last-child{
+    max-width: 503px;
     min-height: 30px;
-    margin: 8px 0;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #172821;
+    padding: 4px 9px 2px 40px;
+    margin: 19px 0 37px;
   }
   .mark {
     position: absolute;
@@ -121,11 +138,11 @@ const Button = styled.a`
   letter-spacing: 0.4px;
   text-align: center;
   color: #ffffff;
-  width: 206px;
+  width: 248px;
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 39px 0 0;
+  margin: 37px 0 0;
   ${mq('small')}{
     width: auto;
   }
@@ -138,14 +155,26 @@ export default () => (
         <Content>
           <h2>Topographic Survey</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing edivt, sed do eiusmod
-            tempor incididunt ut labore et dolore magna adivqua.
+            Understand the land. Topographic surveys provide vital information
+            used in the design and approval process of land development.
           </p>
           <List>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              We use Leica survey equipment in conjunction with
+              MicroSurvey and AutoDesk drafting software to provide
+              accurate measurements
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Determine elevation contours, the location of natural and
+              man-made land attributes, and legal boundaries
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              A crucial tool when presenting plans to a buyer or
+              municipal approving authorities
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              What charges are impacting the land?
+            </div>
           </List>
           <Button>ask us a question</Button>
         </Content>

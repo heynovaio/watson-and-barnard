@@ -6,6 +6,8 @@ import Home from "../components/services/home"
 import Architect from "../components/services/architect"
 import Developer from "../components/services/developer"
 import Property from "../components/services/property"
+import Settlement from "../components/services/settlement"
+import Drone from "../components/services/drone"
 import Header from "../components/header"
 
 const render = () => (
@@ -16,6 +18,8 @@ const render = () => (
     <Developer/>
     <Property/>
     <Home/>
+    <Settlement/>
+    <Drone/>
     <Feed/>
   </Layout>
 )

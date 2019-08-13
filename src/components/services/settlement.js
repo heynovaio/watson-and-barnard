@@ -1,8 +1,8 @@
 import React from "react"
-import pic from "../../images/services_2@3x.jpg"
+import styled from "@emotion/styled"
+import pic from "../../images/1055059750@3x.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
-import styled from "@emotion/styled"
 const bp = {
   smaller: 300,
   small: 500,
@@ -19,23 +19,24 @@ const mq = n => {
   }, []);
   return result;
 }
-const Developer = styled.section`
+const Settlement = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 142px 0 94px;
+  margin: 84px 0 266px;
   position: relative;
   ${mq('small')}{
     margin: 28px 0 22px;
     min-height: 761px;
   }
   h2 {
-    min-height: 91.2px;
+    min-height: 72px;
     font-family: astoria, sans-serif;
     font-size: 36px;
     font-weight: normal;
     line-height: 1.17;
+    letter-spacing: normal;
     color: #34594c;
-    margin: 0 0 -21.2px;
+    margin: 0 0 -12px;
     ${mq('small')}{
       min-height: 89px;
       font-size: 36px;
@@ -45,16 +46,12 @@ const Developer = styled.section`
     }
   }
   p {
-    min-height: 98px;
+    min-height: 73px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
     max-width: 428px;
-    margin: -21.2px 0 20px;
-    ${mq('small')}{
-      min-height: 97px;
-      margin: 5px 0 17px;
-    }
+    margin: -12px 0 21px;
   }
 `
 const Center = styled.div`
@@ -65,12 +62,11 @@ const Center = styled.div`
   ${mq('small')}{position: static}
   img {
     position: absolute;
-    left: 0;
-    top: -31px;
+    right: 0;
+    bottom: -124px;
     max-width: 555px;
     margin: 0;
     ${mq('small')}{
-      top: auto;
       bottom: 0;
       height: 350px;
       max-width: auto;
@@ -85,8 +81,7 @@ const Box = styled.div`
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
   position: relative;
-  padding: 0 20px 26px;
-  margin: 0 0 0 auto;
+  padding: 0 20px;
   ${mq('small')}{
     min-height: 491px;
   }
@@ -94,7 +89,7 @@ const Box = styled.div`
 const Content = styled.div`
   max-width: 494px;
   margin-left: auto;
-  padding: 47px 0 0;
+  padding: 39px 0 0;
   ${mq('small')}{
     padding-top: 20px;
   }
@@ -102,26 +97,22 @@ const Content = styled.div`
 const List = styled.div`
   position: relative;
   div {
-    max-width: 503px;
     padding: 4px 9px 0 40px;
     font-size: 16px;
     line-height: 1.5;
+    color: #172821;
   }
-  div:first-child {
-    margin: 20px 0 1.3px;
-    min-height: 42.5px;
+  div:first-child{
+    margin: 21px 0 6px;
+    min-height: 56px;
   }
   div:nth-child(2){
-    margin: 1.3px 0 0;
-    min-height: 68.1px;
-  }
-  div:nth-child(3){
-    margin: 0 0 8.3px;
-    min-height: 42.5px;
+    min-height: 58px;
+    margin: 6px 0 9px;
   }
   div:last-child{
-    margin: 8.3px 0 21.8px;
-    min-height: 42.5px;
+    margin: 9px 0 23px;
+    min-height: 55px;
   }
   .mark {
     position: absolute;
@@ -140,41 +131,40 @@ const Button = styled.a`
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 21.8px 0 0;
+  margin: 23px 0 0;
   ${mq('small')}{
     width: auto;
   }
 `
 export default () => (
-  <Developer>
+  <Settlement>
     <Center>
       <img src={pic} alt=""/>
       <Box>
         <Content>
-          <h2>Construction Surveys</h2>
+          <h2>Settlement Monitoring</h2>
           <p>
-            Accurate data, from start to finish. Construction surveys collect
-            data to establish a preliminary survey control plan and inform on
-            the accuracy of the work post-construction.
+            Build responsibly. Seismic monitoring is used to detect
+            horizontal and vertical movement when working next to
+            neighbouring structures.
           </p>
           <List>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Guaranteed timely turnarounds for standard layouts.
+              Our state-of-the-art equipment performs based on your
+              unique project requirements.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Our cutting edge technology is suitable for single-family lots
-              to multi-hundred hectare properties
+              Minimizing the risk of claims and upset neighbours with
+              vibration and sound monitoring.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Excavation offsets and foundation layouts
-            </div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              As-built surveys to complete municipal form inspections
+              Geotechnical engineer consult to establish a thorough
+              control plan
             </div>
           </List>
           <Button>ask us a question</Button>
         </Content>
       </Box>
     </Center>
-  </Developer>
+  </Settlement>
 )

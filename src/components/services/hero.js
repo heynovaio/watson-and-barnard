@@ -2,8 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import picture from "../../images/icon-group@3x.png"
 import Circles from "../circles"
-//font-family: metropolis, sans-serif;
-//font-family: astoria, sans-serif;
 const bp = {
   smaller: 300,
   small: 500,
@@ -26,14 +24,14 @@ const Hero = styled.section`
   position: relative;
   padding: 0 0 0;
   h1 {
-    min-height: 53px;
+    min-height: 87px;
     font-family: astoria, sans-serif;
-    font-size: 100px;
+    font-size: 74px;
     font-weight: 500;
-    line-height: 0.53;
-    letter-spacing: 0.4px;
+    line-height: 1.18;
+    letter-spacing: 0.3px;
     color: #eee4cb;
-    margin: 0 0 39px;
+    margin: 0 0 7px;
     ${mq('small')}{
       min-height: 96px;
       font-family: metropolis, sans-serif;
@@ -46,12 +44,12 @@ const Hero = styled.section`
   }
   p {
     font-family: metropolis, sans-serif;
-    max-width: 598px;
-    min-height: 102px;
+    max-width: 609px;
+    min-height: 192px;
     font-size: 22px;
-    line-height: 1.55;
+    line-height: 1.45;
     color: #ffffff;
-    margin: 39px 0 0;
+    margin: 7px 0 0;
     ${mq('small')}{
       max-width: 304px;
       min-height: 258px;
@@ -94,7 +92,7 @@ const Center = styled.div`
   }
 `
 const Content = styled.div`
-  padding: 280px 0 20px;
+  padding: 246px 0 20px;
   min-height: 622px;
   position: relative;
   ${mq('small')}{
@@ -114,11 +112,12 @@ export default () => (
     <Center>
       <img src={picture} alt=""/>
       <Content>
-        <h1>Services</h1>
+        <h1>Areas of Expertise</h1>
         <p>
-          Hexagon fashion axe authentic chartreuse. Green juice kale chips
-          irony chicharrones bicycle rights chartreuse, lo-fi put a bird on
-          it marfa poke tousled.
+          Our team of skilled survey experts, engineers and development
+          consultants are by your side, from field to finish, and, at
+          the helm of the industry’s latest technology, will provide
+          you with the most precise and comprehensive geomatics.
         </p>
       </Content>
       <Mobile>

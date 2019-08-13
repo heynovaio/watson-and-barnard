@@ -22,21 +22,20 @@ const mq = n => {
 const Property = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 84px 0 261px;
+  margin: 94px 0 232px;
   position: relative;
   ${mq('small')}{
     margin: 28px 0 22px;
     min-height: 761px;
   }
   h2 {
-    min-height: 52px;
+    min-height: 72px;
     font-family: astoria, sans-serif;
-    font-size: 50px;
+    font-size: 36px;
     font-weight: normal;
-    line-height: 1.04;
-    letter-spacing: normal;
+    line-height: 1.17;
     color: #34594c;
-    margin: 0 0 15px;
+    margin: 0 0 -2px;
     ${mq('small')}{
       min-height: 89px;
       font-size: 36px;
@@ -46,12 +45,12 @@ const Property = styled.section`
     }
   }
   p {
-    min-height: 78px;
+    min-height: 56px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
     max-width: 482px;
-    margin: 15px 0 15px;
+    margin: -2px 0 22px;
   }
 `
 const Center = styled.div`
@@ -63,7 +62,7 @@ const Center = styled.div`
   img {
     position: absolute;
     right: 0;
-    bottom: -136px;
+    bottom: -117px;
     max-width: 555px;
     margin: 0;
     ${mq('small')}{
@@ -87,23 +86,37 @@ const Box = styled.div`
   }
 `
 const Content = styled.div`
-  max-width: 464px;
-  margin: auto;
-  padding: 47px 0 0;
+  max-width: 494px;
+  margin-left: auto;
+  padding: 39px 0 0;
   ${mq('small')}{
     padding-top: 20px;
   }
 `
 const List = styled.div`
   position: relative;
-  margin: 15px 0 39px;
   div {
-    padding: 4px 0 0 40px;
-    min-height: 30px;
-    margin: 8px 0;
+    padding: 4px 9px 0 40px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
+    max-width: 503px;
+  }
+  div:first-child{
+    min-height: 54px;
+    margin: 22px 0 0px;
+  }
+  div:nth-child(2){
+    min-height: 75px;
+    margin: 0;
+  }
+  div:nth-child(3){
+    min-height: 30px;
+    margin: 0 0 16px;
+  }
+  div:last-child {
+    min-height: 30px;
+    margin: 16px 0 43px;
   }
   .mark {
     position: absolute;
@@ -118,11 +131,11 @@ const Button = styled.a`
   letter-spacing: 0.4px;
   text-align: center;
   color: #ffffff;
-  width: 206px;
+  width: 248px;
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 39px 0 0;
+  margin: 43px 0 0;
   ${mq('small')}{
     width: auto;
   }
@@ -133,16 +146,25 @@ export default () => (
       <img src={pic} alt=""/>
       <Box>
         <Content>
-          <h2>Property Owners</h2>
+          <h2>Subdivisions and Legal Surveys</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing edivt, sed do eiusmod
-            tempor incididunt ut labore et dolore magna adivqua.
+            Divide and conquer. Subdivision surveys establish new land
+            parcel boundaries or adjust pre-existing parcels.
           </p>
           <List>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              We work closely with you to understand all aspects of your project
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Posting plans for resolving boundary disputes and proper
+              fence construction
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Comprehensive subdivision plans
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Detailed plans for right of ways and easements
+            </div>
           </List>
           <Button>ask us a question</Button>
         </Content>

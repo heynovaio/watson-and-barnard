@@ -22,21 +22,20 @@ const mq = n => {
 const Home = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 261px 0 465px;
+  margin: 232px 0 84px;
   position: relative;
   ${mq('small')}{
     margin: 24px 0 2731px;
     min-height: 760px;
   }
   h2 {
-    min-height: 52px;
+    min-height: 72px;
     font-family: astoria, sans-serif;
-    font-size: 50px;
+    font-size: 36px;
     font-weight: normal;
-    line-height: 1.04;
-    letter-spacing: normal;
+    line-height: 1.17;
     color: #34594c;
-    margin: 0 0 15px;
+    margin: 0 0 28px;
     ${mq('small')}{
       min-height: 89px;
       font-size: 36px;
@@ -46,12 +45,12 @@ const Home = styled.section`
     }
   }
   p {
-    min-height: 78px;
+    min-height: 73px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
-    max-width: 482px;
-    margin: 15px 0 15px;
+    max-width: 428px;
+    margin: 28px 0 21px;
     ${mq('small')}{
       min-height: 97px;
       margin: 5px 0 17px;
@@ -93,23 +92,32 @@ const Box = styled.div`
   }
 `
 const Content = styled.div`
-  max-width: 464px;
-  margin: auto;
-  padding: 47px 0 0;
+  max-width: 494px;
+  margin-left: auto;
+  padding: 39px 0 0;
   ${mq('small')}{
     padding-top: 20px;
   }
 `
 const List = styled.div`
   position: relative;
-  margin: 15px 0 39px;
   div {
-    padding: 4px 0 0 40px;
-    min-height: 30px;
-    margin: 8px 0;
+    padding: 4px 0 9px 40px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
+  }
+  div:first-child {
+    margin: 21px 0 12px;
+    min-height: 30px;
+  }
+  div:nth-child(2){
+    margin: 12px 0 12px;
+    min-height: 48px;
+  }
+  div:last-child{
+    margin: 12px 0 35px;
+    min-height: 30px;
   }
   .mark {
     position: absolute;
@@ -124,11 +132,11 @@ const Button = styled.a`
   letter-spacing: 0.4px;
   text-align: center;
   color: #ffffff;
-  width: 206px;
+  width: 248px;
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 39px 0 0;
+  margin: 35px 0 0;
   ${mq('small')}{
     width: auto;
   }
@@ -139,16 +147,22 @@ export default () => (
       <img src={pic} alt=""/>
       <Box>
         <Content>
-          <h2>Home Owners</h2>
+          <h2>Strata Surveys and Air Space Plans</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing edivt, sed do eiusmod
-            tempor incididunt ut labore et dolore magna adivqua.
+            Precise plans for distinct projects. Strata surveys define
+            the nature and location of legal boundaries of buildings
+            in your unique development plan.
           </p>
           <List>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>Lorem ipsum dolor sit amet</div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              We are familiar with municipal planning requirements and,
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Current policies governing strata subdivisions and air space titles
+            </div>
+            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
+              Residential and commercial-scale projects
+            </div>
           </List>
           <Button>ask us a question</Button>
         </Content>
