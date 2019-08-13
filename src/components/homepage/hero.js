@@ -4,6 +4,7 @@ import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import styled from "@emotion/styled"
 import photo from "../../images/adobe-stock-4946677-preview@3x.jpg"
 import arrow from "../../images/bitmap@3x.png"
+import Circles from "../circles"
 const bp = {
   smaller: 300,
   small: 500,
@@ -136,106 +137,6 @@ const CustomArrowStyle = styled.div`
     top: 9px
   }
 `
-/*_____________________Watson and Barnard Logo_________________________*/
-const TitleStyle = styled.div`
-  font-family: astoria, sans-serif;
-  position: absolute;
-  top: 0;
-  display: none;
-  ${mq('small')}{ display: block }
-  div {
-    color: #ffffff;
-    position: absolute;
-    text-align: center;
-  }
-  div:first-child{ /*W*/
-    width: 48px;
-    height: 81px;
-    font-size: 37.8px;
-    line-height: 0.71;
-    letter-spacing: -1.62px;
-    top: 40.9px;
-    left: 60px;
-  }
-  div:nth-child(2){ /*atson*/
-    width: 78px;
-    height: 27px;
-    font-size: 34.5px;
-    line-height: 0.78;
-    letter-spacing: -1.06px;
-    color: #ffffff;
-    top:41px;
-    left: 103px;
-  }
-  div:nth-child(3){ /*and*/
-    width: 30px;
-    height: 27px;
-    font-size: 19.2px;
-    line-height: 1.41;
-    letter-spacing: -0.92px;
-    color: #ffffff;
-    top:64.9px;
-    left: 120.1px;
-  }
-  div:nth-child(4){ /*B*/
-    width: 48px;
-    height: 27px;
-    font-size: 37.8px;
-    line-height: 0.71;
-    letter-spacing: -1.62px;
-    color: #ffffff;
-    top: 87.9px;
-    left: 76px;
-  }
-  div:last-child{ /*arnard*/
-    width: 95px;
-    height: 27px;
-    font-size: 34.5px;
-    line-height: 0.78;
-    letter-spacing: -0.87px;
-    color: #ffffff;
-    top: 87.4px;
-    left: 111.7px;
-  }
-`
-const Title = () => (
-  <TitleStyle>
-    <div>W</div><div>atson</div>
-    <div>and</div>
-    <div>B</div><div>arnard</div>
-  </TitleStyle>
-)
-/*____________________________Contact__________________________________*/
-const ContactStyle = styled.div`
-  width: 205px;
-  margin: 0 auto;
-  position: relative;
-  bottom: 37px;
-  div {
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
-    box-shadow: 0 2px 20px 0 rgba(97, 97, 97, 0.2);
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 21px;
-    color: #d3c190;
-    position: absolute;
-  }
-  .icon {
-    width: 30px;
-    display: block;
-    margin: auto;
-  }
-  div:first-child { left: 0 }
-  div:last-child { right: 0 }
-`
-const Contact = () => (
-  <ContactStyle>
-    <div><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
-    <div><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
-  </ContactStyle>
-)
 const Mobile = styled.div`
   display: none;
   img {
@@ -266,8 +167,7 @@ export default () => (
     </OuterContainer>
     <Mobile>
       <img src={arrow} alt=""/>
-      <Title/>
-      <Contact/>
+      <Circles/>
     </Mobile>
   </Hero>
 )

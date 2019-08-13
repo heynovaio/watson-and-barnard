@@ -3,10 +3,31 @@ import styled from "@emotion/styled"
 import pic from "../../images/services_1@3x.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+const bp = {
+  smaller: 300,
+  small: 500,
+  tablet: 768,
+  medium: 1024,
+  large: 1200,
+  regular: 1440,
+}
+const mq = n => {
+  const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
+  const [result] = bpArray.reduce((acc, [name, size]) => {
+    if (n === name) return [...acc, `@media (max-width: ${size}px)`];
+    return acc;
+  }, []);
+  return result;
+}
 const Architect = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
   margin: 82px 0 271px;
+  position: relative;
+  ${mq('small')}{
+    margin-bottom: 24px;
+    min-height: 756px;
+  }
   h2 {
     min-height: 52px;
     font-family: astoria, sans-serif;
@@ -16,6 +37,12 @@ const Architect = styled.section`
     letter-spacing: normal;
     color: #34594c;
     margin: 0 0 15px;
+    ${mq('small')}{
+      min-height: 88px;
+      font-size: 40px;
+      line-height: 1.1;
+      margin: 0 0 6px;
+    }
   }
   p {
     min-height: 78px;
@@ -24,6 +51,10 @@ const Architect = styled.section`
     color: #172821;
     max-width: 482px;
     margin: 15px 0 15px;
+    ${mq('small')}{
+      min-height: 97px;
+      margin: 6px 0 18px;
+    }
   }
 `
 const Center = styled.div`
@@ -31,12 +62,19 @@ const Center = styled.div`
   margin: auto;
   position: relative;
   padding: 0;
+  ${mq('small')}{position: static}
   img {
     position: absolute;
     right: 0;
     bottom: -127px;
     max-width: 555px;
     margin: 0;
+    ${mq('small')}{
+      bottom: 0;
+      height: 350px;
+      max-width: auto;
+      width: 100%;
+    }
   }
 `
 const Box = styled.div`
@@ -46,12 +84,18 @@ const Box = styled.div`
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
   position: relative;
-  padding: 0 20px;
+  padding: 0 20px 26px;
+  ${mq('small')}{
+    min-height: 486px;
+  }
 `
 const Content = styled.div`
   max-width: 464px;
   margin: auto;
   padding: 47px 0 0;
+  ${mq('small')}{
+    padding-top: 20px;
+  }
 `
 const List = styled.div`
   position: relative;
@@ -82,6 +126,9 @@ const Button = styled.a`
   padding: 14px 0 0;
   height: 54px;
   margin: 39px 0 0;
+  ${mq('small')}{
+    width: auto;
+  }
 `
 export default () => (
   <Architect>
@@ -89,7 +136,7 @@ export default () => (
       <img src={pic} alt=""/>
       <Box>
         <Content>
-          <h2>Architects</h2>
+          <h2>Topographic Survey</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing edivt, sed do eiusmod
             tempor incididunt ut labore et dolore magna adivqua.
