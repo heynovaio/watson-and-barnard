@@ -40,6 +40,7 @@ const Associates = styled.section`
     ${mq('small')}{
       font-size: 40px;
       line-height: 1.2;
+      margin: 0 0 28px;
     }
   }
   h3 {
@@ -64,12 +65,13 @@ const Developers = styled.div`
   }
   h3 {
     min-height: 65px;
-    margin: 22px 0 -8px;
+    margin: 22px 0 -8px auto;
+    padding-top: 15px;
   }
   p {
     min-height: 133px;
     max-width: 298px;
-    margin: -8px auto 0;
+    margin: -8px auto 0 auto;
     font-size: 18px;
   }
 `
@@ -80,13 +82,13 @@ const Residential = styled.div`
     margin: 0 auto 18px;
   }
   h3 {
-    margin: 8px auto 9px;
+    margin: 8px auto 9px auto;
     max-width: 285px;
     min-height: 65px;
   }
   p {
     max-width: 256.7px;
-    margin: 9px auto 0;
+    margin: 9px auto 0 auto;
   }
 `
 const Architects = styled.div`
@@ -98,10 +100,11 @@ const Architects = styled.div`
   h3 {
     max-width: 308px;
     min-height: 65px;
-    margin: 0 auto -8px;
+    margin: 0 auto -8px auto;
+    padding-top: 15px;
   }
   p {
-    margin: -8px auto 0;
+    margin: -8px auto 0 auto;
     max-width: 298px;
     font-size: 18px;
   }
@@ -110,21 +113,54 @@ const Municipalities = styled.div`
   padding: 44px 10px 0;
   img {
     max-width: 102px;
-    margin: 0 auto 23.5px;
+    margin: 0 auto 23.5px auto;
   }
   h3 {
     max-width: 307.8px;
     min-height: 65px;
-    margin: 23.5px auto 4px;
+    margin: 23.5px auto 4px auto;
   }
   p {
     max-width: 298.2px;
-    margin: 4px auto 0;
+    margin: 4px auto 0 auto;
     font-size: 18px;
   }
 `
-const Home = styled.div``
-const Nations = styled.div``
+const Home = styled.div`
+  padding: 62px 10px 0;
+  img {
+    max-width: 151px;
+    margin: 0 auto 27px;
+  }
+  h3 {
+    max-width: 308px;
+    margin: 27px auto -8px auto;
+    min-height: 65px;
+    padding-top: 15px;
+  }
+  p {
+    max-width: 298px;
+    margin: -8px auto 0 auto;
+    font-size: 18px;
+  }
+`
+const Nations = styled.div`
+  padding: 51px 10px 0;
+  img {
+    max-width: 161px;
+    margin: 0 auto 20.9px auto;
+  }
+  h3 {
+    max-width: 285px;
+    margin: 0 auto -8px auto;
+    min-height: 65px;
+    padding: 15px 0 0;
+  }
+  p {
+    margin: -8px auto 0 auto;
+    max-width: 298px;
+  }
+`
 const Flex = styled.div`
   display: flex;
   justify-content: center;
@@ -137,7 +173,13 @@ const Flex = styled.div`
     box-shadow: 2px 2px 13px 0 rgba(0, 0, 0, 0.03);
     background-color: #ffffff;
     margin: 30px;
-    ${mq('small')}{}
+    ${mq('small')}{
+      margin: 10px;
+      height: 365px;
+    }
+    img {
+      display: block;
+    }
   }
 `
 const Button = styled.a`
@@ -146,10 +188,13 @@ const Button = styled.a`
   display: block;
   background-color: #172821;
   padding: 17px 0 0;
-  margin: auto;
+  margin: 11px auto 0;
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
+  ${mq('small')}{
+    margin: 41px auto 0;
+  }
 `
 export default () => (
   <Associates>

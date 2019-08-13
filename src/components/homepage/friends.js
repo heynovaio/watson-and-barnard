@@ -25,7 +25,7 @@ const mq = n => {
 const Friends = styled.section`
   font-family: metropolis, sans-serif;
   background-color: #f6f7fa;
-  padding: 79px 10px 80px;
+  padding: 138px 10px 117px;
   ${mq('small')}{ padding: 41px 10px 73px }
   h2 {
     min-eight: 52px;
@@ -35,12 +35,21 @@ const Friends = styled.section`
     color: #172821;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0 10px 56.8px;
+    margin: 0 10px 22px;
     ${mq('small')}{
       font-size: 40px;
       line-height: 1.2;
       margin-bottom: 32px;
     }
+  }
+  p {
+    max-width: 852px;
+    min-height: 92px;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    color: #172821;
+    margin: 22px auto 26px;
   }
 `
 const Flex = styled.div`
@@ -75,11 +84,17 @@ const Item = styled.div`
 `
 export default () => (
   <Friends>
-    <h2>We Have Worked With</h2>
+    <h2>Past Projects</h2>
+    <p>
+      We’re proud to play a small part in the livelihood of
+      our community. Each project is a testament to our genuine
+      client-focused approach and commitment to excellence.
+    </p>
     <Flex>
       <Item><img src={tower} alt=""/><div>145 Store Street</div></Item>
       <Item><img src={building} alt =""/><div>368 Johnson Ave</div></Item>
       <Item><img src={construction} alt=""/><div>45 View Street</div></Item>
+      <Item><img src={residence} alt=""/><div>5999 Main Street</div></Item>
       <Item><img src={residence} alt=""/><div>5999 Main Street</div></Item>
     </Flex>
   </Friends>

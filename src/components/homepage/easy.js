@@ -23,12 +23,12 @@ const Easy = styled.section`
   padding-right: 20px;
   h2 {
     max-width: 474px;
-    font-size: 50px;
-    line-height: 1.04;
-    color: #eee4cb;
+    font-size: 36px;
+    line-height: 1.17;
+    color: #ffffff;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0 0 14px 0;
+    margin: 0 0 34px;
     ${mq('small')}{
       min-height: 96px;
       font-size: 40px;
@@ -37,30 +37,19 @@ const Easy = styled.section`
       margin-bottom: 18px;
     }
   }
-  h2 + p {
+  p {
     max-width: 555px;
+    min-height: 381px;
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
-    min-height: 78px;
-    margin: 14px 0 12px;
+    margin: 34px 0 0;
     ${mq('small')}{
-      margin-top: 18px;
+      margin: 18px 0 0;
     }
   }
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.2;
-    color: #ffffff;
-    margin: 0 0 10px;
-  }
-  h3 + p {
-    max-width: 466px;
-    font-size: 16px;
-    line-height: 1.31;
-    color: #ffffff;
-    margin: 10px 0 0;
+  span {
+    font-weight: 800;
   }
 `
 const Center = styled.div`
@@ -95,14 +84,6 @@ const TxtContainer = styled.div`
   }
   position: relative;
   background-color: #092146;
-  div:nth-of-type(1) {
-    min-height: 116px;
-    margin: 12px 0 30px;
-  }
-  div:nth-of-type(2) {
-    min-height: 126px;
-    margin: 30px 0 0;
-  }
 `
 const UpperImgContainer = styled.div`
   position: relative;
@@ -121,25 +102,20 @@ export default () => (
       <TxtContainer>
         <h2>How we Make it Easier For You</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.
+          We could tell you that we’ve been servicing Delta
+          and the Lower Mainland for over 40 years. We could tell
+          you that our team of survey experts, engineers and development
+          consultants are highly-skilled, friendly and professional.
+          We could tell you that we understand and apply the most
+          current technology and equipment in our practice. We could
+          tell you that we have a deep understanding of local development
+          and building permit processes. But we’ll simply tell you
+          that <span>we genuinely care about your project.</span><br/><br/>
+          Our team is committed to providing surveying services to all related
+          professionals with integrity, excellence and accuracy, and can
+          be reached anytime over the phone, behind a screen or in person
+          for guidance and project support.
         </p>
-        <div>
-          <h3>Educating and guiding</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation.
-          </p>
-        </div>
-        <div>
-          <h3>Other ways you help</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation.
-          </p>
-        </div>
       </TxtContainer>
       <ImgContainer>
         <Visible>
