@@ -25,7 +25,7 @@ const Drone = styled.section`
   margin: 266px 0 153px;
   position: relative;
   ${mq('small')}{
-    margin: 24px 0 2731px;
+    margin: 24px 0 0;
     min-height: 760px;
   }
   h2 {

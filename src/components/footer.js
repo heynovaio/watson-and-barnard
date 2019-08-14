@@ -1,19 +1,21 @@
 import { Link } from "gatsby"
 import React from "react"
+import styled from '@emotion/styled'
 
-const Footer = () => (
-  <div>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et.
-    </p>
-    <ul>
-      <li><Link to="/index/">Home</Link></li>
-      <li><Link to="/services/">Service</Link></li>
-      <li><Link to="/about/">About</Link></li>
-      <li><Link>Resources</Link></li>
-      <li><Link to="/contact/">Contact</Link></li>
-    </ul>
-  </div>
+const Footer = styled.section``
+const Title = styled.div``
+const Logos = styled.div``
+const Nav = styled.nav``
+export default () => (
+  <Footer>
+    <Title>Watson and Barnard</Title>
+    <Logos/>
+    <Nav>
+      <Link to='/index/'>Home</Link>
+      <Link to='/services/'>Services</Link>
+      <Link to='/about/'>About</Link>
+      <Link to='/resources/'>Resources</Link>
+      <Link to='/contact/'>Contact</Link>
+    </Nav>
+  </Footer>
 )
-export default Footer

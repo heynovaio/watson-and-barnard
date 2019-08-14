@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Font from "./font"
 import "./layout.css"
-
+import Footer from "./footer"
 // const data = useStaticQuery(graphql`
 //   query SiteTitleQuery {
 //     site {
@@ -22,8 +22,9 @@ import "./layout.css"
 const Layout = ({ children }) => {
   return (
     <>
-    <Font/>
+      <Font/>
       <main>{children}</main>
+      <Footer/>
     </>
   )
 }

@@ -25,7 +25,7 @@ const Home = styled.section`
   margin: 232px 0 84px;
   position: relative;
   ${mq('small')}{
-    margin: 24px 0 2731px;
+    margin: 24px 0 22px;
     min-height: 760px;
   }
   h2 {

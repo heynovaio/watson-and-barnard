@@ -80,7 +80,7 @@ const Box = styled.div`
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
   position: relative;
-  padding: 0 20px;
+  padding: 0 20px 27px;
   ${mq('small')}{
     min-height: 491px;
   }
