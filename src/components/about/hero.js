@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import {css} from "@emotion/core"
 //font-family: metropolis, sans-serif;
 //font-family: astoria, sans-serif;
 const About = styled.section`

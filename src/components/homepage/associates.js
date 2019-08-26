@@ -25,10 +25,9 @@ const mq = n => {
 }
 const Associates = styled.section`
   background-color: #f6f7fa;
-  padding: 105px 20px 53px;
+  padding: 105px 10px 53px;
   font-family: metropolis, sans-serif;
   text-align: center;
-  ${mq('small')}{ padding: 83px 0 62px }
   h2 {
     font-size: 50px;
     line-height: 1.28;
@@ -44,142 +43,65 @@ const Associates = styled.section`
     }
   }
   h3 {
+    font-family: metropolis, sans-serif;
     font-size: 21px;
     font-weight: bold;
     line-height: 1.33;
+    text-align: center;
     color: #172821;
-    margin: 0 0 8px;
-  }
-  p {
-    font-size: 16px;
-    line-height: 1.44;
-    color: #172821;
-    margin: 0;
+    margin: 18px 0 9px;
   }
 `
-const Developers = styled.div`
-  padding: 52px 10px 0;
-  img {
-    max-width: 139px;
-    margin: 0 auto 22px;
-  }
-  h3 {
-    min-height: 65px;
-    margin: 22px 0 -8px auto;
-    padding-top: 15px;
-  }
-  p {
-    min-height: 133px;
-    max-width: 298px;
-    margin: -8px auto 0 auto;
-    font-size: 18px;
-  }
-`
-const Residential = styled.div`
-  padding: 35px 10px 0;
-  img {
-    max-width: 127px;
-    margin: 0 auto 18px;
-  }
-  h3 {
-    margin: 8px auto 9px auto;
-    max-width: 285px;
-    min-height: 65px;
-  }
-  p {
-    max-width: 256.7px;
-    margin: 9px auto 0 auto;
-  }
-`
-const Architects = styled.div`
-  padding: 54px 10px 0;
-  img {
-    max-width: 134px;
-    margin: 0 auto 15px;
-  }
-  h3 {
-    max-width: 308px;
-    min-height: 65px;
-    margin: 0 auto -8px auto;
-    padding-top: 15px;
-  }
-  p {
-    margin: -8px auto 0 auto;
-    max-width: 298px;
-    font-size: 18px;
-  }
-`
-const Municipalities = styled.div`
-  padding: 44px 10px 0;
-  img {
-    max-width: 102px;
-    margin: 0 auto 23.5px auto;
-  }
-  h3 {
-    max-width: 307.8px;
-    min-height: 65px;
-    margin: 23.5px auto 4px auto;
-  }
-  p {
-    max-width: 298.2px;
-    margin: 4px auto 0 auto;
-    font-size: 18px;
-  }
-`
-const Home = styled.div`
-  padding: 62px 10px 0;
-  img {
-    max-width: 151px;
-    margin: 0 auto 27px;
-  }
-  h3 {
-    max-width: 308px;
-    margin: 27px auto -8px auto;
-    min-height: 65px;
-    padding-top: 15px;
-  }
-  p {
-    max-width: 298px;
-    margin: -8px auto 0 auto;
-    font-size: 18px;
-  }
-`
-const Nations = styled.div`
-  padding: 51px 10px 0;
-  img {
-    max-width: 161px;
-    margin: 0 auto 20.9px auto;
-  }
-  h3 {
-    max-width: 285px;
-    margin: 0 auto -8px auto;
-    min-height: 65px;
-    padding: 15px 0 0;
-  }
-  p {
-    margin: -8px auto 0 auto;
-    max-width: 298px;
-  }
-`
-const Flex = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+const ItemGallery = styled.div`
+  max-width: 1260px;
   margin: 0 auto;
-  div {
-    width: 360px;
-    height: 387px;
-    border-radius: 4px;
-    box-shadow: 2px 2px 13px 0 rgba(0, 0, 0, 0.03);
-    background-color: #ffffff;
-    margin: 30px;
-    ${mq('small')}{
-      margin: 10px;
-      height: 365px;
-    }
-    img {
-      display: block;
-    }
+`
+const ItemContainer = styled.div`
+  display: inline-block;
+  position: relative;
+  padding: 30px;
+  width: 33%;
+  vertical-align: top;
+  ${mq('medium')}{
+    width: 50%;
+  }
+  ${mq('small')}{
+    width: 100%;
+    padding: 10px;
+  }
+`
+const Item = styled.div`
+  margin: 0 auto;
+  min-height: 387px;
+  background-color: #ffffff;
+  padding: 35px 26px 20px;
+`
+const LilPar = styled.p`
+  font-family: metropolis, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.44;
+  text-align: center;
+  color: #172821;
+`
+const BigPar = styled.p`
+  font-family: metropolis, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.44;
+  text-align: center;
+  color: #172821;
+`
+const ImageContainer = styled.div`
+  height: 148px;
+  text-align: center;
+  position: relative;
+  img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 `
 const Button = styled.a`
@@ -199,51 +121,57 @@ const Button = styled.a`
 export default () => (
   <Associates>
     <h2>We Work With</h2>
-    <Flex>
-      <Developers>
-        <img src={helmetLogo}/>
-        <h3>Developers</h3>
-        <p>
-          Not knowing your land’s potential is your only obstacle.
-        </p>
-      </Developers>
-      <Residential>
-        <img src={homeLogo}/>
-        <h3>Residential and Urban Construction</h3>
-        <p>
-          Start off effectively right from the start
-          — ensure you meet all criteria and requirements.
-        </p>
-      </Residential>
-      <Architects>
-        <img src={archLogo}/>
-        <h3>Architects</h3>
-        <p>
-          Design courageously by knowing your limits and land restrictions.
-        </p>
-      </Architects>
-      <Municipalities>
-        <img src={buildingsLogo}/>
-        <h3>Municipalities and Government</h3>
-        <p>
-          Build to ensure a safe and functional community.
-        </p>
-      </Municipalities>
-      <Home>
-        <img src={fenceLogo}/>
-        <h3>Home/Property Owners</h3>
-        <p>“Good fences make good neighbors.” Be a good neighbor.</p>
-      </Home>
-      <Nations>
-        <img src={scrollLogo}/>
-        <h3>First Nations</h3>
-        <p>
-          We are familiar with, and sensitive to, the legislature
-          and agreements involved in the management of lands belonging
-          to the Musqueam and Tsawwassen First Nations.
-        </p>
-      </Nations>
-    </Flex>
+    <ItemGallery>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={helmetLogo} alt='HelmetLogo'/></ImageContainer>
+          <h3>Developers</h3>
+          <BigPar>Not knowing your land’s potential is your only obstacle.</BigPar>
+        </Item>
+      </ItemContainer>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={homeLogo} alt='homeLogo'/></ImageContainer>
+          <h3>Residential and Urban Construction</h3>
+          <LilPar>
+            Start off effectively right from the start  — ensure you meet all
+            criteria and requirements.
+          </LilPar>
+        </Item>
+      </ItemContainer>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={archLogo} alt='archLogo'/></ImageContainer>
+          <h3>Architects</h3>
+          <BigPar>Design courageously by knowing your limits and land restrictions.</BigPar>
+        </Item>
+      </ItemContainer>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={buildingsLogo} alt='buildingsLogo'/></ImageContainer>
+          <h3>Municipalities and Government</h3>
+          <BigPar>Build to ensure a safe and functional community. </BigPar>
+        </Item>
+      </ItemContainer>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={fenceLogo} alt='fenceLogo'/></ImageContainer>
+          <h3>Home/Property Owners</h3>
+          <BigPar>“Good fences make good neighbors.” Be a good neighbor. </BigPar>
+        </Item>
+      </ItemContainer>
+      <ItemContainer>
+        <Item>
+          <ImageContainer><img src={scrollLogo} alt='scrollLogo'/></ImageContainer>
+          <h3>First Nations</h3>
+          <LilPar>
+            We are familiar with, and sensitive to, the legislature and
+            agreements involved in the management of lands belonging to
+            the Musqueam and Tsawwassen First Nations.
+          </LilPar>
+        </Item>
+      </ItemContainer>
+    </ItemGallery>
     <Button>View Services</Button>
   </Associates>
 )

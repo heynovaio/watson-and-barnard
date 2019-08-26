@@ -1,6 +1,4 @@
 import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import styled from "@emotion/styled"
 import photo from "../../images/adobe-stock-4946677-preview@3x.jpg"
 import arrow from "../../images/bitmap@3x.png"

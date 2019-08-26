@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import arrow from "../images/bitmap@3x.png"
@@ -39,13 +38,15 @@ const ArrowLogo = styled.img`
 `
 /*Making title logo section*/
 const Title = () => (
-  <TitleStyle>
-    <div>W</div><div>atson</div>
-    <div>and</div>
-    <div>B</div><div>arnard</div>
-  </TitleStyle>
+  <Link to="/">
+    <TitleStyle>
+      <div>W</div><div>atson</div>
+      <div>and</div>
+      <div>B</div><div>arnard</div>
+    </TitleStyle>
+  </Link>
 )
-const TitleStyle = styled.div`
+const TitleStyle = styled.a`
   font-family: astoria, sans-serif;
   position: absolute;
   top: 0;
@@ -183,35 +184,32 @@ const Menu = styled.nav`
     }
   }
   div:first-child {
-    display: ${props => (props.page === 'home') ? 'none' : 'inline-block'};
+    display: none;
+    ${mq('small')}{ display: block }
+  }
+  div:nth-child(2) {
+    display: inline-block;
     ${mq('small')}{ display: block }
     &:hover ~ hr {
       margin-left: 0;
     }
   }
-  div:nth-child(2) {
-    display: ${props => props.page === 'services' ? 'none' : 'inline-block'};
-    ${mq('small')}{ display: block }
-    &:hover ~ hr {
-      margin-left: ${props => props.page === 'home' ? '0' : '25%'};
-    }
-  }
   div:nth-child(3) {
-    display: ${props => props.page === 'about' ? 'none' : 'inline-block'};
+    display: inline-block;
     ${mq('small')}{ display: block }
     &:hover ~ hr {
-      margin-left: ${props => props.page === 'home' || props.page ==='services' ? '25%' : '50%'};
+      margin-left: 25%;
     }
   }
   div:nth-child(4) {
-    display: ${props => props.page === 'resources' ? 'none' : 'inline-block'};
+    display: inline-block;
     ${mq('small')}{ display: block }
     &:hover ~ hr {
-      margin-left: ${props => props.page !== 'contact'  ? '50%' : '75%'};
+      margin-left: 50%;
     }
   }
   div:nth-child(5){
-    display: ${props => props.page === 'contact' ? 'none' : 'inline-block'};
+    display:inline-block;
     ${mq('small')}{ display: block }
     &:hover ~ hr {
       margin-left: 75%;
@@ -221,7 +219,7 @@ const Menu = styled.nav`
     background-color: ${props => (props.page === 'home') ? '#172821': 'white'};
     width: 25%;
     transition: .3s ease-in-out;
-    height: 7px;
+    height: 2px;
     margin: 0;
     border: none;
     ${mq('small')}{ display: none }

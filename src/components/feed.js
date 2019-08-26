@@ -213,8 +213,8 @@ export default () => (
               <h2>Contact us</h2>
               <h3>We'd love to hear from you</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Contact us to learn more about our services, get expert
+                advice or to request a quote. 
               </p>
               <Address>
                 <AddressItem>

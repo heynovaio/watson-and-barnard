@@ -83,9 +83,9 @@ const Center = styled.div`
   }
   img {
     position: absolute;
-    bottom: -45px;
-    right: 0px;
-    max-width: 528px;
+    bottom: -82px;
+    right: -12px;
+    max-width: 554px;
     ${mq('small')}{
       display: none;
     }

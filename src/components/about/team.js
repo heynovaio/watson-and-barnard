@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import {css} from "@emotion/core"
 import helmetGeek from "../../images/about-icon.svg"
 //font-family: metropolis, sans-serif;
 //font-family: astoria, sans-serif;
@@ -50,7 +49,7 @@ export default () => (
   <Team>
     <OuterContainer>
       <InnerContainer>
-        <img src={helmetGeek}/>
+        <img src={helmetGeek} alt='helmet'/>
         <Box>
           <p>
             <span>Our team</span> of skilled survey experts, engineers and development

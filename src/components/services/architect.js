@@ -79,7 +79,7 @@ const Center = styled.div`
 `
 const Box = styled.div`
   max-width: 566px;
-  min-height: 508px;
+  min-height: 572px;
   border-radius: 6px;
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
