@@ -156,7 +156,7 @@ export default () => (
         <Align>
           <h1>Land Surveying & Engineering with Integrity</h1>
           <p>
-            We care about your project as much as you do.
+            We care about your project as much as you do. Proudly surveying Delta since 1989.
           </p>
           <Button>Learn More<CustomArrow/></Button>
         </Align>
