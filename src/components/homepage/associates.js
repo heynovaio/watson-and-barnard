@@ -74,7 +74,8 @@ const Item = styled.div`
   margin: 0 auto;
   min-height: 387px;
   background-color: #ffffff;
-  padding: 35px 26px 20px;
+  padding: 35px 26px 0;
+  max-heihgt: 100%;
 `
 const LilPar = styled.p`
   font-family: metropolis, sans-serif;

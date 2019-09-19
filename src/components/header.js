@@ -325,8 +325,10 @@ const PhoneLogo = styled.div`
   top: 234px;
   color: #d3c190;
 `
-const Phone = styled.div`
+const Phone = styled.a`
   display: block;
+  color: #172821;
+  text-decoration: none;
   ${mq('small')}{display: none}
   transform: rotate(270deg);
   position: absolute;
@@ -349,14 +351,15 @@ const MailLogo = styled.div`
   top: 435px;
   color: #d3c190;
 `
-const Email = styled.div`
+const Email = styled.a`
   display: block;
+  color: #172821;
+  text-decoration: none;
   ${mq('small')}{display: none}
   transform: rotate(270deg);
   position: absolute;
-  left: -44px;
-  height: 39px;
-  top: 510px;
+  left: -77px;
+  top: 546px;
   padding-top: 9px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
@@ -368,9 +371,9 @@ export default props => (
     <ArrowLogo src={arrow} alt="main logo"/>
     <Title/>
     <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
-    <Phone>1 555 555 2525</Phone>
+    <Phone href="tel:604-943-9433">604.943.9433</Phone>
     <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
-    <Email>info@w&b.com</Email>
+    <Email href="mailto:info@wbsurveys.bc.ca">info@wbsurveys.bc.ca</Email>
     <Hamburger/>
     <MenuContainerOuter>
       <MenuContainerInner id="drop">{/*whole drop down*/}
