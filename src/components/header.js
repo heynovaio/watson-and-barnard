@@ -222,6 +222,13 @@ const Menu = styled.nav`
     height: 2px;
     margin: 0;
     border: none;
+    margin-left: ${props => {
+        if (props.page === 'about') return '25%';
+        else if (props.page === 'resources') return '50%';
+        else if (props.page === 'contact') return '75%';
+        else return '0';
+      }
+    };
     ${mq('small')}{ display: none }
   }
 `

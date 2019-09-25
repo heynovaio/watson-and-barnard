@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 const bp = {
   smaller: 300,
-  small: 500,
+  small: 680,
   tablet: 768,
   medium: 1024,
   large: 1200,
@@ -214,7 +214,7 @@ export default () => (
               <h3>We'd love to hear from you</h3>
               <p>
                 Contact us to learn more about our services, get expert
-                advice or to request a quote. 
+                advice or to request a quote.
               </p>
               <Address>
                 <AddressItem>

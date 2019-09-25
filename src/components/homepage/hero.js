@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
-import photo from "../../images/adobe-stock-4946677-preview@3x.jpg"
-import arrow from "../../images/bitmap@3x.png"
 import Circles from "../circles"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 const bp = {
   smaller: 300,
   small: 500,
@@ -20,7 +20,6 @@ const mq = n => {
   return result;
 }
 const Hero = styled.section`
-  background-color: #f6f7fa;
   font-family: metropolis, sans-serif;
   position: relative;
   h1 {
@@ -50,24 +49,6 @@ const Hero = styled.section`
       font-size: 20px;
       line-height: 1.4;
     }
-  }
-`
-const ImgContainer = styled.div`
-  margin: auto;
-  padding: 0 0 0 39px;
-  max-width: 1440px;
-  ${mq('small')}{ display: none }
-  div {
-    padding: 0 0 0 39px;
-    max-width: 1366px;
-    position: relative;
-  }
-  img {
-    position: absolute;
-    width: 707px;
-    top: 115px;
-    right: 0;
-    box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
   }
 `
 const OuterContainer = styled.div`
@@ -106,7 +87,6 @@ const Button = styled.a`
   line-height: 1.1;
   color: #eee4cb;
 `
-/*_________________________Custom Arrow______________________________*/
 const CustomArrow = () => (
   <CustomArrowStyle><div/><div/></CustomArrowStyle>
 )
@@ -120,11 +100,11 @@ const CustomArrowStyle = styled.div`
     position: absolute;
     width: 10px;
     height: 10px;
-    transform: rotate(45deg);
     border-style: solid;
     border-width: 2px 2px 0 0;
     right: 1px;
-    top: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
   }
   div:last-child {
     width: 40px;
@@ -133,38 +113,62 @@ const CustomArrowStyle = styled.div`
     border-width: 1px 0 1px 0;
     position: absolute;
     right: 0;
-    top: 9px
+    top: 50%;
+    transform: translateY(-50%);
   }
 `
+const ImgPositionOuter = styled.div`
+  margin: 0 auto;
+  padding: 0 0 0 39px;
+  max-width: 1440px;
+  ${mq('small')}{display: none}
+`
+const ImgPositionInner = styled.div`
+  position: relative;
+  max-width: 1364px;
+`
+const ImgContainer = styled.div`
+  position: absolute;
+  right: 0;
+  width: 707px;
+  top: 115px;
+  box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
+`
+const Photo = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "tout-img@3x.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 707) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+}
 const Mobile = styled.div`
   display: none;
-  img {
-    position: absolute;
-    width: 28.9px;
-    top: 36px;
-    left: 21px;
-  }
   ${mq('small')}{display: block}
 `
 export default () => (
   <Hero>
-    <ImgContainer>
-      <div><img src={photo} alt=""/></div>
-    </ImgContainer>
+    <ImgPositionOuter><ImgPositionInner>
+      <ImgContainer><Photo/></ImgContainer>
+    </ImgPositionInner></ImgPositionOuter>
     <OuterContainer>
       <GreenBox>
         <Align>
           <h1>Land Surveying & Engineering with Integrity</h1>
           <p>
-            We care about your project as much as you do. Proudly surveying Delta since 1989.
+            We care about your project as much as you do. Proudly surveying
+            Delta since 1989.
           </p>
           <Button>Learn More<CustomArrow/></Button>
         </Align>
       </GreenBox>
     </OuterContainer>
-    <Mobile>
-      <img src={arrow} alt=""/>
-      <Circles/>
-    </Mobile>
+    <Mobile><Circles/></Mobile>
   </Hero>
 )

@@ -6,9 +6,10 @@ import helmetLogo from "../../images/construction.svg"
 import fenceLogo from "../../images/shape.svg"
 import scrollLogo from "../../images/scroll.svg"
 import buildingsLogo from "../../images/buildings.svg"
+
 const bp = {
   smaller: 300,
-  small: 500,
+  small: 720,
   tablet: 768,
   medium: 1024,
   large: 1200,
@@ -75,7 +76,10 @@ const Item = styled.div`
   min-height: 387px;
   background-color: #ffffff;
   padding: 35px 26px 0;
-  max-heihgt: 100%;
+  max-height: 100%;
+  ${mq('small')}{
+    min-height:
+  }
 `
 const LilPar = styled.p`
   font-family: metropolis, sans-serif;
