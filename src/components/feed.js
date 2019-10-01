@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Map from "./GoogleMapWithMarker.js"
 import survey from "../images/survey.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
@@ -199,8 +198,13 @@ const ImgContainer = styled.div`
   }
 `
 const MapStyle = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 432px;
+  overflow: hidden;
+  iframe {
+    border: none;
+    height: 100%;
+  }
 `
 export default () => (
   <Feed>
@@ -238,12 +242,8 @@ export default () => (
       </GreenBox>
     </Half>
     <MapStyle>
-      <Map
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key="
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+      <iframe title="Google Map" src="https://snazzymaps.com/embed/188647" width="100%"></iframe>
     </MapStyle>
+
   </Feed>
 )

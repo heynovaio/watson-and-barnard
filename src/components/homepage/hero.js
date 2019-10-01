@@ -31,7 +31,7 @@ const Hero = styled.section`
     color: #eee4cb;
     font-weight: 600;
     max-width: 590px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       font-size: 26px;
       line-height: 1.42;
       letter-spacing: -0.3px;
@@ -45,7 +45,7 @@ const Hero = styled.section`
     font-size: 22px;
     line-height: 1.45;
     color: #ffffff;
-    ${mq('small')}{
+    ${mq('tablet')}{
       font-size: 20px;
       line-height: 1.4;
     }
@@ -63,7 +63,7 @@ const GreenBox = styled.div`
   background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
   min-height: 749px;
   ${mq('regular')}{ margin-right: 0 }
-  ${mq('small')}{
+  ${mq('tablet')}{
     margin-left: 0;
     padding-top: 205px;
     min-height: 705px;
@@ -121,7 +121,7 @@ const ImgPositionOuter = styled.div`
   margin: 0 auto;
   padding: 0 0 0 39px;
   max-width: 1440px;
-  ${mq('small')}{display: none}
+  ${mq('tablet')}{display: none}
 `
 const ImgPositionInner = styled.div`
   position: relative;
@@ -132,6 +132,8 @@ const ImgContainer = styled.div`
   right: 0;
   width: 707px;
   top: 115px;
+  border-radius: 6px;
+  overflow: hidden;
   box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
 `
 const Photo = () => {
@@ -150,7 +152,7 @@ const Photo = () => {
 }
 const Mobile = styled.div`
   display: none;
-  ${mq('small')}{display: block}
+  ${mq('tablet')}{display: block}
 `
 export default () => (
   <Hero>

@@ -36,7 +36,7 @@ const Associates = styled.section`
     min-height: 64px;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0;
+    margin: 0 0 20px;
     ${mq('small')}{
       font-size: 40px;
       line-height: 1.2;
@@ -77,6 +77,8 @@ const Item = styled.div`
   background-color: #ffffff;
   padding: 35px 26px 0;
   max-height: 100%;
+  box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.05);
+  border-radius: 6px;
   ${mq('small')}{
     min-height:
   }

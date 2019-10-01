@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import handShake from "../../images/rectangle@3x.jpg"
+import handShake from "../../images/handshake.jpg"
 const bp = {
   smaller: 300,
   small: 500,
@@ -20,10 +20,9 @@ const mq = n => {
 const Easy = styled.section`
   background-color: #092146;
   font-family: metropolis, sans-serif;
-  padding-right: 20px;
   h2 {
     max-width: 474px;
-    font-size: 36px;
+    font-size: 50px;
     line-height: 1.17;
     color: #ffffff;
     font-family: astoria, sans-serif;
@@ -59,7 +58,7 @@ const Center = styled.div`
 `
 const ImgContainer = styled.div`
   position: relative;
-  max-width: 585px;
+  width: 585px;
   margin-right: 615px;
   ${mq('small')}{ display:none }
 `
@@ -69,7 +68,6 @@ const Visible = styled.div`
   position: absolute;
   overflow: hidden;
   bottom: -29px;
-  div { width: 997.2px }
   img { width: 100% }
 `
 const TxtContainer = styled.div`
@@ -84,10 +82,11 @@ const TxtContainer = styled.div`
   }
   position: relative;
   background-color: #092146;
+  z-index: 2;
 `
 const UpperImgContainer = styled.div`
   position: relative;
-  width: 100vw;
+  width: 50vw;
   display: none;
   ${mq('small')}{ display:block }
   img {
@@ -97,7 +96,7 @@ const UpperImgContainer = styled.div`
 `
 export default () => (
   <Easy>
-    <UpperImgContainer><img src={handShake} alt=""/></UpperImgContainer>
+    <UpperImgContainer><img src={handShake} role="presentation" alt="Handshake"/></UpperImgContainer>
     <Center>
       <TxtContainer>
         <h2>How we Make it Easier For You</h2>
@@ -119,7 +118,7 @@ export default () => (
       </TxtContainer>
       <ImgContainer>
         <Visible>
-          <div><img src={handShake} alt=""/></div>
+          <div><img src={handShake} role="presentation" alt="Handshake"/></div>
         </Visible>
       </ImgContainer>
     </Center>

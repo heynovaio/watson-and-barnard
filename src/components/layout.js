@@ -10,18 +10,16 @@ import PropTypes from "prop-types"
 import Font from "./font"
 import "./layout.css"
 import Footer from "./footer"
-// const data = useStaticQuery(graphql`
-//   query SiteTitleQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//   }
-// `)
+import SEO from "../components/seo"
+
 const Layout = ({ children }) => {
   return (
     <>
+      <SEO
+        title="Watson &amp; Barnard Land Surveyors &amp; Engineers"
+        description="We are a private land survey firm situated in Delta, BC, Canada that has been serving the Lower Mainland and surrounding areas including Washington State since 1989."
+        keywords={[`land surveyors`,`Delta`,`engineers`,`land survey`,`Washington`,`BCLS`]}
+      />
       <Font/>
       <main>{children}</main>
       <Footer/>

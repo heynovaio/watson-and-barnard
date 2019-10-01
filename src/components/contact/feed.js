@@ -90,8 +90,12 @@ const Form = () => (
   </FormStyle>
 )
 const MapStyle = styled.div`
-  width: 100vw;
-  height: 432px;
+  width: 100%;
+  height: 500px;
+  iframe {
+    height: 100%;
+    border: none;
+  }
 `
 export default () => (
   <Feed>
@@ -102,12 +106,7 @@ export default () => (
       </PushRight>
     </Center>
     <MapStyle>
-      <Map
-        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key="
-        loadingElement={<div style={{ height: `100%` }} />}
-        containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
-      />
+      <iframe title="Google Map" src="https://snazzymaps.com/embed/188647" width="100%"></iframe>
     </MapStyle>
   </Feed>
 )

@@ -75,9 +75,9 @@ const GreenBox = styled.div`
 `
 const Center = styled.div`
   position: relative;
-  max-width: 1204px;
+  max-width: 1200px;
   margin: auto;
-  padding: 0 548px 0 59px;
+  padding: 0 548px 0 0;
   ${mq('small')}{
     padding: 0 20px 0;
   }

@@ -92,8 +92,9 @@ const ItemContainer = styled.div`
 const Item = styled.div`
   max-width: 590px;
   margin: 0 auto;
+  box-shadow: -5px 6px 15px 0 rgba(32,62,50,0.05);
   border-radius: 4px;
-  box-shadow: 2px 5px 16px 0 rgba(0, 0, 0, 0.07);
+  overflow: hidden;
   background-color: #ffffff;
 `
 const ImgContainer = styled.div`

@@ -30,9 +30,9 @@ const ArrowLogo = styled.img`
   max-width: 48px;
   top: 20px;
   left: 15px;
-  ${mq('small')}{
+  ${mq('tablet')}{
     width: 28.9px;
-    top: 36px;
+    top: 26px;
     left: 21px;
   }
 `
@@ -49,7 +49,7 @@ const Title = () => (
 const TitleStyle = styled.a`
   font-family: astoria, sans-serif;
   position: absolute;
-  top: 0;
+  top: -10px;
   div {
     color: #ffffff;
     position: absolute;
@@ -63,7 +63,7 @@ const TitleStyle = styled.a`
     letter-spacing: -1.62px;
     top: 43.9px;
     left: 90px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top: 40.9px;
       left: 60px;
     }
@@ -77,7 +77,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top:44px;
     left: 133px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top:41px;
       left: 103px;
     }
@@ -91,7 +91,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top:70px;
     left: 150.1px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top:64.9px;
       left: 120.1px;
     }
@@ -105,7 +105,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top: 90.9px;
     left: 106px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top:87.9px;
       left: 76px;
     }
@@ -119,7 +119,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top: 90.4px;
     left: 141.7px;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top: 87.4px;
       left: 111.7px;
     }
@@ -134,10 +134,13 @@ const MenuContainerOuter = styled.div`
 `
 /*Acts as Width for desktop*/
 const MenuContainerInner = styled.div`
-  max-width: 628px;
-  margin-left: 775px;
+  width: 46%;
+  margin: 0 0 0 auto;
   position: relative;
-  ${mq('small')}{
+  ${mq('medium')}{
+    width: 60%;
+  }
+  ${mq('tablet')}{
     display: none;
     position: fixed;
     top: 0;
@@ -145,15 +148,16 @@ const MenuContainerInner = styled.div`
     right: 0;
     left: 0;
     background-color: rgba(23, 40, 33, 0.91);
-    max-width: auto;
+    width: 100%;
     margin: 0;
   }
 `
 const Menu = styled.nav`
   width: 100%;
   position: absolute;
+  overflow: hidden;
   padding-top: 43px;
-  ${mq('small')} {
+  ${mq('tablet')} {
     width: auto;
     max-height: 330px;
     margin: 122px auto 61px;
@@ -163,7 +167,8 @@ const Menu = styled.nav`
   div {
     text-align: center;
     width: 25%;
-    ${mq('small')}{
+    margin-bottom: 8px;
+    ${mq('tablet')}{
       width: 100%;
       height: 20%;
       padding: 19px;
@@ -175,7 +180,7 @@ const Menu = styled.nav`
       font-weight: 600;
       font-size: 16px;
       text-decoration: none;
-      ${mq('small')}{
+      ${mq('tablet')}{
         color: white;
         font-size: 26px;
         line-height: 2.54px;
@@ -185,32 +190,32 @@ const Menu = styled.nav`
   }
   div:first-child {
     display: none;
-    ${mq('small')}{ display: block }
+    ${mq('tablet')}{ display: block }
   }
   div:nth-child(2) {
     display: inline-block;
-    ${mq('small')}{ display: block }
+    ${mq('tablet')}{ display: block }
     &:hover ~ hr {
       margin-left: 0;
     }
   }
   div:nth-child(3) {
     display: inline-block;
-    ${mq('small')}{ display: block }
+    ${mq('tablet')}{ display: block }
     &:hover ~ hr {
       margin-left: 25%;
     }
   }
   div:nth-child(4) {
     display: inline-block;
-    ${mq('small')}{ display: block }
+    ${mq('tablet')}{ display: block }
     &:hover ~ hr {
       margin-left: 50%;
     }
   }
   div:nth-child(5){
     display:inline-block;
-    ${mq('small')}{ display: block }
+    ${mq('tablet')}{ display: block }
     &:hover ~ hr {
       margin-left: 75%;
     }
@@ -222,14 +227,16 @@ const Menu = styled.nav`
     height: 2px;
     margin: 0;
     border: none;
+    overflow: hidden;
     margin-left: ${props => {
         if (props.page === 'about') return '25%';
+        else if (props.page === 'home') return '-50%';
         else if (props.page === 'resources') return '50%';
         else if (props.page === 'contact') return '75%';
         else return '0';
       }
     };
-    ${mq('small')}{ display: none }
+    ${mq('tablet')}{ display: none }
   }
 `
 const Exit = () => (
@@ -239,7 +246,7 @@ const Exit = () => (
 )
 const ExitStyle = styled.div`
   display: none;
-  ${mq('small')}{display: block}
+  ${mq('tablet')}{display: block}
   div {
     position: absolute;
     top: 38px;
@@ -266,7 +273,7 @@ const Hamburger = () => (
 )
 const HamburgerStyle = styled.div`
   display: none;
-  ${mq('small')}{display: block}
+  ${mq('tablet')}{display: block}
   width: 42px;
   height: 24px;
   position: fixed;
@@ -274,7 +281,7 @@ const HamburgerStyle = styled.div`
   right: 23px;
   div {
     position: absolute;
-    background-color: white;
+    background-color: #172821;
   }
   div:first-child {
     width: 42px;
@@ -297,7 +304,7 @@ const ContactStyle = styled.div`
   margin: 0 auto;
   position: relative;
   display: none;
-  ${mq('small')}{display: block}
+  ${mq('tablet')}{display: block}
   div {
     width: 74px;
     height: 74px;
@@ -319,13 +326,13 @@ const ContactStyle = styled.div`
 `
 const Contact = () => (
   <ContactStyle>
-    <div><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
-    <div><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
+    <div><FontAwesomeIcon className="icon" icon={faPhoneAlt}/></div>
+    <div><FontAwesomeIcon className="icon" icon={faEnvelope}/></div>
   </ContactStyle>
 )
 const PhoneLogo = styled.div`
   display: block;
-  ${mq('small')}{display: none}
+  ${mq('tablet')}{display: none}
   width: 39px;
   position: absolute;
   text-align: center;
@@ -336,7 +343,7 @@ const Phone = styled.a`
   display: block;
   color: #172821;
   text-decoration: none;
-  ${mq('small')}{display: none}
+  ${mq('tablet')}{display: none}
   transform: rotate(270deg);
   position: absolute;
   left: -46px;
@@ -351,7 +358,7 @@ const Phone = styled.a`
 `
 const MailLogo = styled.div`
   display: block;
-  ${mq('small')}{display: none}
+  ${mq('tablet')}{display: none}
   width: 39px;
   position: absolute;
   text-align: center;
@@ -362,7 +369,7 @@ const Email = styled.a`
   display: block;
   color: #172821;
   text-decoration: none;
-  ${mq('small')}{display: none}
+  ${mq('tablet')}{display: none}
   transform: rotate(270deg);
   position: absolute;
   left: -77px;
