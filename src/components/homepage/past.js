@@ -30,28 +30,29 @@ const Friends = styled.section`
   padding: 138px 20px 117px;
   ${mq('small')}{ padding: 41px 10px 73px }
   h2 {
-    min-eight: 52px;
     font-size: 50px;
     line-height: 1.04;
     text-align: center;
     color: #172821;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0 10px 22px;
+    margin: 0 10px 16px;
     ${mq('small')}{
       font-size: 40px;
       line-height: 1.2;
-      margin-bottom: 32px;
     }
   }
   p {
     max-width: 852px;
-    min-height: 92px;
     font-size: 20px;
     line-height: 1.4;
     text-align: center;
     color: #172821;
-    margin: 22px auto 26px;
+    margin: 0 auto 26px;
+    padding: 0 10px;
+    ${mq('small')}{
+      font-size: 16px;
+    }
   }
 `
 const Gallery = styled.div`

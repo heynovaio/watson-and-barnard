@@ -2,9 +2,28 @@ import React from "react"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+
+const bp = {
+  smaller: 300,
+  small: 500,
+  tablet: 768,
+  medium: 1024,
+  large: 1200,
+  regular: 1440,
+}
+const mq = n => {
+  const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
+  const [result] = bpArray.reduce((acc, [name, size]) => {
+    if (n === name) return [...acc, `@media (max-width: ${size}px)`];
+    return acc;
+  }, []);
+  return result;
+}
+
 const Hero = styled.section`
   position: relative;
   font-family: metropolis, sans-serif;
+  z-index: 2;
   h1 {
     font-family: astoria, sans-serif;
     font-size: 100px;
@@ -14,17 +33,30 @@ const Hero = styled.section`
     text-align: center;
     color: #eee4cb;
     margin: 0 0 40px;
+    ${mq('tablet')}{
+      font-family: metropolis, sans-serif;
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.09;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
   }
   p {
     max-width: 598px;
-    min-height: 96px;
     font-size: 22px;
     line-height: 1.45;
     text-align: center;
     color: #ffffff;
     margin: 40px auto 0;
+    ${mq('tablet')}{
+      max-width: 304px;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #ffffff;
+    }
   }
-  .icon {
+  svg {
     max-height: 36px;
     margin: auto;
     display: block;
@@ -40,10 +72,24 @@ const GreenBox = styled.div`
   border-radius: 0 0 0 6px;
   box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.07);
   background-image: linear-gradient(to bottom, #4e8672, #386656);
+  min-height: 636px;
+  ${mq('regular')}{ margin-right: 0 }
+  ${mq('tablet')}{
+    max-width: 100%;
+    min-height: 258px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #ffffff;
+    left: 0;
+    text-align: center;
+  }
 `
 const Container = styled.div`
   position: relative;
   padding: 303px 20px 130px;
+  ${mq('tablet')}{
+    padding: 194px 20px 40px;
+  }
 `
 const FlexContainer = styled.div`
   position: relative;
@@ -56,13 +102,27 @@ const FlexBox = styled.div`
   margin: auto;
   width: 100%;
   position: absolute;
-  top: -83px;
+  top: -28px;
+  flex-wrap: wrap;
+  ${mq('tablet')}{
+    position: relative;
+    text-align: center;
+    justify-content: center;
+  }
 `
 const Item = styled.div`
   padding: 22px 10px 43px;
   min-height: 225px;
+  a {
+    text-decoration: none;
+  }
+  ${mq('tablet')}{
+    min-height: 0;
+    padding: 0px 24px 4a0px;
+  }
 `
-const Circle = styled.div`
+const Circle = styled.a`
+  display: block;
   width: 87px;
   height: 87px;
   box-shadow: 0 2px 4px 0 rgba(78, 78, 78, 0.11);
@@ -78,8 +138,11 @@ const Title = styled.div`
   text-align: center;
   color: #505d68;
   margin: 17px 0 2px;
+  ${mq('tablet')}{
+    color: #fff;
+  }
 `
-const Content = styled.div`
+const Content = styled.a`
   max-width: 166px;
   min-height: 24px;
   font-size: 18px;
@@ -87,6 +150,9 @@ const Content = styled.div`
   text-align: center;
   color: #172821;
   margin: 2px 0 0;
+  ${mq('tablet')}{
+    color: #fff;
+  }
 `
 export default () => (
   <Hero>
@@ -94,27 +160,25 @@ export default () => (
     <Container>
       <h1>Contact Us</h1>
       <p>
-        Hexagon fashion axe authentic chartreuse. Green juice kale chips
-        irony chicharrones bicycle rights chartreuse, lo-fi put a bird
-         on it marfa poke tousled.
+        Contact us to learn more about our services, get expert advice or to request a quote.
       </p>
     </Container>
     <FlexContainer>
       <FlexBox>
         <Item>
-          <Circle><FontAwesomeIcon class="icon" icon={faEnvelope}/></Circle>
+          <Circle tabindex="-1" href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></Circle>
           <Title>Email</Title>
-          <Content>info@form.com</Content>
+          <Content href="mailto:info@wbsurveys.bc.ca">info@wbsurveys.bc.ca</Content>
         </Item>
         <Item>
-          <Circle><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></Circle>
+          <Circle href="tel:604.943.9433"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></Circle>
           <Title>Phone</Title>
-          <Content>601-199-0349</Content>
+          <Content href="tel:604.943.9433">604-943-9433</Content>
         </Item>
         <Item>
           <Circle><FontAwesomeIcon class="icon" icon={faMapMarkerAlt}/></Circle>
           <Title>Address</Title>
-          <Content>053 Braulio Field</Content>
+          <Content>1524 56 St, Delta, BC </Content>
         </Item>
       </FlexBox>
     </FlexContainer>

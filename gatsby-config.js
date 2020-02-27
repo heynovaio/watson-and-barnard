@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/staging`,
   siteMetadata: {
     title: `Watson & Barnard Land Surveyors & Engineers`,
     description: `We are a private land survey firm situated in Delta, BC, Canada that has been serving the Lower Mainland and surrounding areas including Washington State since 1989.`,

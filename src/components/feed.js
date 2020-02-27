@@ -111,13 +111,20 @@ const AddressItem = styled.div`
   padding-left: 40px;
   position: relative;
   margin: 23px 0;
-  .icon {
+  svg {
     position: absolute;
     max-width: 22px;
     max-height: 22px;
     left: 5px;
     text-align: center;
     color: #eee4cb;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #d3c190;
+    }
   }
 `
 const FormStyle = styled.form`
@@ -134,6 +141,7 @@ const FormStyle = styled.form`
     top: 0;
     margin-top: 58px;
   }
+  input[type=email],
   input[type=text] {
     width: 100%;
     height: 40px;
@@ -172,19 +180,20 @@ const FormStyle = styled.form`
   }
 `
 const Form = () => (
-  <FormStyle>
-    Email Address
-    <input type="text"/>
-    Project Type
-    <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </select>
-    Write us a message
-    <textarea/>
-    <input type="submit"/>
+  <FormStyle action="https://formspree.io/info@wbsurveys.bc.ca" method="POST">
+    <label for="email">
+      Email Address
+    </label>
+    <input name="email" type="email" id="email" />
+    <label for="name">
+      Name
+    </label>
+    <input id="name" name="name" type="text"/>
+    <label for="message">
+      Write us a message
+    </label>
+    <textarea id="message" name="message"></textarea>
+    <input type="submit" value="submit" />
   </FormStyle>
 )
 const ImgContainer = styled.div`
@@ -222,15 +231,19 @@ export default () => (
               </p>
               <Address>
                 <AddressItem>
-                  123 Address, Delta BC
+                  1524 56 St, Delta, BC
                   <FontAwesomeIcon class="icon" icon={faMapMarkerAlt}/>
                 </AddressItem>
                 <AddressItem>
-                  000-000-0000
+                  <a href="tel:604.943.9433">
+                    604-943-9433
+                  </a>
                   <FontAwesomeIcon class="icon" icon={faPhoneAlt}/>
                 </AddressItem>
                 <AddressItem>
-                  email@address.com
+                  <a href="mailto:info@wbsurveys.bc.ca">
+                    info@wbsurveys.bc.ca
+                  </a>
                   <FontAwesomeIcon class="icon" icon={faEnvelope}/>
                 </AddressItem>
                 <img src={survey} alt=""/>

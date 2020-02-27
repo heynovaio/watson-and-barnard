@@ -22,7 +22,7 @@ const mq = n => {
 }
 const Header = styled.header`
   position: relative;
-  z-index: 1;
+  z-index: 3;
   font-family: metropolis, sans-serif;
 `
 const ArrowLogo = styled.img`
@@ -186,6 +186,9 @@ const Menu = styled.nav`
         line-height: 2.54px;
         letter-spacing: -0.3px;
       }
+      &:hover {
+        color: #d3c190;
+      }
     }
   }
   div:first-child {
@@ -305,7 +308,9 @@ const ContactStyle = styled.div`
   position: relative;
   display: none;
   ${mq('tablet')}{display: block}
-  div {
+  a {
+    display: block;
+    text-decoration: none;
     width: 74px;
     height: 74px;
     border-radius: 50%;
@@ -315,8 +320,9 @@ const ContactStyle = styled.div`
     padding-top: 21px;
     color: #d3c190;
     position: absolute;
+    font-size: 30px;
   }
-  .icon {
+  svg {
     width: 30px;
     display: block;
     margin: auto;
@@ -326,8 +332,8 @@ const ContactStyle = styled.div`
 `
 const Contact = () => (
   <ContactStyle>
-    <div><FontAwesomeIcon className="icon" icon={faPhoneAlt}/></div>
-    <div><FontAwesomeIcon className="icon" icon={faEnvelope}/></div>
+    <a href="tel:604-943-9433"><FontAwesomeIcon className="icon" icon={faPhoneAlt}/></a>
+    <a href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon className="icon" icon={faEnvelope}/></a>
   </ContactStyle>
 )
 const PhoneLogo = styled.div`
@@ -336,8 +342,9 @@ const PhoneLogo = styled.div`
   width: 39px;
   position: absolute;
   text-align: center;
-  top: 234px;
+  top: 225px;
   color: #d3c190;
+  padding: 9px 9px 0px;
 `
 const Phone = styled.a`
   display: block;
@@ -349,7 +356,7 @@ const Phone = styled.a`
   left: -46px;
   bottom: 390px;
   height: 39px;
-  top: 310px;
+  top: 300px;
   padding-top: 12px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
@@ -362,8 +369,9 @@ const MailLogo = styled.div`
   width: 39px;
   position: absolute;
   text-align: center;
-  top: 435px;
+  top: 410px;
   color: #d3c190;
+  padding: 9px 9px 0px;
 `
 const Email = styled.a`
   display: block;
@@ -373,12 +381,13 @@ const Email = styled.a`
   transform: rotate(270deg);
   position: absolute;
   left: -77px;
-  top: 546px;
+  top: 522px;
   padding-top: 9px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.7px;
+
 `
 export default props => (
   <Header>

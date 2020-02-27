@@ -50,9 +50,9 @@ export default () => (
     <Box>
       <h2>Check out these helpful links:</h2>
       <Container>
-        <div><a><FontAwesomeIcon icon={faLink}/> Association of BC Land Surveyors</a></div>
-        <div><a><FontAwesomeIcon icon={faLink}/> Engineers & Geoscientists British Columbia</a></div>
-        <div><a><FontAwesomeIcon icon={faLink}/> Association of Canada Lands Surveyors</a></div>
+        <div><a href="#"><FontAwesomeIcon icon={faLink}/> Association of BC Land Surveyors</a></div>
+        <div><a href="#"><FontAwesomeIcon icon={faLink}/> Engineers & Geoscientists British Columbia</a></div>
+        <div><a href="#"><FontAwesomeIcon icon={faLink}/> Association of Canada Lands Surveyors</a></div>
       </Container>
     </Box>
   </Links>

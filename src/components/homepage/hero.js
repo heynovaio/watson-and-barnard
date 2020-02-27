@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import Circles from "../circles"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
 const bp = {
   smaller: 300,
   small: 500,
@@ -19,11 +20,12 @@ const mq = n => {
   }, []);
   return result;
 }
+
 const Hero = styled.section`
   font-family: metropolis, sans-serif;
   position: relative;
   h1 {
-    margin: 0 0 14px;
+    margin: 0 0 6px;
     min-height: 170px;
     font-size: 49px;
     line-height: 1.06;
@@ -39,7 +41,7 @@ const Hero = styled.section`
     }
   }
   p {
-    margin: 14px 0 44px;
+    margin: 4px 0 24px;
     max-width: 543px;
     min-height: 32px;
     font-size: 22px;
@@ -58,7 +60,7 @@ const OuterContainer = styled.div`
 `
 const GreenBox = styled.div`
   margin: 0 -55px 0 39px;
-  padding: 274px 20px 20px;
+  padding: 232px 20px 20px;
   border-radius: 0 0 6px 6px;
   background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
   min-height: 749px;
@@ -74,10 +76,9 @@ const Align = styled.div`
   margin-left: auto;
 `
 const Button = styled.a`
-  margin: 44px 0 0;
-  padding: 22px 0 0 33px;
-  display: block;
-  width: 231px;
+  margin: 13px 0 0;
+  padding: 22px 80px 0 33px;
+  display: inline-block;
   height: 65px;
   box-shadow: 5px 2px 14px 0 rgba(23, 40, 33, 0.52);
   background-color: #172821;
@@ -86,6 +87,16 @@ const Button = styled.a`
   font-weight: bold;
   line-height: 1.1;
   color: #eee4cb;
+  text-decoration: none;
+  transition: all .25s;
+  &:hover {
+    background: #eee4cb;
+    color: #396859;
+    padding-right: 100px;
+    div:last-child {
+      width: 55px;
+    }
+  }
 `
 const CustomArrow = () => (
   <CustomArrowStyle><div/><div/></CustomArrowStyle>
@@ -115,6 +126,7 @@ const CustomArrowStyle = styled.div`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+    transition: width .25s;
   }
 `
 const ImgPositionOuter = styled.div`
@@ -164,10 +176,9 @@ export default () => (
         <Align>
           <h1>Land Surveying & Engineering with Integrity</h1>
           <p>
-            We care about your project as much as you do. Proudly surveying
-            Delta since 1989.
+            Providing quality service in Delta and the Lower Mainland for over 45 years with a dynamic multidisciplinary team ready to take on any challenge.
           </p>
-          <Button>Learn More<CustomArrow/></Button>
+          <Button href="/services">Learn More<CustomArrow/></Button>
         </Align>
       </GreenBox>
     </OuterContainer>

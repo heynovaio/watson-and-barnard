@@ -4,20 +4,20 @@ import helmetGeek from "../../images/about-icon.svg"
 //font-family: metropolis, sans-serif;
 //font-family: astoria, sans-serif;
 const Team = styled.section`
-  padding: 59px 20px 87px;
+  padding: 85px 20px 95px;
   font-family: metropolis, sans-serif;
   p {
-    min-height: 332px;
     font-size: 20px;
     line-height: 1.35;
-    letter-spacing: 0.08px;
     color: #172821;
+    margin: 0;
+    padding-bottom: 30px;
   }
   span {
     font-size: 36px;
     letter-spacing: 0.14px;
     font-family: astoria, sans-serif;
-    font-weight: 200;
+    font-weight: 500;
     line-height: 1.35px;
   }
   img {

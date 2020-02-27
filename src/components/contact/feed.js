@@ -1,12 +1,29 @@
 import React from "react"
 import styled from "@emotion/styled"
 import survey from "../../images/survey.svg"
-import Map from "../GoogleMapWithMarker.js"
+
+const bp = {
+  smaller: 300,
+  small: 500,
+  tablet: 768,
+  medium: 1024,
+  large: 1200,
+  regular: 1440,
+}
+const mq = n => {
+  const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
+  const [result] = bpArray.reduce((acc, [name, size]) => {
+    if (n === name) return [...acc, `@media (max-width: ${size}px)`];
+    return acc;
+  }, []);
+  return result;
+}
+
 const Feed = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
 `
-const Center = styled.div`
+const Center = styled.div`    padding: 75px 0 127px;
   max-width: 1064px;
   margin: 0 auto;
   position: relative;
@@ -16,6 +33,9 @@ const Center = styled.div`
     right: 0;
     top: 188px;
     margin: 0;
+    ${mq('tablet')}{
+      display: none;
+    }
   }
 `
 const PushRight = styled.div`
@@ -29,6 +49,10 @@ const FormStyle = styled.form`
   font-family: metropolis, sans-serif;
   padding: 197px 0 127px;
   margin: 0 0 0 auto;
+  ${mq('tablet')}{
+    padding-top: 0px;
+  }
+  input[type=email],
   input[type=text] {
     width: 100%;
     height: 40px;
@@ -74,19 +98,20 @@ const FormStyle = styled.form`
   }
 `
 const Form = () => (
-  <FormStyle>
-    Email Address
-    <input type="text"/>
-    Project Type
-    <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
-    </select>
-    Write us a message
-    <textarea/>
-    <input type="submit"/>
+  <FormStyle action="https://formspree.io/info@wbsurveys.bc.ca" method="POST">
+    <label for="email">
+      Email Address
+    </label>
+    <input name="email" type="email" id="email" />
+    <label for="name">
+      Name
+    </label>
+    <input id="name" name="name" type="text"/>
+    <label for="message">
+      Write us a message
+    </label>
+    <textarea id="message" name="message"></textarea>
+    <input type="submit" value="submit" />
   </FormStyle>
 )
 const MapStyle = styled.div`

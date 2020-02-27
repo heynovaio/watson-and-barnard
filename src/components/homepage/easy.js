@@ -29,7 +29,6 @@ const Easy = styled.section`
     font-weight: 400;
     margin: 0 0 34px;
     ${mq('small')}{
-      min-height: 96px;
       font-size: 40px;
       line-height: 1.2;
       max-width: 335px;
@@ -38,7 +37,6 @@ const Easy = styled.section`
   }
   p {
     max-width: 555px;
-    min-height: 381px;
     font-size: 16px;
     line-height: 1.5;
     color: #ffffff;
@@ -60,56 +58,45 @@ const ImgContainer = styled.div`
   position: relative;
   width: 585px;
   margin-right: 615px;
-  ${mq('small')}{ display:none }
+  ${mq('tablet')}{ width: auto; max-width: 100%; margin-right: 0;}
 `
 const Visible = styled.div`
   width: 100%;
-  height: 593px;
   position: absolute;
   overflow: hidden;
   bottom: -29px;
-  img { width: 100% }
+  margin: 0;
+  img {
+    width: 100%;
+    margin-bottom: 0;
+    display: block;
+  }
+  ${mq('tablet')}{
+    position: relative; bottom: auto; height: auto;
+  }
+
 `
 const TxtContainer = styled.div`
   max-width: 575px;
-  min-height: 600px;
   margin-left: auto;
-  padding: 67px 0 20px 20px;
+  padding: 67px 20px 60px 20px;
   ${mq('small')}{
     padding-top: 46px;
-    min-height: 724px;
     margin-right: auto;
   }
   position: relative;
   background-color: #092146;
   z-index: 2;
 `
-const UpperImgContainer = styled.div`
-  position: relative;
-  width: 50vw;
-  display: none;
-  ${mq('small')}{ display:block }
-  img {
-    width: 100%;
-    margin: 0;
-  }
-`
 export default () => (
   <Easy>
-    <UpperImgContainer><img src={handShake} role="presentation" alt="Handshake"/></UpperImgContainer>
     <Center>
       <TxtContainer>
         <h2>How we Make it Easier For You</h2>
         <p>
-          We could tell you that we’ve been servicing Delta
-          and the Lower Mainland for over 40 years. We could tell
-          you that our team of survey experts, engineers and development
-          consultants are highly-skilled, friendly and professional.
-          We could tell you that we understand and apply the most
-          current technology and equipment in our practice. We could
-          tell you that we have a deep understanding of local development
-          and building permit processes. But we’ll simply tell you
-          that <span>we genuinely care about your project.</span><br/><br/>
+          Our team of survey experts, engineers, and development consultants are highly-skilled, friendly and professional, and we apply the most current technology and equipment in our practice. With an in-depth understanding of local development and building permit processes, we will help you achieve all your project’s goals.
+        </p>
+        <p>
           Our team is committed to providing surveying services to all related
           professionals with integrity, excellence and accuracy, and can
           be reached anytime over the phone, behind a screen or in person

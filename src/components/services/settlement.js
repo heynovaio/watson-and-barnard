@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import pic from "../../images/1055059750@3x.jpg"
+import Pic from "./images/settlement-monitoring"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const bp = {
@@ -22,23 +22,22 @@ const mq = n => {
 const Settlement = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 84px 0 266px;
+  margin: 82px 0 182px;
   position: relative;
-  ${mq('small')}{
+  ${mq('tablet')}{
     margin: 28px 0 22px;
     min-height: 761px;
   }
   h2 {
-    min-height: 72px;
     font-family: astoria, sans-serif;
     font-size: 36px;
     font-weight: normal;
     line-height: 1.17;
     letter-spacing: normal;
     color: #34594c;
-    margin: 0 0 -12px;
-    ${mq('small')}{
-      min-height: 89px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    ${mq('tablet')}{
       font-size: 36px;
       line-height: 1.17;
       margin-bottom: 5px;
@@ -51,7 +50,7 @@ const Settlement = styled.section`
     line-height: 1.5;
     color: #172821;
     max-width: 428px;
-    margin: -12px 0 21px;
+    margin: 0 0 20px;
   }
 `
 const Center = styled.div`
@@ -59,14 +58,14 @@ const Center = styled.div`
   margin: auto;
   position: relative;
   padding: 0;
-  ${mq('small')}{position: static}
+  ${mq('tablet')}{position: static; display: block;}
   img {
     position: absolute;
     right: 0;
     bottom: -124px;
     max-width: 555px;
     margin: 0;
-    ${mq('small')}{
+    ${mq('tablet')}{
       bottom: 0;
       height: 350px;
       max-width: auto;
@@ -76,43 +75,29 @@ const Center = styled.div`
 `
 const Box = styled.div`
   max-width: 566px;
-  min-height: 508px;
   border-radius: 6px;
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
   position: relative;
-  padding: 0 20px;
-  ${mq('small')}{
+  padding: 35px;
+  ${mq('tablet')}{
     min-height: 491px;
   }
 `
 const Content = styled.div`
   max-width: 494px;
-  margin-left: auto;
-  padding: 39px 0 0;
+  margin-left: 0;
   ${mq('small')}{
     padding-top: 20px;
   }
 `
 const List = styled.div`
   position: relative;
-  div {
-    padding: 4px 9px 0 40px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #172821;
-  }
-  div:first-child{
-    margin: 21px 0 6px;
-    min-height: 56px;
-  }
-  div:nth-child(2){
-    min-height: 58px;
-    margin: 6px 0 9px;
-  }
-  div:last-child{
-    margin: 9px 0 23px;
-    min-height: 55px;
+  line-height: 1.5;
+  font-size: 16px;
+  > div{
+    max-width: 479px;
+    padding:4px 9px 12px 40px;
   }
   .mark {
     position: absolute;
@@ -131,15 +116,33 @@ const Button = styled.a`
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 23px 0 0;
-  ${mq('small')}{
+  margin: 20px 0 0;
+  text-decoration: none;
+  transition: all .25s;
+  &:hover {
+    background: #396859;
+  }
+  ${mq('tablet')}{
     width: auto;
+  }
+`
+const ImgContainer = styled.div`
+  max-width: 550px;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  ${mq('tablet')}{
+    bottom: 0;
+    top: auto;
   }
 `
 export default () => (
   <Settlement>
     <Center>
-      <img src={pic} alt=""/>
+      <ImgContainer>
+        <Pic/>
+      </ImgContainer>
       <Box>
         <Content>
           <h2>Settlement Monitoring</h2>
@@ -162,7 +165,7 @@ export default () => (
               control plan
             </div>
           </List>
-          <Button>ask us a question</Button>
+          <Button href="/contact">Learn More</Button>
         </Content>
       </Box>
     </Center>

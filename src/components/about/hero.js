@@ -1,7 +1,23 @@
 import React from "react"
 import styled from "@emotion/styled"
-//font-family: metropolis, sans-serif;
-//font-family: astoria, sans-serif;
+
+const bp = {
+  smaller: 300,
+  small: 500,
+  tablet: 768,
+  medium: 1024,
+  large: 1200,
+  regular: 1440,
+}
+const mq = n => {
+  const bpArray = Object.keys(bp).map(key => [key, bp[key]]);
+  const [result] = bpArray.reduce((acc, [name, size]) => {
+    if (n === name) return [...acc, `@media (max-width: ${size}px)`];
+    return acc;
+  }, []);
+  return result;
+}
+
 const About = styled.section`
   position: relative;
   font-family: metropolis, sans-serif;
@@ -15,6 +31,14 @@ const About = styled.section`
     color: #eee4cb;
     height: 53px;
     margin: 0 auto 40px;
+    ${mq('tablet')}{
+      font-family: metropolis, sans-serif;
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.09;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
   }
   p {
     font-family: metropolis, sans-serif;
@@ -25,6 +49,13 @@ const About = styled.section`
     max-width: 598px;
     margin: 40px auto 0;
     min-height: 96px;
+    ${mq('tablet')}{
+      max-width: 304px;
+      min-height: 258px;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #ffffff;
+    }
   }
 `
 const Green = styled.div`
@@ -36,11 +67,25 @@ const Green = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
+  ${mq('regular')}{ margin-right: 0 }
+  ${mq('tablet')}{
+    max-width: 100%;
+    min-height: 258px;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #ffffff;
+    left: 0;
+    text-align: center;
+  }
 `
 const Content = styled.div`
   position: relative;
   padding: 303px 0 20px;
   min-height: 636px;
+  ${mq('tablet')}{
+    padding: 194px 20px 40px;
+    min-height: 520px;
+  }
 `
 export default () => (
   <About>

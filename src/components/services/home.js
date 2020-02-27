@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import pic from "../../images/1055059750@3x.jpg"
+import Pic from "./images/strata-surveys"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const bp = {
@@ -22,21 +22,22 @@ const mq = n => {
 const Home = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 232px 0 84px;
+  margin: 82px 0;
   position: relative;
-  ${mq('small')}{
+  ${mq('tablet')}{
     margin: 24px 0 22px;
     min-height: 760px;
   }
   h2 {
-    min-height: 72px;
     font-family: astoria, sans-serif;
     font-size: 36px;
     font-weight: normal;
     line-height: 1.17;
+    letter-spacing: normal;
     color: #34594c;
-    margin: 0 0 28px;
-    ${mq('small')}{
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    ${mq('tablet')}{
       min-height: 89px;
       font-size: 36px;
       line-height: 1.17;
@@ -50,8 +51,8 @@ const Home = styled.section`
     line-height: 1.5;
     color: #172821;
     max-width: 428px;
-    margin: 28px 0 21px;
-    ${mq('small')}{
+    margin: 0px 0 20px;
+    ${mq('tablet')}{
       min-height: 97px;
       margin: 5px 0 17px;
     }
@@ -62,14 +63,14 @@ const Center = styled.div`
   margin: auto;
   position: relative;
   padding: 0;
-  ${mq('small')}{position: static}
+  ${mq('tablet')}{position: static}
   img {
     position: absolute;
     left: 0;
     top: -76px;
     max-width: 555px;
     margin: 0;
-    ${mq('small')}{
+    ${mq('tablet')}{
       top: auto;
       bottom: 0;
       height: 350px;
@@ -80,44 +81,30 @@ const Center = styled.div`
 `
 const Box = styled.div`
   max-width: 566px;
-  min-height: 508px;
   border-radius: 6px;
   box-shadow: 5px 5px 20px 0 rgba(9, 9, 9, 0.08);
   background-color: #ffffff;
   position: relative;
-  padding: 0 20px 26px;
+  padding: 35px;
   margin: 0 0 0 auto;
-  ${mq('small')}{
+  ${mq('tablet')}{
     min-height: 491px;
   }
 `
 const Content = styled.div`
   max-width: 494px;
-  margin-left: auto;
-  padding: 39px 0 0;
+  margin-left: 0;
   ${mq('small')}{
     padding-top: 20px;
   }
 `
 const List = styled.div`
   position: relative;
-  div {
-    padding: 4px 0 9px 40px;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #172821;
-  }
-  div:first-child {
-    margin: 21px 0 12px;
-    min-height: 30px;
-  }
-  div:nth-child(2){
-    margin: 12px 0 12px;
-    min-height: 48px;
-  }
-  div:last-child{
-    margin: 12px 0 35px;
-    min-height: 30px;
+  line-height: 1.5;
+  font-size: 16px;
+  > div{
+    max-width: 479px;
+    padding:4px 9px 12px 40px;
   }
   .mark {
     position: absolute;
@@ -136,15 +123,33 @@ const Button = styled.a`
   background-color: #172821;
   padding: 14px 0 0;
   height: 54px;
-  margin: 35px 0 0;
-  ${mq('small')}{
+  margin: 20px 0 0;
+  text-decoration: none;
+  transition: all .25s;
+  &:hover {
+    background: #396859;
+  }
+  ${mq('tablet')}{
     width: auto;
+  }
+`
+const ImgContainer = styled.div`
+  max-width: 550px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -40px;
+  ${mq('tablet')}{
+    bottom: 0;
+    top: auto;
   }
 `
 export default () => (
   <Home>
     <Center>
-      <img src={pic} alt=""/>
+      <ImgContainer>
+        <Pic/>
+      </ImgContainer>
       <Box>
         <Content>
           <h2>Strata Surveys and Air Space Plans</h2>
@@ -164,7 +169,7 @@ export default () => (
               Residential and commercial-scale projects
             </div>
           </List>
-          <Button>ask us a question</Button>
+          <Button href="/contact">Learn More</Button>
         </Content>
       </Box>
     </Center>

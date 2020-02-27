@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Pic from "./images/subdivisions-legal-surveys"
+import Pic from "./images/settlement-monitoring"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const bp = {
@@ -19,12 +19,12 @@ const mq = n => {
   }, []);
   return result;
 }
-const Property = styled.section`
+const Laser = styled.section`
   padding: 0 20px;
   font-family: metropolis, sans-serif;
-  margin: 82px 0 183px;
+  margin: 82px 0 182px;
   position: relative;
-  ${mq('small')}{
+  ${mq('tablet')}{
     margin: 28px 0 22px;
     min-height: 761px;
   }
@@ -38,7 +38,6 @@ const Property = styled.section`
     margin-bottom: 0;
     padding-bottom: 10px;
     ${mq('tablet')}{
-      min-height: 89px;
       font-size: 36px;
       line-height: 1.17;
       margin-bottom: 5px;
@@ -46,11 +45,10 @@ const Property = styled.section`
     }
   }
   p {
-    min-height: 56px;
     font-size: 16px;
     line-height: 1.5;
     color: #172821;
-    max-width: 482px;
+    max-width: 428px;
     margin: 0 0 20px;
   }
 `
@@ -59,11 +57,11 @@ const Center = styled.div`
   margin: auto;
   position: relative;
   padding: 0;
-  ${mq('tablet')}{position: static}
+  ${mq('tablet')}{position: static; display: block;}
   img {
     position: absolute;
     right: 0;
-    bottom: -117px;
+    bottom: -124px;
     max-width: 555px;
     margin: 0;
     ${mq('tablet')}{
@@ -139,36 +137,34 @@ const ImgContainer = styled.div`
   }
 `
 export default () => (
-  <Property>
+  <Laser>
     <Center>
       <ImgContainer>
         <Pic/>
       </ImgContainer>
       <Box>
         <Content>
-          <h2>Subdivisions and Legal Surveys</h2>
+          <h2>High Definition Laser Scanning</h2>
           <p>
-            Divide and conquer. Subdivision surveys establish new land
-            parcel boundaries or adjust pre-existing parcels.
+            Achieve greater accuracy in all types of complicated environments, quickly and efficiently.
           </p>
           <List>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              We work closely with you to understand all aspects of your project
+              Our industry-leading laser scanning equipment generates precise 3D models.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Posting plans for resolving boundary disputes and proper
-              fence construction
+              Used for creating accurate measurements of complicated environments or those with limited access such as heritage sites.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Comprehensive subdivision plans
+              Creates highly accurate three-dimensional images for use in many digital formats for Architects and Engineers.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Detailed plans for right of ways and easements
+              Performs traditional land surveying services more quickly and accurately
             </div>
           </List>
           <Button href="/contact">Learn More</Button>
         </Content>
       </Box>
     </Center>
-  </Property>
+  </Laser>
 )

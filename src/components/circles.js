@@ -7,7 +7,7 @@ const Circles = styled.div`
   margin: 0 auto;
   position: relative;
   bottom: 37px;
-  div {
+  a {
     width: 74px;
     height: 74px;
     border-radius: 50%;
@@ -23,12 +23,12 @@ const Circles = styled.div`
     display: block;
     margin: auto;
   }
-  div:first-child { left: 0 }
-  div:last-child { right: 0 }
+  a:first-child { left: 0 }
+  a:last-child { right: 0 }
 `
 export default () => (
   <Circles>
-    <div><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></div>
-    <div><FontAwesomeIcon class="icon" icon={faEnvelope}/></div>
+    <a href="tel:604-943-9433"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></a>
+    <a href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></a>
   </Circles>
 )

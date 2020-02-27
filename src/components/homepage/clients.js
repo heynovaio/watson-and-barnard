@@ -121,6 +121,11 @@ const Button = styled.a`
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
+  text-decoration: none;
+  transition: all .25s;
+  &:hover {
+    background: #396859;
+  }
   ${mq('small')}{
     margin: 41px auto 0;
   }
@@ -164,7 +169,7 @@ export default () => (
         <Item>
           <ImageContainer><img src={fenceLogo} alt='fenceLogo'/></ImageContainer>
           <h3>Home/Property Owners</h3>
-          <BigPar>“Good fences make good neighbors.” Be a good neighbor. </BigPar>
+          <BigPar>“Good fences make good neighbours.” Be a good neighbour. </BigPar>
         </Item>
       </ItemContainer>
       <ItemContainer>
@@ -172,13 +177,11 @@ export default () => (
           <ImageContainer><img src={scrollLogo} alt='scrollLogo'/></ImageContainer>
           <h3>First Nations</h3>
           <LilPar>
-            We are familiar with, and sensitive to, the legislature and
-            agreements involved in the management of lands belonging to
-            the Musqueam and Tsawwassen First Nations.
+            We were involved with the first urban treaty survey in British Columbia.  We are familiar with, and sensitive to, the legislature and agreements involved in First Nations Lands and Treaty Surveys.
           </LilPar>
         </Item>
       </ItemContainer>
     </ItemGallery>
-    <Button>View Services</Button>
+    <Button href="/services">View Services</Button>
   </Associates>
 )
