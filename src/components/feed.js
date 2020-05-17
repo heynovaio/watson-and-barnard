@@ -187,7 +187,6 @@ const Form = () => (
       </label>
       <input name="email" type="email" id="email" />
     </div>
-    testing
     <div>
       <label for="name">
         Name
