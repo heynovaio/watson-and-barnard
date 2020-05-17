@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <SEO
         title="Watson &amp; Barnard Land Surveyors &amp; Engineers"
         description="We are a private land survey firm situated in Delta, BC, Canada that has been serving the Lower Mainland and surrounding areas including Washington State since 1989."
-        keywords={[`land surveyors`,`Delta`,`engineers`,`land survey`,`Washington`,`BCLS`]}
+        keywords={[`land surveyors`,`Delta`,`engineers`,`land survey`,`Washington`,`BCLS`,`lower mainland`]}
       />
       <Font/>
       <main>{children}</main>

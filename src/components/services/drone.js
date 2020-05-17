@@ -164,10 +164,6 @@ export default () => (
               mapping, in a fraction of the time.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
-              Our high-performance equipment translates to accurate
-              aerial mapping, in a fraction of the time.
-            </div>
-            <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>
               Used for large or remote site inspections and progress monitoring.
             </div>
             <div><FontAwesomeIcon class="mark" icon={faCheckCircle}/>

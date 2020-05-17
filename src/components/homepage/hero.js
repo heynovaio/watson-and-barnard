@@ -178,7 +178,7 @@ export default () => (
           <p>
             Providing quality service in Delta and the Lower Mainland for over 45 years with a dynamic multidisciplinary team ready to take on any challenge.
           </p>
-          <Button href="/services">Learn More<CustomArrow/></Button>
+          <Button href="/services">Our Services<CustomArrow/></Button>
         </Align>
       </GreenBox>
     </OuterContainer>

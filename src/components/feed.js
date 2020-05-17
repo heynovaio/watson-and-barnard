@@ -181,18 +181,25 @@ const FormStyle = styled.form`
 `
 const Form = () => (
   <FormStyle action="https://formspree.io/info@wbsurveys.bc.ca" method="POST">
-    <label for="email">
-      Email Address
-    </label>
-    <input name="email" type="email" id="email" />
-    <label for="name">
-      Name
-    </label>
-    <input id="name" name="name" type="text"/>
-    <label for="message">
-      Write us a message
-    </label>
-    <textarea id="message" name="message"></textarea>
+    <div>
+      <label for="email">
+        Email Address
+      </label>
+      <input name="email" type="email" id="email" />
+    </div>
+    testing
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input id="name" name="name" type="text"/>
+    </div>
+    <div>
+      <label for="message">
+        Write us a message
+      </label>
+      <textarea id="message" name="message"></textarea>
+    </div>
     <input type="submit" value="submit" />
   </FormStyle>
 )

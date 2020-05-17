@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import Pic from "./images/settlement-monitoring"
+import Pic from "./images/laser-scanning"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 const bp = {
