@@ -166,9 +166,9 @@ export default () => (
     <FlexContainer>
       <FlexBox>
         <Item>
-          <Circle tabindex="-1" href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></Circle>
+          <Circle tabindex="-1" href="mailto:contact@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></Circle>
           <Title>Email</Title>
-          <Content href="mailto:info@wbsurveys.bc.ca">info@wbsurveys.bc.ca</Content>
+          <Content href="mailto:contact@wbsurveys.bc.ca">contact@wbsurveys.bc.ca</Content>
         </Item>
         <Item>
           <Circle href="tel:604.943.9433"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></Circle>

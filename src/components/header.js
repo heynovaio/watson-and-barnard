@@ -333,7 +333,7 @@ const ContactStyle = styled.div`
 const Contact = () => (
   <ContactStyle>
     <a href="tel:604-943-9433"><FontAwesomeIcon className="icon" icon={faPhoneAlt}/></a>
-    <a href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon className="icon" icon={faEnvelope}/></a>
+    <a href="mailto:contact@wbsurveys.bc.ca"><FontAwesomeIcon className="icon" icon={faEnvelope}/></a>
   </ContactStyle>
 )
 const PhoneLogo = styled.div`
@@ -369,9 +369,9 @@ const MailLogo = styled.div`
   width: 39px;
   position: absolute;
   text-align: center;
-  top: 410px;
+  top: 385px;
   color: #d3c190;
-  padding: 9px 9px 0px;
+  padding: 9px 9px 0px 6px;
 `
 const Email = styled.a`
   display: block;
@@ -380,8 +380,8 @@ const Email = styled.a`
   ${mq('tablet')}{display: none}
   transform: rotate(270deg);
   position: absolute;
-  left: -77px;
-  top: 522px;
+  left: -96px;
+  top: 511px;
   padding-top: 9px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
@@ -396,17 +396,17 @@ export default props => (
     <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
     <Phone href="tel:604-943-9433">604.943.9433</Phone>
     <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
-    <Email href="mailto:info@wbsurveys.bc.ca">info@wbsurveys.bc.ca</Email>
+    <Email href="mailto:contact@wbsurveys.bc.ca">contact@wbsurveys.bc.ca</Email>
     <Hamburger/>
     <MenuContainerOuter>
       <MenuContainerInner id="drop">{/*whole drop down*/}
         <Exit/>
         <Menu page={props.page}>
-          <div><Link to="/" >Home</Link></div>
-          <div><Link to="/services/" >Our Services</Link></div>
-          <div><Link to="/about/" >About Us</Link></div>
-          <div><Link to="/resources/" >Resources</Link></div>
-          <div><Link to="/contact/" >Contact Us</Link></div>
+          <div><Link to="/">Home</Link></div>
+          <div><Link to="/services/">Our Services</Link></div>
+          <div><Link to="/about/">About Us</Link></div>
+          <div><Link to="/resources/">Resources</Link></div>
+          <div><Link to="/contact/">Contact Us</Link></div>
           <hr/>
         </Menu>
         <Contact/>

@@ -29,6 +29,6 @@ const Circles = styled.div`
 export default () => (
   <Circles>
     <a href="tel:604-943-9433"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></a>
-    <a href="mailto:info@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></a>
+    <a href="mailto:contact@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></a>
   </Circles>
 )
