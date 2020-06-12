@@ -54,7 +54,7 @@ export default () => (
     <Title>Watson and Barnard</Title>
     <Logos><Image/></Logos>
     <Nav>
-      <A to='/index/'>HOME</A>
+      <A to='/'>HOME</A>
       <A to='/services/'>SERVICES</A>
       <A to='/about/'>ABOUT</A>
       <A to='/resources/'>RESOURCES</A>

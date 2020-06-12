@@ -16,9 +16,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <SEO
-        title="Hey Nova | Branding, Designing, Developing"
-        description="Evolving the way companies communicate to their audience by creating cohesive brands, user-centred design, and inclusive code."
-        keywords={[`Web Design`, `Web Development`, `Victoria`, `British Columbia`, `Marketing`, `User Experience`, `Branding`]}
+        title="Watson & Barnard Land Surveyors & Engineers"
+        description="We are a private land survey firm situated in Delta, BC, Canada that has been serving the Lower Mainland and surrounding areas including Washington State since 1989."
+        keywords={[`land surveyors`,`Delta`,`engineers`,`land survey`,`Washington`,`BCLS`]}
       />
       <Font/>
       <main>{children}</main>
