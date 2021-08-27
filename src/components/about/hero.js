@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
+import helmetGeek from "../../images/about-icon.svg"
+import { colors } from "../global.js"
 
 const bp = {
   smaller: 300,
@@ -28,7 +30,7 @@ const About = styled.section`
     line-height: 0.53;
     letter-spacing: 0.4px;
     text-align: center;
-    color: #eee4cb;
+    color: ${colors.lightGold};
     height: 53px;
     margin: 0 auto 40px;
     ${mq('tablet')}{
@@ -57,6 +59,7 @@ const About = styled.section`
       color: #ffffff;
     }
   }
+  
 `
 const Green = styled.div`
   border-radius: 0 0  0 6px;
@@ -86,6 +89,20 @@ const Content = styled.div`
     padding: 194px 20px 40px;
     min-height: 520px;
   }
+  img {
+    position:absolute;
+    bottom:-40px;
+    right:0;
+    max-width: 376px;
+    width:100%;
+    ${mq('medium')}{
+      bottom:-60px;
+      max-width:225px;
+      right:50%;
+      transform:translateX(50%);
+    }
+  }
+  
 `
 export default () => (
   <About>
@@ -96,6 +113,7 @@ export default () => (
         We are a private land survey firm situated in Delta, BC, Canada that has
         been serving the Lower Mainland and surrounding areas since 1989.
       </p>
-    </Content>
+      <img src={helmetGeek} alt='helmet'/>
+    </Content> 
   </About>
 )

@@ -1,6 +1,15 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 
+export const colors ={
+  themeBlue:'#092146',
+  themeGreen:'#34594C',
+  themeBlack:'#172821',
+  btnGold:'#D3C190',
+  lightGold:'#EEE4CB',
+  bgGrey:'#F6F7FA',
+}
+
 export const GlobalStyle = () => (
 
   <Global
