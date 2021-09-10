@@ -217,6 +217,9 @@ export const GlobalStyle = () => (
       input[type='button']::-moz-focus-inner {
         outline: 0;
       }
+      test{
+        border-width: 20px;
+      }
     `}
   />
 );

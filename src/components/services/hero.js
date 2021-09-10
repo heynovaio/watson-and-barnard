@@ -19,42 +19,34 @@ const mq = n => {
   return result;
 }
 const Hero = styled.section`
-  background-color: #f6f7fa;
   font-family: metropolis, sans-serif;
   position: relative;
-  padding: 0 0 0;
   h1 {
-    min-height: 87px;
-    font-family: astoria, sans-serif;
-    font-size: 74px;
-    font-weight: 500;
-    line-height: 1.18;
-    letter-spacing: 0.3px;
+    margin: 0 0 6px;
+    min-height: 170px;
+    font-size: 49px;
+    line-height: 1.06;
+    letter-spacing: -0.56px;
     color: #eee4cb;
-    margin: 0 0 7px;
+    font-weight: 600;
+    max-width: 590px;
     ${mq('tablet')}{
-      font-family: metropolis, sans-serif;
-      font-size: 44px;
-      font-weight: 600;
-      line-height: 1.09;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
+      font-size: 26px;
+      line-height: 1.42;
+      letter-spacing: -0.3px;
+      min-height: 74px;
     }
   }
   p {
-    font-family: metropolis, sans-serif;
-    max-width: 609px;
-    min-height: 192px;
+    margin: 4px 0 24px;
+    max-width: 543px;
+    min-height: 32px;
     font-size: 22px;
     line-height: 1.45;
     color: #ffffff;
-    margin: 7px 0 0;
     ${mq('tablet')}{
-      max-width: 100%;
-      min-height: 258px;
       font-size: 20px;
       line-height: 1.4;
-      color: #ffffff;
     }
   }
 `
