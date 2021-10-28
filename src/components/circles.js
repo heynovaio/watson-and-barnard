@@ -6,7 +6,7 @@ const Circles = styled.div`
   width: 205px;
   margin: 0 auto;
   position: relative;
-  bottom: 37px;
+  bottom: -10px;
   a {
     width: 74px;
     height: 74px;
@@ -17,6 +17,7 @@ const Circles = styled.div`
     padding-top: 21px;
     color: #d3c190;
     position: absolute;
+    font-size: 30px;
   }
   .icon {
     width: 30px;
