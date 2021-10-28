@@ -6,7 +6,7 @@ const Circles = styled.div`
   width: 205px;
   margin: 0 auto;
   position: relative;
-  bottom: 37px;
+  bottom: -10px;
   a {
     width: 74px;
     height: 74px;
@@ -17,6 +17,7 @@ const Circles = styled.div`
     padding-top: 21px;
     color: #d3c190;
     position: absolute;
+    font-size: 30px;
   }
   .icon {
     width: 30px;
@@ -29,6 +30,6 @@ const Circles = styled.div`
 export default () => (
   <Circles>
     <a href="tel:604-943-9433"><FontAwesomeIcon class="icon" icon={faPhoneAlt}/></a>
-    <a href="mailto:contact@wbsurveys.bc.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></a>
+    <a href="mailto:contact@wbsurveys.ca"><FontAwesomeIcon class="icon" icon={faEnvelope}/></a>
   </Circles>
 )

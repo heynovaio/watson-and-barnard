@@ -128,9 +128,6 @@ export default () => (
       <ImgContainer>
         <img src={picture} alt="engineering graphic" role="presentation" />
       </ImgContainer>
-      <Mobile>
-        <Circles/>
-      </Mobile>
     </Center>
   </Hero>
 )

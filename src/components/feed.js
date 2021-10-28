@@ -180,7 +180,7 @@ const FormStyle = styled.form`
   }
 `
 const Form = () => (
-  <FormStyle action="https://formspree.io/contact@wbsurveys.bc.ca" method="POST">
+  <FormStyle action="https://formspree.io/contact@wbsurveys.ca" method="POST">
     <div>
       <label for="email">
         Email Address
@@ -248,8 +248,8 @@ export default () => (
                   <FontAwesomeIcon class="icon" icon={faPhoneAlt}/>
                 </AddressItem>
                 <AddressItem>
-                  <a href="mailto:contact@wbsurveys.bc.ca">
-                    contact@wbsurveys.bc.ca
+                  <a href="mailto:contact@wbsurveys.ca">
+                    contact@wbsurveys.ca
                   </a>
                   <FontAwesomeIcon class="icon" icon={faEnvelope}/>
                 </AddressItem>

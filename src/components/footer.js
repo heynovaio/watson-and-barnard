@@ -6,7 +6,7 @@ import Img from "gatsby-image"
 
 const Footer = styled.section`
   background-color: #ffffff;
-  padding: 31px 20px 50px;
+  padding: 31px 20px 70px;
 `
 const Title = styled.h2`
   font-family: astoria, sans-serif;
