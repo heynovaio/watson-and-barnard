@@ -98,7 +98,7 @@ const FormStyle = styled.form`
   }
 `
 const Form = () => (
-  <FormStyle action="https://formspree.io/contact@wbsurveys.ca" method="POST">
+  <FormStyle action="https://formspree.io/contact@wbsurveys.bc.ca" method="POST">
     <label for="email">
       Email Address
     </label>
