@@ -418,7 +418,7 @@ export default props => (
     </MenuContainerOuter>
     <ConsultButton
       text="Book a free consult"
-      url="https://calendly.com/wbsurveys/30min"
+      url="https://calendly.com/wbls/consult30min"
     />
   </Header>
 )
