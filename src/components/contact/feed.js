@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import survey from "../../images/survey.svg"
+import { navigate } from 'gatsby-link'
 
 const bp = {
   smaller: 300,
@@ -97,23 +98,61 @@ const FormStyle = styled.form`
     font-weight: 600;
   }
 `
-const Form = () => (
-  <FormStyle action="https://formspree.io/contact@wbsurveys.bc.ca" method="POST">
+
+const Form = () => {
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  }
+  const [state, setState] = React.useState({})
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    fetch('/en/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
+
+  return(
+  <FormStyle 
+    /*action="https://formspree.io/contact@wbsurveys.bc.ca" */
+    method="POST"
+    netlify-honeypot="bot-field" 
+    data-netlify="true" 
+    name="contact"
+    onSubmit={handleSubmit}
+    action="/contact-thank-you/"
+  >
     <label for="email">
       Email Address
     </label>
-    <input name="email" type="email" id="email" />
+    <input name="email" type="email" id="email" onChange={handleChange}/>
     <label for="name">
       Name
     </label>
-    <input id="name" name="name" type="text"/>
+    <input id="name" name="name" type="text" onChange={handleChange}/>
     <label for="message">
       Write us a message
     </label>
-    <textarea id="message" name="message"></textarea>
-    <input type="submit" value="submit" />
+    <textarea id="message" name="message" onChange={handleChange}></textarea>
+    <input type="submit" value="submit" onChange={handleChange}/>
   </FormStyle>
-)
+)}
 const MapStyle = styled.div`
   width: 100%;
   height: 500px;
