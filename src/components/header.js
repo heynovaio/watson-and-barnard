@@ -1,9 +1,11 @@
-import { Link } from "gatsby"
 import React from "react"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import arrow from "../images/bitmap@3x.png"
+import arrow from "../images/bitmap@3x.png";
+import {PopupButton} from 'react-calendly'
+
 const bp = {
   smaller: 300,
   small: 500,
@@ -21,8 +23,9 @@ const mq = n => {
   return result;
 }
 const Header = styled.header`
-  position: relative;
+  position: absolute;
   z-index: 3;
+  width: 100%;
   font-family: metropolis, sans-serif;
 `
 const ArrowLogo = styled.img`
@@ -30,7 +33,7 @@ const ArrowLogo = styled.img`
   max-width: 48px;
   top: 20px;
   left: 15px;
-  ${mq('tablet')}{
+  ${mq('medium')}{
     width: 28.9px;
     top: 26px;
     left: 21px;
@@ -63,7 +66,7 @@ const TitleStyle = styled.a`
     letter-spacing: -1.62px;
     top: 43.9px;
     left: 90px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       top: 40.9px;
       left: 60px;
     }
@@ -77,7 +80,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top:44px;
     left: 133px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       top:41px;
       left: 103px;
     }
@@ -91,7 +94,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top:70px;
     left: 150.1px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       top:64.9px;
       left: 120.1px;
     }
@@ -105,7 +108,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top: 90.9px;
     left: 106px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       top:87.9px;
       left: 76px;
     }
@@ -119,7 +122,7 @@ const TitleStyle = styled.a`
     color: #ffffff;
     top: 90.4px;
     left: 141.7px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       top: 87.4px;
       left: 111.7px;
     }
@@ -134,20 +137,20 @@ const MenuContainerOuter = styled.div`
 `
 /*Acts as Width for desktop*/
 const MenuContainerInner = styled.div`
-  width: 46%;
-  margin: 0 0 0 auto;
+  max-width: 724px;
+  margin: 0 auto;
   position: relative;
-  ${mq('medium')}{
-    width: 60%;
+  ${mq('large')}{
+    width: 100%;
   }
-  ${mq('tablet')}{
+  ${mq('medium')}{
     display: none;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: rgba(23, 40, 33, 0.91);
+    background-color: rgba(23, 40, 33, 1);
     width: 100%;
     margin: 0;
   }
@@ -156,8 +159,8 @@ const Menu = styled.nav`
   width: 100%;
   position: absolute;
   overflow: hidden;
-  padding-top: 43px;
-  ${mq('tablet')} {
+  padding-top: 40px;
+  ${mq('medium')} {
     width: auto;
     max-height: 330px;
     margin: 122px auto 61px;
@@ -168,19 +171,19 @@ const Menu = styled.nav`
     text-align: center;
     width: 25%;
     margin-bottom: 8px;
-    ${mq('tablet')}{
+    ${mq('medium')}{
       width: 100%;
       height: 20%;
       padding: 19px;
     }
     a {
-      color: ${props => props.page === 'home' ? '#172821': 'white'};
+      color: #ffffff;
       text-align: center;
       font-family: metropolis, sans-serif;
       font-weight: 600;
       font-size: 16px;
       text-decoration: none;
-      ${mq('tablet')}{
+      ${mq('medium')}{
         color: white;
         font-size: 26px;
         line-height: 2.54px;
@@ -193,53 +196,23 @@ const Menu = styled.nav`
   }
   div:first-child {
     display: none;
-    ${mq('tablet')}{ display: block }
+    ${mq('medium')}{ display: block }
   }
   div:nth-child(2) {
     display: inline-block;
-    ${mq('tablet')}{ display: block }
-    &:hover ~ hr {
-      margin-left: 0;
-    }
+    ${mq('medium')}{ display: block }
   }
   div:nth-child(3) {
     display: inline-block;
-    ${mq('tablet')}{ display: block }
-    &:hover ~ hr {
-      margin-left: 25%;
-    }
+    ${mq('medium')}{ display: block }
   }
   div:nth-child(4) {
     display: inline-block;
-    ${mq('tablet')}{ display: block }
-    &:hover ~ hr {
-      margin-left: 50%;
-    }
+    ${mq('medium')}{ display: block }
   }
   div:nth-child(5){
     display:inline-block;
-    ${mq('tablet')}{ display: block }
-    &:hover ~ hr {
-      margin-left: 75%;
-    }
-  }
-  hr {
-    background-color: ${props => (props.page === 'home') ? '#172821': 'white'};
-    width: 25%;
-    transition: .3s ease-in-out;
-    height: 2px;
-    margin: 0;
-    border: none;
-    overflow: hidden;
-    margin-left: ${props => {
-        if (props.page === 'about') return '25%';
-        else if (props.page === 'home') return '-50%';
-        else if (props.page === 'resources') return '50%';
-        else if (props.page === 'contact') return '75%';
-        else return '0';
-      }
-    };
-    ${mq('tablet')}{ display: none }
+    ${mq('medium')}{ display: block }
   }
 `
 const Exit = () => (
@@ -249,11 +222,11 @@ const Exit = () => (
 )
 const ExitStyle = styled.div`
   display: none;
-  ${mq('tablet')}{display: block}
+  ${mq('medium')}{display: block}
   div {
     position: absolute;
-    top: 38px;
-    right: 22px;
+    top: 50px;
+    right: 30px;
     width: 42px;
     height: 4px;
     background-color: #ffffff;
@@ -275,31 +248,35 @@ const Hamburger = () => (
   </HamburgerStyle>
 )
 const HamburgerStyle = styled.div`
-  display: none;
-  ${mq('tablet')}{display: block}
-  width: 42px;
-  height: 24px;
+  width: 60px;
+  height: 60px;
   position: fixed;
   top: 28px;
-  right: 23px;
+  right: 20px;
+  background: #ede4cb;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 5px 2px 14px 0 rgba(23, 40, 33, 0.52);
+  display: none;
+  ${mq('medium')}{display: block}
   div {
     position: absolute;
     background-color: #172821;
   }
   div:first-child {
-    width: 42px;
-    height: 4px;
-    top: 0;
+    width: 40px;
+    height: 5px;
+    top: 17px;
   }
   div:nth-child(2) {
-    width: 42px;
-    height: 4px;
-    top: 10px;
+    width: 40px;
+    height: 5px;
+    top: 27px;
   }
   div:last-child {
-    width: 42px;
-    height: 4px;
-    top: 20px;
+    width: 40px;
+    height: 5px;
+    top: 37px;
   }
 `
 const ContactStyle = styled.div`
@@ -307,7 +284,7 @@ const ContactStyle = styled.div`
   margin: 0 auto;
   position: relative;
   display: none;
-  ${mq('tablet')}{display: block}
+  ${mq('medium')}{display: block}
   a {
     display: block;
     text-decoration: none;
@@ -319,7 +296,8 @@ const ContactStyle = styled.div`
     text-align: center;
     padding-top: 21px;
     color: #d3c190;
-    position: absolute;
+    display: inline-block;
+    margin: 0 10px;
     font-size: 30px;
   }
   svg {
@@ -333,70 +311,97 @@ const ContactStyle = styled.div`
 const Contact = () => (
   <ContactStyle>
     <a href="tel:604-943-9433"><FontAwesomeIcon className="icon" icon={faPhoneAlt}/></a>
-    <a href="mailto:contact@wbsurveys.bc.ca"><FontAwesomeIcon className="icon" icon={faEnvelope}/></a>
+    <a href="mailto:contact@wbsurveys.ca"><FontAwesomeIcon className="icon" icon={faEnvelope}/></a>
   </ContactStyle>
 )
+const VerticalContainer = styled.div`
+  top: 275px;
+  left: 0;
+  position: absolute;
+  ${mq('tablet')}{display: none}
+`
 const PhoneLogo = styled.div`
   display: block;
-  ${mq('tablet')}{display: none}
   width: 39px;
-  position: absolute;
   text-align: center;
-  top: 225px;
   color: #d3c190;
-  padding: 9px 9px 0px;
+  padding: 9px 9px 110px;
 `
 const Phone = styled.a`
   display: block;
   color: #172821;
   text-decoration: none;
-  ${mq('tablet')}{display: none}
   transform: rotate(270deg);
-  position: absolute;
-  left: -46px;
-  bottom: 390px;
-  height: 39px;
-  top: 300px;
-  padding-top: 12px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.7px;
+  position: absolute;
+  left: -40px;
+  top: 90px;
 `
 const MailLogo = styled.div`
   display: block;
-  ${mq('tablet')}{display: none}
   width: 39px;
-  position: absolute;
   text-align: center;
-  top: 385px;
+  margin-top: 30px;
   color: #d3c190;
-  padding: 9px 9px 0px 6px;
+  padding: 9px 9px 90px 6px;
 `
 const Email = styled.a`
   display: block;
   color: #172821;
   text-decoration: none;
-  ${mq('tablet')}{display: none}
-  transform: rotate(270deg);
-  position: absolute;
-  left: -96px;
-  top: 511px;
-  padding-top: 9px;
   font-family: metropolis, sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 0.7px;
-
+  transform: rotate(270deg);
+  position: absolute;
+  left: -79px;
 `
+const ConsultButton = styled(PopupButton)`
+  margin: 13px 0 0;
+  padding: 25px 26px 30px;
+  outline: none;
+  border: none;
+  display: inline-block;
+  box-shadow: 5px 2px 14px 0 rgba(23, 40, 33, 0.52);
+  background-color: #172821;
+  position: fixed;
+  top: 5px;
+  right: 70px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #eee4cb;
+  cursor: pointer;
+  &:hover {
+    background: #eee4cb;
+    color: #396859;
+  }
+  ${mq('regular')}{
+    right: 20px;
+  }
+  ${mq('medium')}{
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    top: auto;
+    padding: 16px 18px;
+  }
+`
+
 export default props => (
   <Header>
     <ArrowLogo src={arrow} alt="main logo"/>
     <Title/>
-    <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
-    <Phone href="tel:604-943-9433">604.943.9433</Phone>
-    <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
-    <Email href="mailto:contact@wbsurveys.bc.ca">contact@wbsurveys.bc.ca</Email>
+    <VerticalContainer>
+      <PhoneLogo><FontAwesomeIcon icon={faPhoneAlt}/></PhoneLogo>
+      <Phone href="tel:604-943-9433">604.943.9433</Phone>
+      <MailLogo><FontAwesomeIcon icon={faEnvelope}/></MailLogo>
+      <Email href="mailto:contact@wbsurveys.ca">contact@wbsurveys.ca</Email>
+    </VerticalContainer>
     <Hamburger/>
     <MenuContainerOuter>
       <MenuContainerInner id="drop">{/*whole drop down*/}
@@ -407,10 +412,13 @@ export default props => (
           <div><Link to="/about/">About Us</Link></div>
           <div><Link to="/resources/">Resources</Link></div>
           <div><Link to="/contact/">Contact Us</Link></div>
-          <hr/>
         </Menu>
         <Contact/>
       </MenuContainerInner>
     </MenuContainerOuter>
+    <ConsultButton
+      text="Book a free consult"
+      url="https://calendly.com/wbls/consult30min"
+    />
   </Header>
 )

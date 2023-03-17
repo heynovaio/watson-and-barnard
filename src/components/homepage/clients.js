@@ -26,7 +26,7 @@ const mq = n => {
 }
 const Associates = styled.section`
   background-color: #f6f7fa;
-  padding: 105px 10px 53px;
+  padding: 25px 10px 150px;
   font-family: metropolis, sans-serif;
   text-align: center;
   h2 {
@@ -36,11 +36,16 @@ const Associates = styled.section`
     min-height: 64px;
     font-family: astoria, sans-serif;
     font-weight: 400;
-    margin: 0 0 20px;
+    margin: 0 auto 20px;
+    max-width: 1200px;
+    text-align: left;
     ${mq('small')}{
       font-size: 40px;
       line-height: 1.2;
       margin: 0 0 28px;
+    }
+    ${mq('tablet')}{
+      text-align: center;
     }
   }
   h3 {

@@ -54,26 +54,24 @@ const Hero = styled.section`
   }
 `
 const OuterContainer = styled.div`
-  max-width: 50%;
   position: relative;
-  ${mq('regular')}{ max-width: 775px }
 `
 const GreenBox = styled.div`
-  margin: 0 -55px 0 39px;
-  padding: 232px 20px 20px;
+  margin: 0 34px 110px 34px;
+  padding: 279px 20px 46px;
   border-radius: 0 0 6px 6px;
-  background-image: radial-gradient(circle at 21% 15%, #4e8672, #386656);
-  min-height: 749px;
+  background: #407261;
+  min-height: 840px;
   ${mq('regular')}{ margin-right: 0 }
   ${mq('tablet')}{
     margin-left: 0;
     padding-top: 205px;
-    min-height: 705px;
+    min-height: 680px;
   }
 `
 const Align = styled.div`
-  max-width: 626px;
-  margin-left: auto;
+  max-width: 1240px;
+  margin: 0 auto;
 `
 const Button = styled.a`
   margin: 13px 0 0;
@@ -129,24 +127,30 @@ const CustomArrowStyle = styled.div`
     transition: width .25s;
   }
 `
-const ImgPositionOuter = styled.div`
-  margin: 0 auto;
-  padding: 0 0 0 39px;
-  max-width: 1440px;
-  ${mq('tablet')}{display: none}
-`
-const ImgPositionInner = styled.div`
-  position: relative;
-  max-width: 1364px;
-`
+
 const ImgContainer = styled.div`
   position: absolute;
-  right: 0;
-  width: 707px;
-  top: 115px;
+  right: 70px;
+  width: 772px;
+  top: 120px;
+  height: 774px;
   border-radius: 6px;
   overflow: hidden;
+  z-index: 2;
   box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.27);
+  max-width: 50%;
+  > div {
+    height: 101%;
+  }
+  img {
+    top: -2px!important;
+  }
+  ${mq('regular')}{
+    right: 20px;
+    max-width: 40%;
+
+  }
+  ${mq('medium')}{display: none}
 `
 const Photo = () => {
   const data = useStaticQuery(graphql`
@@ -164,13 +168,14 @@ const Photo = () => {
 }
 const Mobile = styled.div`
   display: none;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
   ${mq('tablet')}{display: block}
 `
 export default () => (
   <Hero>
-    <ImgPositionOuter><ImgPositionInner>
-      <ImgContainer><Photo/></ImgContainer>
-    </ImgPositionInner></ImgPositionOuter>
+    <ImgContainer><Photo/></ImgContainer>
     <OuterContainer>
       <GreenBox>
         <Align>

@@ -248,8 +248,8 @@ export default () => (
                   <FontAwesomeIcon class="icon" icon={faPhoneAlt}/>
                 </AddressItem>
                 <AddressItem>
-                  <a href="mailto:contact@wbsurveys.bc.ca">
-                    contact@wbsurveys.bc.ca
+                  <a href="mailto:contact@wbsurveys.ca">
+                    contact@wbsurveys.ca
                   </a>
                   <FontAwesomeIcon class="icon" icon={faEnvelope}/>
                 </AddressItem>
