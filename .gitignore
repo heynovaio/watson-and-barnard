@@ -68,3 +68,13 @@ yarn-error.log
 .yarn-integrity
 
 public/
+
+# Next.js
+.next/
+out/
+
+# Migration artifacts (heavy raw reports/screenshots kept locally, summary committed)
+migration-baseline/*.json
+migration-baseline/screenshots/
+migration-baseline/lh-errors.log
+migration-results/
