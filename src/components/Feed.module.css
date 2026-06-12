@@ -152,6 +152,9 @@
   border-style: none;
   border-radius: 2px;
   display: block;
+  background-color: #ffffff;
+  color: #172821;
+  padding: 0 10px;
 }
 .form select {
   width: 100%;
@@ -169,6 +172,9 @@
   border-radius: 2px;
   display: block;
   margin: 7px 0 16px;
+  background-color: #ffffff;
+  color: #172821;
+  padding: 10px;
 }
 .form input[type="submit"] {
   margin: 16px 0 0;

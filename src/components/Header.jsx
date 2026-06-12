@@ -23,11 +23,13 @@ export default function Header() {
       />
 
       <Link href="/" className={styles.title} aria-label="Watson and Barnard home">
-        <div>W</div>
-        <div>atson</div>
-        <div>and</div>
-        <div>B</div>
-        <div>arnard</div>
+        <span aria-hidden="true">
+          <div>W</div>
+          <div>atson</div>
+          <div>and</div>
+          <div>B</div>
+          <div>arnard</div>
+        </span>
       </Link>
 
       <div className={styles.verticalContainer}>
