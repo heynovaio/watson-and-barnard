@@ -25,8 +25,35 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Adobe Typekit (Astoria) */}
-        <link rel="stylesheet" href="https://use.typekit.net/kzp1hfe.css" />
+        {/* Preconnect + preload to cut render-blocking / font delay (matches
+            the production-trace findings: render-blocking ~1.34s, font display) */}
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="/fonts/metropolis-medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/metropolis-semibold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        {/* Adobe Typekit (Astoria) — preloaded then injected after interactive
+            so it doesn't block first render. Astoria is only used for the logo
+            and section headings (not the LCP element), so async is safe. */}
+        <link rel="preload" as="style" href="https://use.typekit.net/kzp1hfe.css" />
+        <Script id="typekit" strategy="afterInteractive">
+          {`(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://use.typekit.net/kzp1hfe.css';document.head.appendChild(l);})();`}
+        </Script>
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <link rel="stylesheet" href="https://use.typekit.net/kzp1hfe.css" />
+        </noscript>
         {/* Google Tag Manager */}
         <Script id="gtm" strategy="afterInteractive">
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_ID}');`}
