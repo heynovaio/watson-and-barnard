@@ -80,3 +80,4 @@ migration-results/
 # next-image-export-optimizer build artifacts
 public/**/nextImageExportOptimizer/
 public/nextImageExportOptimizer/
+public/images/next-image-export-optimizer-hashes.json

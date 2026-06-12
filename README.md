@@ -1,60 +1,80 @@
 # Watson & Barnard — Land Surveyors & Engineers
 
 Marketing site for Watson & Barnard, a private land survey firm in Delta, BC.
-Built with [Gatsby 5](https://www.gatsbyjs.com/) and React 18.
+Built with [Next.js 15](https://nextjs.org/) (App Router) and exported as a static
+site. Deploys to Netlify as plain HTML/CSS/JS with no server runtime.
 
 ## Requirements
 
 - **Node** `>=18` (the repo pins **Node 20** via `.nvmrc`)
-- **Yarn** (v1 / classic) — yarn is the package manager for this project; do not use npm (there is a single `yarn.lock`)
-
-If you use [nvm](https://github.com/nvm-sh/nvm):
+- **Yarn** (v1 / classic) — single `yarn.lock`, do not use npm
 
 ```sh
-nvm use      # picks up .nvmrc (Node 20)
+nvm use        # Node 20
+yarn install
 ```
 
 ## Getting started
 
 ```sh
-yarn install     # install dependencies
-yarn develop     # start the dev server at http://localhost:8000
+yarn dev       # dev server at http://localhost:3000
+yarn build     # static export to out/ (runs the image optimizer)
+yarn serve     # serve the exported out/ locally
 ```
-
-The GraphQL explorer is available at `http://localhost:8000/___graphql`.
 
 ## Scripts
 
-| Command        | Description                                          |
-| -------------- | ---------------------------------------------------- |
-| `yarn develop` | Start the hot-reloading development server           |
-| `yarn build`   | Build the production site to `public/`               |
-| `yarn serve`   | Serve the production build locally                   |
-| `yarn clean`   | Clear the Gatsby `.cache` and `public` directories   |
-| `yarn format`  | Format `src/` with Prettier                          |
+| Command       | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| `yarn dev`    | Next dev server (hot reload)                                 |
+| `yarn build`  | `next build` + `next-image-export-optimizer` → static `out/` |
+| `yarn serve`  | Serve the exported `out/` directory                          |
+| `yarn format` | Format `src/` with Prettier                                  |
 
 ## Project structure
 
 ```
 src/
-├── components/   Shared and page-specific UI components (Emotion-styled)
-├── fonts/        Self-hosted Metropolis web fonts
-├── images/       Source images (processed by gatsby-plugin-image / sharp)
-├── pages/        Routes — each file maps to a URL
-└── html.js       Custom HTML document (Typekit + GTM)
+├── app/                 App Router — one folder per route + page.jsx
+│   ├── layout.jsx       Root shell: metadata, Typekit, GTM/Bing, Footer
+│   ├── globals.css      Reset + self-hosted @font-face (Metropolis)
+│   ├── sitemap.js       /sitemap.xml
+│   ├── robots.js        /robots.txt
+│   ├── manifest.js      /manifest.webmanifest
+│   └── <route>/page.jsx Routes (about, services, services/*, contact, …)
+└── components/          UI components, each with a co-located *.module.css
+public/
+├── images/              Source images (optimized to WebP at build time)
+└── fonts/               Self-hosted Metropolis (woff2)
 ```
 
-Key config lives in `gatsby-config.js` (site metadata, plugins).
+## Architecture notes
 
-## Tech notes
+- **Styling**: CSS Modules (`*.module.css`) co-located with each component.
+  Components are React Server Components by default; only `Header`, `Feed`,
+  `ContactFeed`, and `ConsultButton` are client components (interactivity).
+- **Images**: `next/image` via
+  [`next-image-export-optimizer`](https://github.com/Niels-IO/next-image-export-optimizer)
+  (static export builds WebP at multiple sizes). Static imports give intrinsic
+  width/height → no layout shift.
+- **SEO**: per-page `metadata` exports (App Router Metadata API). Sitemap, robots
+  and manifest are generated metadata routes.
+- **Fonts**: self-hosted Metropolis via `@font-face` (`font-display: swap`,
+  woff2 only); Astoria from Adobe Typekit, loaded non-render-blocking.
+- **Icons**: inline SVG (`src/components/icons.jsx`) — no icon-font runtime.
+- **Analytics**: Google Tag Manager (`GTM-T4JDVQ9`) + Bing UET via `next/script`.
+  The legacy Universal Analytics property was dropped (UA is defunct); add GA4
+  via `@next/third-parties/google` with a measurement ID when ready.
+- **Calendly**: lazy-loaded on click (`ConsultButton`), kept out of the initial bundle.
 
-- **Images** use `gatsby-plugin-image` (`GatsbyImage` + `gatsbyImageData` queries),
-  which outputs modern responsive WebP.
-- **Styling** uses [Emotion](https://emotion.sh/) (`@emotion/react` + `@emotion/styled`).
-- **SEO/meta** is currently handled with `react-helmet` (`src/components/seo.js`).
-  Gatsby 5 ships a built-in [Head API](https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/)
-  that is the recommended modern replacement — a worthwhile future refactor.
-- **Analytics:** Google Tag Manager (`GTM-T4JDVQ9`) and Bing UET are injected via
-  `src/html.js` and `src/components/layout.js`. The legacy Universal Analytics
-  property (`gatsby-plugin-google-analytics`) no longer collects data and should be
-  migrated to GA4 when convenient.
+## Deployment (Netlify)
+
+`netlify.toml` builds with `yarn build` and publishes `out/`. The contact form
+uses **Netlify Forms** (`data-netlify`, honeypot, hidden `form-name`) and redirects
+to `/contact-thank-you/` on submit.
+
+## Migration
+
+This site was migrated from Gatsby 2 → Next.js. Lighthouse baselines and the
+migration prompt live under `migration-baseline/` (raw reports are gitignored; the
+summary is in `migration-baseline/BASELINE.md`).
