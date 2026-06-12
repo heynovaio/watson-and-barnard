@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from '@emotion/styled'
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Footer = styled.section`
   background-color: #ffffff;
@@ -25,14 +25,13 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "logos@3x.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 565) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 565, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
   `)
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  const image = getImage(data.placeholderImage)
+  return <GatsbyImage image={image} alt="" />
 }
 const Nav = styled.nav`
   display: flex;

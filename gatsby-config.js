@@ -24,6 +24,7 @@ module.exports = {
         trackingId: "UA-159355492-1"
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

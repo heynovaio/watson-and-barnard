@@ -1,5 +1,5 @@
 import React from "react"
-import { Global, css } from '@emotion/core';
+import { Global, css } from '@emotion/react';
 
 import blackFont from '../fonts/metropolis-black.woff';
 import blackFont2 from '../fonts/metropolis-black.woff2';

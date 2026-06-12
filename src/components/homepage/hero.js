@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import Circles from "../circles"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const bp = {
   smaller: 300,
@@ -157,14 +157,13 @@ const Photo = () => {
     query {
       placeholderImage: file(relativePath: { eq: "tout-img@3x.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 707) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData(width: 707, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
   `)
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  const image = getImage(data.placeholderImage)
+  return <GatsbyImage image={image} alt="" />
 }
 const Mobile = styled.div`
   display: none;
