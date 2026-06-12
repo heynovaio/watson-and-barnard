@@ -11,7 +11,7 @@
 
 "@img/colour@^1.0.0":
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@img/colour/-/colour-1.1.0.tgz#b0c2c2fa661adf75effd6b4964497cd80010bb9d"
+  resolved "https://registry.npmjs.org/@img/colour/-/colour-1.1.0.tgz"
   integrity sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==
 
 "@img/sharp-darwin-arm64@0.34.5":
@@ -23,7 +23,7 @@
 
 "@img/sharp-darwin-x64@0.34.5":
   version "0.34.5"
-  resolved "https://registry.yarnpkg.com/@img/sharp-darwin-x64/-/sharp-darwin-x64-0.34.5.tgz#19bc1dd6eba6d5a96283498b9c9f401180ee9c7b"
+  resolved "https://registry.npmjs.org/@img/sharp-darwin-x64/-/sharp-darwin-x64-0.34.5.tgz"
   integrity sha512-YNEFAF/4KQ/PeW0N+r+aVVsoIY0/qxxikF2SWdp+NRkmMB7y9LBZAVqQ4yhGCm/H3H270OSykqmQMKLBhBJDEw==
   optionalDependencies:
     "@img/sharp-libvips-darwin-x64" "1.2.4"
@@ -35,7 +35,7 @@
 
 "@img/sharp-libvips-darwin-x64@1.2.4":
   version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@img/sharp-libvips-darwin-x64/-/sharp-libvips-darwin-x64-1.2.4.tgz#e63681f4539a94af9cd17246ed8881734386f8cc"
+  resolved "https://registry.npmjs.org/@img/sharp-libvips-darwin-x64/-/sharp-libvips-darwin-x64-1.2.4.tgz"
   integrity sha512-1IOd5xfVhlGwX+zXv2N93k0yMONvUlANylbJw1eTah8K/Jtpi15KC+WSiaX/nBmbm2HxRM1gZ0nSdjSsrZbGKg==
 
 "@img/sharp-libvips-linux-arm64@1.2.4":
@@ -158,7 +158,7 @@
 
 "@next/env@15.5.19":
   version "15.5.19"
-  resolved "https://registry.yarnpkg.com/@next/env/-/env-15.5.19.tgz#d98188c34e6035931604195f8aa2fec8d355d04e"
+  resolved "https://registry.npmjs.org/@next/env/-/env-15.5.19.tgz"
   integrity sha512-sWWluFvcv5v3Fxznmf2ZfjyoVQt/64oCnYqS90inQWGzMPK1VjvekPiz3OPHKmFT30EnHrjlbyaHLt3M0vWabw==
 
 "@next/swc-darwin-arm64@15.5.19":
@@ -168,7 +168,7 @@
 
 "@next/swc-darwin-x64@15.5.19":
   version "15.5.19"
-  resolved "https://registry.yarnpkg.com/@next/swc-darwin-x64/-/swc-darwin-x64-15.5.19.tgz#fd36d8a74eace4ee50d37dd41d3d6355c92ed661"
+  resolved "https://registry.npmjs.org/@next/swc-darwin-x64/-/swc-darwin-x64-15.5.19.tgz"
   integrity sha512-291KFcsIQ3OenRdiUDFOR6W3wezzH4auENXm1gbm1Bjd4ANMMRgxPrWTUztQN43BnVoVuMnHCrLeECIMwgFKbA==
 
 "@next/swc-linux-arm64-gnu@15.5.19":
@@ -203,46 +203,46 @@
 
 "@swc/helpers@0.5.15":
   version "0.5.15"
-  resolved "https://registry.yarnpkg.com/@swc/helpers/-/helpers-0.5.15.tgz#79efab344c5819ecf83a43f3f9f811fc84b516d7"
+  resolved "https://registry.npmjs.org/@swc/helpers/-/helpers-0.5.15.tgz"
   integrity sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==
   dependencies:
     tslib "^2.8.0"
 
 caniuse-lite@^1.0.30001579:
   version "1.0.30001799"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001799.tgz#5c909138c27f1a61219d3e092071c1cc7d32dc55"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001799.tgz"
   integrity sha512-hG1bReV+OUU+MOqK4t/ZWI0tZOyz3rqS9XuhOUz1cIcbwBKjOyJEJuw9ER5JuNyqxNk8u/JUVbGibBOL1yrjFw==
 
 client-only@0.0.1:
   version "0.0.1"
-  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
   integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 detect-libc@^2.1.2:
   version "2.1.2"
-  resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.1.2.tgz#689c5dcdc1900ef5583a4cb9f6d7b473742074ad"
+  resolved "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
   integrity sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==
 
 "js-tokens@^3.0.0 || ^4.0.0":
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
+  resolved "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
 loose-envify@^1.1.0:
   version "1.4.0"
-  resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
+  resolved "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
 nanoid@^3.3.6:
   version "3.3.12"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.12.tgz#ab3d912e217a6d0a514f00a72a16543a28982c05"
+  resolved "https://registry.npmjs.org/nanoid/-/nanoid-3.3.12.tgz"
   integrity sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==
 
 next-image-export-optimizer@^1.18.0:
   version "1.20.1"
-  resolved "https://registry.yarnpkg.com/next-image-export-optimizer/-/next-image-export-optimizer-1.20.1.tgz#be4419744104211ab95e1055617d4874798d2e46"
+  resolved "https://registry.npmjs.org/next-image-export-optimizer/-/next-image-export-optimizer-1.20.1.tgz"
   integrity sha512-hSQkEBqyjQP+YMVSs+TJiI+keVjgylkxvvOiFNiTfGW57dlPptzctMtMYC6Xx1zcLV4VX8B129y3O2vLFBE/6w==
   dependencies:
     sharp "^0.34.5"
@@ -250,7 +250,7 @@ next-image-export-optimizer@^1.18.0:
 
 next@15:
   version "15.5.19"
-  resolved "https://registry.yarnpkg.com/next/-/next-15.5.19.tgz#f09e7faa04c6880347582470ea4a6f9e0cc37983"
+  resolved "https://registry.npmjs.org/next/-/next-15.5.19.tgz"
   integrity sha512-xNOW6tYshGX1/Oi3F8uuk4gpDeWsSUE/1Z0G5uUMekIxaQ0xc03UXd9II0VQHYMWviMeA0OHpJFAKsHf8bTYVg==
   dependencies:
     "@next/env" "15.5.19"
@@ -271,12 +271,12 @@ next@15:
 
 picocolors@^1.0.0:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
+  resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz"
   integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
 
 postcss@8.4.31:
   version "8.4.31"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.31.tgz#92b451050a9f914da6755af352bdc0192508656d"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz"
   integrity sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==
   dependencies:
     nanoid "^3.3.6"
@@ -285,17 +285,17 @@ postcss@8.4.31:
 
 prettier@^3.3.3:
   version "3.8.4"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.8.4.tgz#f334f013ac04a96676f24dabc23c1c4ae1bae411"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-3.8.4.tgz"
   integrity sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==
 
 react-calendly@^4.3.1:
   version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.4.0.tgz#ce4f09ca3232b61cdcdac7dc1b9b1ec4e7a0c3c2"
+  resolved "https://registry.npmjs.org/react-calendly/-/react-calendly-4.4.0.tgz"
   integrity sha512-kMd8fEby0plL5aCebhjq9aesOJ6YWcmR3Pjs3bufncykrp7b6TryaCnWGoq4xZc/oipyudAVCIRgPVUjUEr8nQ==
 
 react-dom@^18.3.1:
   version "18.3.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
+  resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
   dependencies:
     loose-envify "^1.1.0"
@@ -303,26 +303,26 @@ react-dom@^18.3.1:
 
 react@^18.3.1:
   version "18.3.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-18.3.1.tgz#49ab892009c53933625bd16b2533fc754cab2891"
+  resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
   dependencies:
     loose-envify "^1.1.0"
 
 scheduler@^0.23.2:
   version "0.23.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.2.tgz#414ba64a3b282892e944cf2108ecc078d115cdc3"
+  resolved "https://registry.npmjs.org/scheduler/-/scheduler-0.23.2.tgz"
   integrity sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==
   dependencies:
     loose-envify "^1.1.0"
 
 semver@^7.7.3:
   version "7.8.4"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.4.tgz#c73eceebae0616934be8dff28a7fd70757c8e696"
+  resolved "https://registry.npmjs.org/semver/-/semver-7.8.4.tgz"
   integrity sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==
 
 sharp@^0.34.3, sharp@^0.34.5:
   version "0.34.5"
-  resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.34.5.tgz#b6f148e4b8c61f1797bde11a9d1cfebbae2c57b0"
+  resolved "https://registry.npmjs.org/sharp/-/sharp-0.34.5.tgz"
   integrity sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==
   dependencies:
     "@img/colour" "^1.0.0"
@@ -356,22 +356,22 @@ sharp@^0.34.3, sharp@^0.34.5:
 
 source-map-js@^1.0.2:
   version "1.2.1"
-  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
+  resolved "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
 styled-jsx@5.1.6:
   version "5.1.6"
-  resolved "https://registry.yarnpkg.com/styled-jsx/-/styled-jsx-5.1.6.tgz#83b90c077e6c6a80f7f5e8781d0f311b2fe41499"
+  resolved "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.6.tgz"
   integrity sha512-qSVyDTeMotdvQYoHWLNGwRFJHC+i+ZvdBRYosOFgC+Wg1vx4frN2/RG/NA7SYqqvKNLf39P2LSRA2pu6n0XYZA==
   dependencies:
     client-only "0.0.1"
 
 tslib@^2.4.0, tslib@^2.8.0:
   version "2.8.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.8.1.tgz#612efe4ed235d567e8aba5f2a5fab70280ade83f"
+  resolved "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
   integrity sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==
 
 typescript@^5.2.2:
   version "5.9.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.9.3.tgz#5b4f59e15310ab17a216f5d6cf53ee476ede670f"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz"
   integrity sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==
