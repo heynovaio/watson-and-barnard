@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLink } from "@fortawesome/free-solid-svg-icons"
+import { LinkIcon } from "../icons"
 import styles from "./Links.module.css"
 
 const LINKS = [
@@ -17,7 +16,7 @@ export default function Links() {
           {LINKS.map((l) => (
             <div key={l.href}>
               <a href={l.href} target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLink} /> {l.label}
+                <LinkIcon /> {l.label}
               </a>
             </div>
           ))}

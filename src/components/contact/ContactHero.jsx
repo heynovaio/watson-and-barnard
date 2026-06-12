@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons"
+import { PhoneIcon, EnvelopeIcon, MapMarkerIcon } from "../icons"
 import styles from "./ContactHero.module.css"
 
 export default function ContactHero() {
@@ -17,7 +16,7 @@ export default function ContactHero() {
         <div className={styles.flexBox}>
           <div className={styles.item}>
             <a className={styles.circle} href="mailto:contact@wbsurveys.ca" aria-label="Email">
-              <FontAwesomeIcon icon={faEnvelope} />
+              <EnvelopeIcon />
             </a>
             <div className={styles.title}>Email</div>
             <a className={styles.content} href="mailto:contact@wbsurveys.ca">
@@ -26,7 +25,7 @@ export default function ContactHero() {
           </div>
           <div className={styles.item}>
             <a className={styles.circle} href="tel:604.943.9433" aria-label="Phone">
-              <FontAwesomeIcon icon={faPhoneAlt} />
+              <PhoneIcon />
             </a>
             <div className={styles.title}>Phone</div>
             <a className={styles.content} href="tel:604.943.9433">
@@ -35,7 +34,7 @@ export default function ContactHero() {
           </div>
           <div className={styles.item}>
             <span className={styles.circle}>
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
+              <MapMarkerIcon />
             </span>
             <div className={styles.title}>Address</div>
             <span className={styles.content}>1524 56 St, Delta, BC</span>

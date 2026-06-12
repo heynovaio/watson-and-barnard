@@ -3,8 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope, faPhoneAlt } from "@fortawesome/free-solid-svg-icons"
+import { PhoneIcon, EnvelopeIcon } from "./icons"
 import arrow from "@/public/images/bitmap@3x.png"
 import ConsultButton from "./ConsultButton"
 import styles from "./Header.module.css"
@@ -34,13 +33,13 @@ export default function Header() {
 
       <div className={styles.verticalContainer}>
         <div className={styles.phoneLogo}>
-          <FontAwesomeIcon icon={faPhoneAlt} />
+          <PhoneIcon />
         </div>
         <a className={styles.phone} href="tel:604-943-9433">
           604.943.9433
         </a>
         <div className={styles.mailLogo}>
-          <FontAwesomeIcon icon={faEnvelope} />
+          <EnvelopeIcon />
         </div>
         <a className={styles.email} href="mailto:contact@wbsurveys.ca">
           contact@wbsurveys.ca
@@ -89,10 +88,10 @@ export default function Header() {
           </nav>
           <div className={styles.contact}>
             <a href="tel:604-943-9433" aria-label="Call us">
-              <FontAwesomeIcon className="icon" icon={faPhoneAlt} />
+              <PhoneIcon className="icon" />
             </a>
             <a href="mailto:contact@wbsurveys.ca" aria-label="Email us">
-              <FontAwesomeIcon className="icon" icon={faEnvelope} />
+              <EnvelopeIcon className="icon" />
             </a>
           </div>
         </div>

@@ -1,12 +1,6 @@
 import Script from "next/script"
-import { config } from "@fortawesome/fontawesome-svg-core"
-import "@fortawesome/fontawesome-svg-core/styles.css"
 import "./globals.css"
 import Footer from "@/src/components/Footer"
-
-// FontAwesome injects its own CSS at runtime by default, which causes a flash of
-// oversized icons. We import the CSS above and disable the auto-injection.
-config.autoAddCss = false
 
 const GTM_ID = "GTM-T4JDVQ9"
 

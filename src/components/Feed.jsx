@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons"
+import { PhoneIcon, EnvelopeIcon, MapMarkerIcon } from "./icons"
 import styles from "./Feed.module.css"
 
 function encode(data) {
@@ -52,15 +51,15 @@ export default function Feed() {
                 <div className={styles.address}>
                   <div className={styles.addressItem}>
                     1524 56 St, Delta, BC
-                    <FontAwesomeIcon icon={faMapMarkerAlt} />
+                    <MapMarkerIcon />
                   </div>
                   <div className={styles.addressItem}>
                     <a href="tel:604-943-9433">604-943-9433</a>
-                    <FontAwesomeIcon icon={faPhoneAlt} />
+                    <PhoneIcon />
                   </div>
                   <div className={styles.addressItem}>
                     <a href="mailto:contact@wbsurveys.ca">contact@wbsurveys.ca</a>
-                    <FontAwesomeIcon icon={faEnvelope} />
+                    <EnvelopeIcon />
                   </div>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/survey.svg" alt="" />
