@@ -1,0 +1,98 @@
+.friends {
+  font-family: metropolis, sans-serif;
+  background-color: #f6f7fa;
+  padding: 138px 20px 117px;
+}
+.friends h2 {
+  font-size: 50px;
+  line-height: 1.04;
+  text-align: center;
+  color: #172821;
+  font-family: astoria, sans-serif;
+  font-weight: 400;
+  margin: 0 10px 16px;
+}
+.friends p {
+  max-width: 852px;
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+  color: #172821;
+  margin: 0 auto 26px;
+  padding: 0 10px;
+}
+@media (max-width: 500px) {
+  .friends {
+    padding: 41px 10px 73px;
+  }
+  .friends h2 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  .friends p {
+    font-size: 16px;
+  }
+}
+.gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.itemContainer {
+  width: 50%;
+  display: inline-block;
+  margin: 7.5px 0;
+  vertical-align: top;
+}
+.itemContainer:nth-child(2n + 1) {
+  padding-right: 10px;
+}
+.itemContainer:nth-child(2n + 0) {
+  padding-left: 10px;
+}
+.itemContainer:last-child {
+  display: block;
+  padding: 0 5px;
+  margin: auto;
+}
+@media (max-width: 850px) {
+  .itemContainer:nth-child(2n + 1),
+  .itemContainer:nth-child(2n + 0),
+  .itemContainer:last-child {
+    padding: 0;
+    width: 100%;
+  }
+}
+.item {
+  max-width: 590px;
+  margin: 0 auto;
+  box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+.imgContainer {
+  width: 100%;
+}
+.imgContainer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.titleContainer {
+  height: 102px;
+  background-color: #ffffff;
+  position: relative;
+}
+.title {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.41;
+  text-align: center;
+  color: #172821;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+}

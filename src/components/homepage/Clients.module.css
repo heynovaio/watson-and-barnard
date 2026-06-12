@@ -1,0 +1,119 @@
+.associates {
+  background-color: #f6f7fa;
+  padding: 25px 10px 150px;
+  font-family: metropolis, sans-serif;
+  text-align: center;
+}
+.associates h2 {
+  font-size: 50px;
+  line-height: 1.28;
+  color: #34594c;
+  min-height: 64px;
+  font-family: astoria, sans-serif;
+  font-weight: 400;
+  margin: 0 auto 20px;
+  max-width: 1200px;
+  text-align: left;
+}
+.associates h3 {
+  font-family: metropolis, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.33;
+  text-align: center;
+  color: #172821;
+  margin: 18px 0 9px;
+}
+@media (max-width: 720px) {
+  .associates h2 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin: 0 0 28px;
+  }
+}
+@media (max-width: 768px) {
+  .associates h2 {
+    text-align: center;
+  }
+}
+
+.itemGallery {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+.itemContainer {
+  display: inline-block;
+  position: relative;
+  padding: 30px;
+  width: 33%;
+  vertical-align: top;
+}
+@media (max-width: 1024px) {
+  .itemContainer {
+    width: 50%;
+  }
+}
+@media (max-width: 720px) {
+  .itemContainer {
+    width: 100%;
+    padding: 10px;
+  }
+}
+.item {
+  margin: 0 auto;
+  min-height: 387px;
+  background-color: #ffffff;
+  padding: 35px 26px 0;
+  max-height: 100%;
+  box-shadow: -5px 6px 15px 0 rgba(32, 62, 50, 0.05);
+  border-radius: 6px;
+}
+.lilPar {
+  font-family: metropolis, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.44;
+  text-align: center;
+  color: #172821;
+}
+.bigPar {
+  font-family: metropolis, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.44;
+  text-align: center;
+  color: #172821;
+}
+.imageContainer {
+  height: 148px;
+  text-align: center;
+  position: relative;
+}
+.imageContainer img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.button {
+  width: 200px;
+  height: 62px;
+  display: block;
+  background-color: #172821;
+  padding: 17px 0 0;
+  margin: 11px auto 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+.button:hover {
+  background: #396859;
+}
+@media (max-width: 720px) {
+  .button {
+    margin: 41px auto 0;
+  }
+}

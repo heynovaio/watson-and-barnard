@@ -1,9 +1,21 @@
-// Phase 1 scaffold placeholder — real homepage is ported in Phase 2.
+import Header from "@/src/components/Header"
+import Hero from "@/src/components/homepage/Hero"
+import Clients from "@/src/components/homepage/Clients"
+import Easy from "@/src/components/homepage/Easy"
+import Past from "@/src/components/homepage/Past"
+import Feed from "@/src/components/Feed"
+
 export default function HomePage() {
   return (
-    <main>
-      <h1>Watson &amp; Barnard</h1>
-      <p>Next.js migration scaffold — homepage port in progress.</p>
-    </main>
+    <>
+      <Header />
+      <main id="main-content">
+        <Hero />
+        <Clients />
+        <Easy />
+        <Past />
+        <Feed />
+      </main>
+    </>
   )
 }

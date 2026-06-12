@@ -76,3 +76,7 @@ migration-baseline/*.json
 migration-baseline/screenshots/
 migration-baseline/lh-errors.log
 migration-results/
+
+# next-image-export-optimizer build artifacts
+public/**/nextImageExportOptimizer/
+public/nextImageExportOptimizer/

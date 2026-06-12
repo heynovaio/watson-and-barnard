@@ -1,0 +1,29 @@
+.circles {
+  width: 205px;
+  margin: 0 auto;
+  position: relative;
+  bottom: -10px;
+}
+.circles a {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  box-shadow: 0 2px 20px 0 rgba(97, 97, 97, 0.2);
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 21px;
+  color: #d3c190;
+  position: absolute;
+  font-size: 30px;
+}
+.circles .icon {
+  width: 30px;
+  display: block;
+  margin: auto;
+}
+.circles a:first-child {
+  left: 0;
+}
+.circles a:last-child {
+  right: 0;
+}
