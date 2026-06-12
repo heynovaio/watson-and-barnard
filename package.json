@@ -23,6 +23,8 @@
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "next": "15",
+    "next-image-export-optimizer": "^1.18.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-calendly": "^4.3.1",
@@ -37,12 +39,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "dev": "next dev",
+    "build": "next build && next-image-export-optimizer",
+    "start": "next start",
+    "serve": "npx serve out",
+    "format": "prettier --write \"app/**/*.{js,jsx,css}\" \"src/**/*.{js,jsx}\"",
+    "test": "echo \"Write tests! -> https://nextjs.org/docs/app/building-your-application/testing\"",
+    "gatsby:build": "gatsby build",
+    "gatsby:serve": "gatsby serve"
   }
 }
