@@ -8,13 +8,11 @@ function Icon({ viewBox, path, className, title }) {
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       viewBox={viewBox}
-      width="1em"
-      height="1em"
       fill="currentColor"
       aria-hidden={title ? undefined : "true"}
       role={title ? "img" : undefined}
       focusable="false"
-      style={{ verticalAlign: "-0.125em" }}
+      style={{ verticalAlign: "-0.125em", maxHeight: "36px" }}
     >
       {title ? <title>{title}</title> : null}
       <path d={path} />

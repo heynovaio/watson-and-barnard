@@ -2,55 +2,70 @@ import ExportedImage from "next-image-export-optimizer"
 import placeholder from "@/public/images/services_3@3x.jpg"
 import styles from "./Leadership.module.css"
 
-function PersonCard({ cardClass, linkClass }) {
+function PersonCard({ person, cardClass }) {
+  const {
+    image = placeholder,
+    name = "John Doe",
+    position = "Position",
+    credentials = "",
+  } = person ?? {}
+
   return (
     <div className={`${styles.card} ${cardClass}`}>
-      <ExportedImage src={placeholder} alt="Team member" sizes="(max-width: 590px) 100vw, 450px" />
+      <ExportedImage src={image} alt={name} sizes="(max-width: 590px) 100vw, 450px" />
       <div className={styles.content}>
-        <h4>Position</h4>
-        <h4>John Doe</h4>
-        <p>Credentials | University Degree</p>
-        <a href="#">
-          <span className={`${styles.readLink} ${linkClass}`}>Read more</span>
-        </a>
+        <p className={styles.position}>{position}</p>
+        <h3 className={styles.name}>{name}</h3>
+        {credentials && <p className={styles.credentials}>{credentials}</p>}
       </div>
     </div>
   )
 }
 
-export default function Leadership() {
+function TeamSection({ heading, subtitle, members, gridClass, cardClass }) {
+  if (!members?.length) return null
+  return (
+    <>
+      <h2>{heading}</h2>
+      {subtitle && <p className={styles.sub}>{subtitle}</p>}
+      <div className={`${styles.grid} ${gridClass}`}>
+        {members.map((person, i) => (
+          <PersonCard key={i} person={person} cardClass={cardClass} />
+        ))}
+      </div>
+    </>
+  )
+}
+
+export default function Leadership({
+  leadership = { heading: "Our Leadership Team", subtitle: "", members: [] },
+  technical = { heading: "Our Technical Team", subtitle: "", members: [] },
+  field = { heading: "Our Field Team", subtitle: "", members: [] },
+}) {
   return (
     <section className={styles.leadership}>
       <div className={styles.outer}>
-        <h2>Our Leadership Team</h2>
-        <p className={styles.sub}>
-          Reprehenderit esse labore id veniam ut veniam non ex adipisicing
-        </p>
-        <div className={`${styles.grid} ${styles.leaderGrid}`}>
-          {Array.from({ length: 4 }).map((_, i) => (
-            <PersonCard key={i} cardClass={styles.leaderCard} linkClass={styles.linkA} />
-          ))}
-        </div>
-
-        <h2>Our Technical Team</h2>
-        <p className={styles.sub}>
-          Reprehenderit esse labore id veniam ut veniam non ex adipisicing
-        </p>
-        <div className={`${styles.grid} ${styles.teamGrid}`}>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <PersonCard key={i} cardClass={styles.teamCard} linkClass={styles.linkB} />
-          ))}
-        </div>
-
-        <h2>Our Field Team</h2>
-        <p className={styles.sub}>
-          Reprehenderit esse labore id veniam ut veniam non ex adipisicing
-        </p>
-        <div className={`${styles.grid} ${styles.teamGrid}`}>
-          {Array.from({ length: 5 }).map((_, i) => (
-            <PersonCard key={i} cardClass={styles.teamCard} linkClass={styles.linkB} />
-          ))}
-        </div>
+        <TeamSection
+          heading={leadership.heading}
+          subtitle={leadership.subtitle}
+          members={leadership.members}
+          gridClass={styles.leaderGrid}
+          cardClass={styles.leaderCard}
+        />
+        <TeamSection
+          heading={technical.heading}
+          subtitle={technical.subtitle}
+          members={technical.members}
+          gridClass={styles.teamGrid}
+          cardClass={styles.teamCard}
+        />
+        <TeamSection
+          heading={field.heading}
+          subtitle={field.subtitle}
+          members={field.members}
+          gridClass={styles.teamGrid}
+          cardClass={styles.teamCard}
+        />
       </div>
     </section>
   )

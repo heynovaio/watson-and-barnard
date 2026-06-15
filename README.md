@@ -78,3 +78,55 @@ to `/contact-thank-you/` on submit.
 This site was migrated from Gatsby 2 → Next.js. Lighthouse baselines and the
 migration prompt live under `migration-baseline/` (raw reports are gitignored; the
 summary is in `migration-baseline/BASELINE.md`).
+
+## Content & copy
+ 
+Most page copy lives directly in each component, but the **team roster** and the
+**per-service detail pages** are data-driven so non-layout edits don't require
+touching JSX. Both read from a single content module:
+ 
+```
+src/components/content.js   (default: @/src/components/content)
+```
+ 
+### Team members (About page)
+ 
+`content.js` exports a `team` object with three groups — `leadership`,
+`technical`, and `field`. Each group is `{ heading, subtitle, members }`, and
+each member is:
+ 
+```js
+{ name, position, credentials, image?, href? }
+```
+ 
+Add, remove, or reorder people by editing the `members` arrays. Empty groups
+render nothing. `image` is optional (falls back to a placeholder); omit `href`
+unless a member has a destination.
+ 
+### Service detail pages
+ 
+The seven service pages share one `<ServiceDetail />` template. Their copy lives
+in the `services` object in `content.js`, keyed by slug (`topographic`,
+`construction`, `drone`, `strata`, `laser`, …). Each entry is spread straight
+into the component:
+ 
+```js
+{
+  title,
+  intro,
+  overview,
+  detailImg,                 // optional hero/detail image import
+  details: [{ title, body }],
+  applications: { intro, items: [string] },
+  projects: { intro, items: [{ name, body, image? }] },
+}
+```
+ 
+Counts follow the data — a service with five application items renders five, no
+JSX change needed. Each route's `page.jsx` just imports its slug and spreads it,
+and the page `metadata.title` is derived from `title` so it can't drift.
+ 
+> **Note:** several entries still contain placeholder text from the migration.
+> Anything reading `"Position" / "John Doe"` or empty `intro`/`overview` strings
+> is awaiting real copy — that's the SEO/content pass. Fill these in `content.js`
+> rather than in the components.

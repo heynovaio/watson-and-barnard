@@ -4,6 +4,7 @@ import Team from "@/src/components/about/Team"
 import Values from "@/src/components/about/Values"
 import Leadership from "@/src/components/about/Leadership"
 import Feed from "@/src/components/Feed"
+import { team } from "@/src/components/content"
 
 export const metadata = {
   title: "About Us",
@@ -22,7 +23,11 @@ export default function AboutPage() {
         </PageHero>
         <Team />
         <Values />
-        <Leadership />
+        <Leadership
+          leadership={team.leadership}
+          technical={team.technical}
+          field={team.field}
+        />
         <Feed />
       </main>
     </>

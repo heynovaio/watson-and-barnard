@@ -23,7 +23,7 @@
 }
 .listings {
   padding: 0 20px;
-  margin: 40px 0 489px;
+  margin: 40px 0 120px;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -62,14 +62,17 @@
   padding: 16px 20px 21px;
   width: 100%;
   flex-grow: 1;
-  justify-content: space-between;
   display: flex;
   flex-direction: column;
 }
 .content h3 {
   margin-bottom: 11px;
 }
+.content p {
+  margin: 0 0 20px;
+}
 .learnBtn {
+  margin-top: auto;
   max-width: 190px;
   width: 100%;
   background: #d3c190;

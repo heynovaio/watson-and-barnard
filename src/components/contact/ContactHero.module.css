@@ -22,7 +22,7 @@
   margin: 40px auto 0;
 }
 .hero svg {
-  max-height: 36px;
+  max-height: 44px;
   margin: auto;
   display: block;
   color: #34594c;
@@ -105,14 +105,15 @@
   }
 }
 .circle {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 87px;
   height: 87px;
   box-shadow: 0 2px 4px 0 rgba(78, 78, 78, 0.11);
   background-color: #ffffff;
   border-radius: 50%;
   margin: 0 auto 17px;
-  padding: 25.5px 0;
 }
 .title {
   font-size: 26px;

@@ -66,38 +66,27 @@
   max-width: 373px;
 }
 .content {
-  padding-bottom: 25px;
-  padding-left: 20px;
-  position: relative;
+  padding: 22px 24px 28px;
 }
-.content a {
-  text-decoration: none;
+.position {
+  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #34594c;
+}
+.name {
+  font-family: astoria, sans-serif;
+  margin: 0 0 8px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 600;
   color: #172821;
-  font-size: 16px;
-  font-weight: 300;
 }
-.content h4,
-.content p {
-  margin-bottom: 18px;
-}
-.readLink {
+.credentials {
   margin: 0;
-  padding: 0;
-}
-.readLink::after {
-  font-family: arial;
-  content: "➔";
-  font-size: 16px;
-  position: absolute;
-  z-index: 3;
-  padding-left: 5px;
-  padding-top: 1px;
-}
-.linkA {
-  position: absolute;
-  top: -70px;
-  right: 30px;
-}
-.linkB {
-  position: relative;
+  font-size: 15px;
+  font-weight: 300;
+  color: #172821;
 }

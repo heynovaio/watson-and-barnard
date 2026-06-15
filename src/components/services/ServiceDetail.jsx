@@ -1,16 +1,19 @@
 import Link from "next/link"
 import ExportedImage from "next-image-export-optimizer"
-import detailImg from "@/public/images/topographic-survey.jpg"
-import projectImg from "@/public/images/placeholder.png"
+import defaultDetailImg from "@/public/images/topographic-survey.jpg"
+import defaultProjectImg from "@/public/images/placeholder.png"
 import styles from "./ServiceDetail.module.css"
 
-const LOREM =
-  "Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco dolor proident. Exercitation velit"
-
-// Shared layout for the individual service detail pages. The Gatsby source had
-// 7 identical stub pages ("Topographic Survey" + lorem); this renders that
-// content and accepts a title so each route can be customised later.
-export default function ServiceDetail({ title = "Topographic Survey" }) {
+export default function ServiceDetail({
+  title = "Topographic Survey",
+  intro = "",
+  overview = "",
+  overviewIcon = "/images/tripod.svg",
+  details = [],
+  detailImg = defaultDetailImg,
+  applications = { intro: "", items: [] },
+  projects = { intro: "", items: [] },
+}) {
   return (
     <div className={styles.wrapper}>
       <section className={styles.hero}>
@@ -20,7 +23,7 @@ export default function ServiceDetail({ title = "Topographic Survey" }) {
             <Link href="/services/">Services</Link> &gt; <span>{title}</span>
           </h4>
           <h1>{title}</h1>
-          <p>{LOREM} ea incididunt sit qui do ipsum fugiat laboris minim nostrud dolor</p>
+          {intro && <p>{intro}</p>}
         </div>
       </section>
 
@@ -28,12 +31,10 @@ export default function ServiceDetail({ title = "Topographic Survey" }) {
         <section className={styles.overview}>
           <div>
             <h2>Overview</h2>
-            <p>
-              {LOREM} ea incididunt sit qui do ipsum fugiat laboris minim nostrud dolor
-            </p>
+            {overview && <p>{overview}</p>}
           </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/tripod.svg" alt="" />
+          <img src={overviewIcon} alt="" />
         </section>
       </div>
 
@@ -41,10 +42,10 @@ export default function ServiceDetail({ title = "Topographic Survey" }) {
         <div className={styles.blue} />
         <div className={styles.innerContainer}>
           <ul>
-            {[1, 2, 3].map((n) => (
-              <li key={n}>
-                <h3>Detail {n}</h3>
-                <p>{LOREM} ea</p>
+            {details.map((d, i) => (
+              <li key={d.title ?? i}>
+                <h3>{d.title}</h3>
+                <p>{d.body}</p>
               </li>
             ))}
           </ul>
@@ -58,27 +59,27 @@ export default function ServiceDetail({ title = "Topographic Survey" }) {
         <section className={styles.applications}>
           <div className={styles.copy}>
             <h2>Applications</h2>
-            <p>{LOREM} ea incididunt</p>
+            {applications.intro && <p>{applications.intro}</p>}
             <button type="button" className={styles.cta}>
               See what you need
             </button>
           </div>
           <ul>
-            {[1, 2, 3, 4, 5, 6, 7].map((n) => (
-              <li key={n}>Example of use {n}</li>
+            {applications.items.map((item, i) => (
+              <li key={i}>{item}</li>
             ))}
           </ul>
         </section>
 
         <section className={styles.projects}>
           <h2>Related Projects</h2>
-          <p>Reprehenderit esse labore id veniam ut veniam non ex adipisicing</p>
+          {projects.intro && <p>{projects.intro}</p>}
           <div className={styles.cardRow}>
-            {[1, 2, 3].map((n) => (
-              <div key={n}>
-                <ExportedImage src={projectImg} alt="" sizes="369px" />
-                <h3>Project Name</h3>
-                <p>Lorem quis sunt magna dolor consectetur aliqua officia</p>
+            {projects.items.map((p, i) => (
+              <div key={p.name ?? i}>
+                <ExportedImage src={p.image ?? defaultProjectImg} alt="" sizes="369px" />
+                <h3>{p.name}</h3>
+                <p>{p.body}</p>
               </div>
             ))}
           </div>

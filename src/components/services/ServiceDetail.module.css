@@ -1,5 +1,6 @@
 .wrapper h2 {
   min-height: 64px;
+  max-width: 640px;
   font-size: 50px;
   line-height: 1.28;
   color: #34594c;
@@ -60,11 +61,11 @@
   font-family: astoria, sans-serif;
   font-size: 100px;
   font-weight: 500;
-  line-height: 0.53;
+  line-height: 1;
   letter-spacing: 0.4px;
   text-align: center;
   color: #eee4cb;
-  height: 53px;
+  max-width: 900px;
   margin: 0 auto 40px;
 }
 .content p {
