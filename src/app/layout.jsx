@@ -5,7 +5,7 @@ import Footer from "@/src/components/Footer"
 const GTM_ID = "GTM-T4JDVQ9"
 
 export const metadata = {
-  metadataBase: new URL("http://www.wbsurveys.bc.ca"),
+  metadataBase: new URL("https://www.wbsurveys.bc.ca"),
   title: {
     default: "Watson & Barnard Land Surveyors & Engineers",
     template: "%s | Watson & Barnard",

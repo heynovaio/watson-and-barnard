@@ -1,6 +1,6 @@
 export const dynamic = "force-static"
 
-const BASE = "http://www.wbsurveys.bc.ca"
+const BASE = "https://www.wbsurveys.bc.ca"
 
 const ROUTES = [
   "/",
