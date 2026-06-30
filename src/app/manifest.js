@@ -2,12 +2,12 @@ export const dynamic = "force-static"
 
 export default function manifest() {
   return {
-    name: "watson-and-barnard",
-    short_name: "starter",
+    name: "Watson & Barnard Land Surveyors & Engineers",
+    short_name: "W&B Surveys",
     start_url: "/",
     display: "standalone",
-    background_color: "#663399",
-    theme_color: "#663399",
+    background_color: "#f6f7fa",
+    theme_color: "#34594c",
     icons: [
       {
         src: "/images/bitmap.png",

@@ -1,7 +1,7 @@
 {
   "name": "watson-and-barnard",
   "private": true,
-  "description": "Watson & Barnard Land Surveyors & Engineers marketing site, built with Gatsby.",
+  "description": "Watson & Barnard Land Surveyors & Engineers marketing site, built with Next.js.",
   "version": "1.0.0",
   "author": "HeyNova <hello@heynova.io>",
   "engines": {
@@ -18,7 +18,9 @@
     "prettier": "^3.3.3"
   },
   "keywords": [
-    "gatsby"
+    "nextjs",
+    "react",
+    "land-surveying"
   ],
   "license": "MIT",
   "scripts": {
