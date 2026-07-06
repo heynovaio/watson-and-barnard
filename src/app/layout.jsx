@@ -2,7 +2,7 @@ import Script from "next/script"
 import "./globals.css"
 import Footer from "@/src/components/Footer"
 
-const GTM_ID = "GTM-T4JDVQ9"
+const GTM_ID = "GTM-53PFQMHS"
 
 export const metadata = {
   metadataBase: new URL("https://www.wbsurveys.bc.ca"),
