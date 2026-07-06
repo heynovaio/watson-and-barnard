@@ -1,0 +1,16 @@
+.wrap {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 100px 20px;
+  text-align: center;
+  font-family: metropolis, sans-serif;
+}
+.wrap h1 {
+  font-size: 40px;
+  color: #172821;
+  margin-bottom: 16px;
+}
+.wrap p {
+  font-size: 18px;
+  color: #172821;
+}

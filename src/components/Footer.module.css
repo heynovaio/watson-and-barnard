@@ -1,0 +1,30 @@
+.footer {
+  background-color: #ffffff;
+  padding: 31px 20px 70px;
+}
+.title {
+  font-family: astoria, sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  text-align: center;
+  color: #505d68;
+}
+.logos {
+  max-width: 565px;
+  margin: 9px auto 25px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.nav a {
+  font-family: metropolis, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #505d68;
+  text-decoration: none;
+  display: block;
+}

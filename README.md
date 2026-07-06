@@ -1,97 +1,132 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Watson & Barnard — Land Surveyors & Engineers
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Marketing site for Watson & Barnard, a private land survey firm in Delta, BC.
+Built with [Next.js 15](https://nextjs.org/) (App Router) and exported as a static
+site. Deploys to Netlify as plain HTML/CSS/JS with no server runtime.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+## Requirements
 
-## 🚀 Quick start
+- **Node** `>=18` (the repo pins **Node 20** via `.nvmrc`)
+- **Yarn** (v1 / classic) — single `yarn.lock`, do not use npm
 
-1.  **Create a Gatsby site.**
+```sh
+nvm use        # Node 20
+yarn install
+```
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+## Getting started
 
-    ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+```sh
+yarn dev       # dev server at http://localhost:3000
+yarn build     # static export to out/ (runs the image optimizer)
+yarn serve     # serve the exported out/ locally
+```
 
-1.  **Start developing.**
+## Scripts
 
-    Navigate into your new site’s directory and start it up.
+| Command       | Description                                                  |
+| ------------- | ------------------------------------------------------------ |
+| `yarn dev`    | Next dev server (hot reload)                                 |
+| `yarn build`  | `next build` + `next-image-export-optimizer` → static `out/` |
+| `yarn serve`  | Serve the exported `out/` directory                          |
+| `yarn format` | Format `src/` with Prettier                                  |
 
-    ```sh
-    cd my-default-starter/
-    gatsby develop
-    ```
+## Project structure
 
-1.  **Open the source code and start editing!**
+```
+src/
+├── app/                 App Router — one folder per route + page.jsx
+│   ├── layout.jsx       Root shell: metadata, Typekit, GTM/Bing, Footer
+│   ├── globals.css      Reset + self-hosted @font-face (Metropolis)
+│   ├── sitemap.js       /sitemap.xml
+│   ├── robots.js        /robots.txt
+│   ├── manifest.js      /manifest.webmanifest
+│   └── <route>/page.jsx Routes (about, services, services/*, contact, …)
+└── components/          UI components, each with a co-located *.module.css
+public/
+├── images/              Source images (optimized to WebP at build time)
+└── fonts/               Self-hosted Metropolis (woff2)
+```
 
-    Your site is now running at `http://localhost:8000`!
+## Architecture notes
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+- **Styling**: CSS Modules (`*.module.css`) co-located with each component.
+  Components are React Server Components by default; only `Header`, `Feed`,
+  `ContactFeed`, and `ConsultButton` are client components (interactivity).
+- **Images**: `next/image` via
+  [`next-image-export-optimizer`](https://github.com/Niels-IO/next-image-export-optimizer)
+  (static export builds WebP at multiple sizes). Static imports give intrinsic
+  width/height → no layout shift.
+- **SEO**: per-page `metadata` exports (App Router Metadata API). Sitemap, robots
+  and manifest are generated metadata routes.
+- **Fonts**: self-hosted Metropolis via `@font-face` (`font-display: swap`,
+  woff2 only); Astoria from Adobe Typekit, loaded non-render-blocking.
+- **Icons**: inline SVG (`src/components/icons.jsx`) — no icon-font runtime.
+- **Analytics**: Google Tag Manager (`GTM-T4JDVQ9`) + Bing UET via `next/script`.
+  The legacy Universal Analytics property was dropped (UA is defunct); add GA4
+  via `@next/third-parties/google` with a measurement ID when ready.
+- **Calendly**: lazy-loaded on click (`ConsultButton`), kept out of the initial bundle.
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+## Deployment (Netlify)
 
-## 🧐 What's inside?
+`netlify.toml` builds with `yarn build` and publishes `out/`. The contact form
+uses **Netlify Forms** (`data-netlify`, honeypot, hidden `form-name`) and redirects
+to `/contact-thank-you/` on submit.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+## Migration
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+This site was migrated from Gatsby 2 → Next.js. Lighthouse baselines and the
+migration prompt live under `migration-baseline/` (raw reports are gitignored; the
+summary is in `migration-baseline/BASELINE.md`).
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+## Content & copy
+ 
+Most page copy lives directly in each component, but the **team roster** and the
+**per-service detail pages** are data-driven so non-layout edits don't require
+touching JSX. Both read from a single content module:
+ 
+```
+src/components/content.js   (default: @/src/components/content)
+```
+ 
+### Team members (About page)
+ 
+`content.js` exports a `team` object with three groups — `leadership`,
+`technical`, and `field`. Each group is `{ heading, subtitle, members }`, and
+each member is:
+ 
+```js
+{ name, position, credentials, image?, href? }
+```
+ 
+Add, remove, or reorder people by editing the `members` arrays. Empty groups
+render nothing. `image` is optional (falls back to a placeholder); omit `href`
+unless a member has a destination.
+ 
+### Service detail pages
+ 
+The seven service pages share one `<ServiceDetail />` template. Their copy lives
+in the `services` object in `content.js`, keyed by slug (`topographic`,
+`construction`, `drone`, `strata`, `laser`, …). Each entry is spread straight
+into the component:
+ 
+```js
+{
+  title,
+  intro,
+  overview,
+  detailImg,                 // optional hero/detail image import
+  details: [{ title, body }],
+  applications: { intro, items: [string] },
+  projects: { intro, items: [{ name, body, image? }] },
+}
+```
+ 
+Counts follow the data — a service with five application items renders five, no
+JSX change needed. Each route's `page.jsx` just imports its slug and spreads it,
+and the page `metadata.title` is derived from `title` so it can't drift.
+ 
+> **Note:** several entries still contain placeholder text from the migration.
+> Anything reading `"Position" / "John Doe"` or empty `intro`/`overview` strings
+> is awaiting real copy — that's the SEO/content pass. Fill these in `content.js`
+> rather than in the components.

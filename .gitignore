@@ -54,7 +54,7 @@ typings/
 # dotenv environment variables file
 .env
 
-# gatsby files
+# gatsby files (legacy — removed in Phase 5)
 .cache/
 
 # Mac files
@@ -67,4 +67,17 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-public/
+# Next.js (public/ is now a committed SOURCE dir, not build output)
+.next/
+out/
+
+# Migration artifacts (heavy raw reports/screenshots kept locally, summary committed)
+migration-baseline/*.json
+migration-baseline/screenshots/
+migration-baseline/lh-errors.log
+migration-results/
+
+# next-image-export-optimizer build artifacts
+public/**/nextImageExportOptimizer/
+public/nextImageExportOptimizer/
+public/images/next-image-export-optimizer-hashes.json
