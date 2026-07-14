@@ -23,6 +23,10 @@ export default function HTML(props) {
           })(window,document,'script','dataLayer','GTM-53PFQMHS');</script>`,
         }}
         />
+        {/* Calendly link widget begin */}
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        {/* Calendly link widget end */}
       </head>
       <body {...props.bodyAttributes}>
         <noscript dangerouslySetInnerHTML={{

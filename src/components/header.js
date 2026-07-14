@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import arrow from "../images/bitmap@3x.png";
-import {PopupButton} from 'react-calendly'
 
 const bp = {
   smaller: 300,
@@ -360,7 +359,7 @@ const Email = styled.a`
   position: absolute;
   left: -79px;
 `
-const ConsultButton = styled(PopupButton)`
+const ConsultButton = styled.a`
   margin: 13px 0 0;
   padding: 25px 26px 30px;
   outline: none;
@@ -417,8 +416,16 @@ export default props => (
       </MenuContainerInner>
     </MenuContainerOuter>
     <ConsultButton
-      text="Book a free consult"
-      url="https://calendly.com/wbls/consult30min"
-    />
+      href=""
+      onClick={e => {
+        e.preventDefault()
+        if (window.Calendly) {
+          window.Calendly.initPopupWidget({ url: 'https://calendly.com/ce982/initialconsultation' })
+        }
+        return false
+      }}
+    >
+      Book a free consult
+    </ConsultButton>
   </Header>
 )
